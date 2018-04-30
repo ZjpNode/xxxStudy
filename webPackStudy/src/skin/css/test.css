@@ -1,0 +1,17 @@
+.font_color_blue{
+	color: blue;
+}
+.font_color_yellow{
+	color: yellow;
+}
+.font_color_red{
+	color: red;
+}
+.webpackImg {
+    background: url('../img/timg.jpg') no-repeat center;
+    height:500px;
+}
+.webpackImg2 {
+    background: url('../img/63751480503240497.jpg') no-repeat center;
+    height:500px;
+}
