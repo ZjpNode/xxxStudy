@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>二列and三列布局</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .content {
+            height: 100vh;
+        }
+
+        .sub {
+            height: 100%;
+            width: 100px;
+            float: left;
+            background-color: red
+        }
+
+        .extra {
+            height: 100%;
+            width: 200px;
+            float: right;
+            background-color: yellow
+        }
+
+        .main {
+            height: 100%;
+            margin-left: 100px;
+            margin-right: 200px;
+            background-color: cyan
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="content">
+        <div class="sub">sub</div>
+        <div class="extra">extra</div>
+        <div class="main">main:
+             *　注意DOM文档的书写顺序，先写两侧栏，再写主面板，更换后则侧栏会被挤到下一列（圣杯布局和双飞翼布局都会用到）。
+             *　这种布局方式比较简单明了，但缺点是渲染时先渲染了侧边栏，而不是比较重要的主面板。</div>
+    </div>
+</body>
+
+</html>

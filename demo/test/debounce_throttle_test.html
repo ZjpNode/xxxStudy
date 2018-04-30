@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>debounce_throttle_test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <p>普通的输入框</p>
+    <input type="text" id="common" placeholder="连续输入">
+    <span id="commonValue"></span>
+    <p>应用了函数消抖debounce的输入框</p>
+    <input type="text" id="debounce" placeholder="连续输入">
+    <span id="debounceValue"></span>
+    <p>应用了函数节流throttle的输入框</p>
+    <input type="text" id="throttle" placeholder="连续输入">
+    <span id="throttleValue"></span>
+</body>
+<script src="../moduleRequire.js"></script>
+<script>
+    ; (function (root, factory) {
+        if (typeof exports === 'object') {
+            module.exports = factory();
+        } else if (typeof define === 'function' && define.amd) {
+            define(factory);
+        } else {
+            var z_module = root['Z_MODULE'] = root['Z_MODULE'] || {};
+            var require = z_module['LocalJs']['require'];
+            factory(require);
+        }
+    })(this, function (require) {
+        var util = require('util');
+        var htmlEleOpt = require('htmlEleOpt');
+        var commonInput = htmlEleOpt.queryEleById('common');
+        var commonValue = htmlEleOpt.queryEleById('commonValue');
+        var debounceInput = htmlEleOpt.queryEleById('debounce');
+        var debounceValue = htmlEleOpt.queryEleById('debounceValue');
+        var throttleInput = htmlEleOpt.queryEleById('throttle');
+        var throttleValue = htmlEleOpt.queryEleById('throttleValue');
+        htmlEleOpt.bindEvent(commonInput, 'keydown', function () {
+            commonValue.innerHTML = this.value;
+        })
+        htmlEleOpt.bindEvent(debounceInput, 'keydown', util.debounce(function () {
+            debounceValue.innerHTML = this.value;
+        }, 500))
+        htmlEleOpt.bindEvent(throttleInput, 'keydown', util.throttle(function () {
+            throttleValue.innerHTML = this.value;
+        }, 500))
+    });
+</script>
+
+</html>

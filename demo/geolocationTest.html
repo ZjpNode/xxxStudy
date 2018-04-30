@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>
+  <button onclick="getLocation()">Show my location</button>
+  <button onclick="x.innerHTML = '';">clear</button>
+</p>
+<div id="demo"></div>
+<script src="moduleRequire.js"></script>
+<script>
+  var x = document.getElementById("demo");
+
+  function getLocation () {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function showPosition (position) {
+
+    console.log(position)
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    x.innerHTML = `longitude:${longitude},latitude:${latitude}`;
+
+    var img = new Image();
+    img.src = `http://restapi.amap.com/v3/staticmap?location=${longitude},${latitude}&zoom=12&size=750*300&markers=mid,,A:${longitude},${latitude}&key=9ca477a92b14295d9a33543b02dcd3f9`;
+    x.appendChild(img);
+  }
+
+  function showError (error) {
+    console.log(error)
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+      default:
+        x.innerHTML = error
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convertImgToBase64Demo</title>
+</head>
+<body>
+<div id="imgArea"></div>
+</body>
+<script src="moduleRequire.js"></script>
+<script>
+	;(function (root, factory) {
+		if (typeof exports === 'object') {
+			module.exports = factory();
+		} else if (typeof define === 'function' && define.amd) {
+			define(factory);
+		} else {
+			var z_module = root['Z_MODULE'] = root['Z_MODULE'] || {};
+			var require = z_module['LocalJs']['require'];
+			z_module['designPatterns'] = factory(require);
+		}
+	})(this, function (require) {
+
+		var htmlEleOpt = require('htmlEleOpt');
+		var imgUrl = 'img/emr_inspection.png';
+
+		var imgArea = htmlEleOpt.queryEleById('imgArea');
+		var utlImg = htmlEleOpt.createEle('img');
+		htmlEleOpt.setAttr({
+			node: utlImg,
+			attribute: [{
+				key: 'src',
+				value: imgUrl
+			}, {
+				key: 'alt',
+				value: 'utlImg'
+			}, {
+				key: 'title',
+				value: 'utlImg'
+			}]
+		});
+		imgArea.appendChild(utlImg);
+		htmlEleOpt.convertImgToBase64(imgUrl, function (base64Img) {
+			var convertImg = htmlEleOpt.createEle('img');
+			htmlEleOpt.setAttr({
+				node: convertImg,
+				attribute: [{
+					key: 'src',
+					value: base64Img
+				}, {
+					key: 'alt',
+					value: 'base64Img'
+				}, {
+					key: 'title',
+					value: 'base64Img'
+				}]
+			});
+
+			imgArea.appendChild(convertImg);
+		})
+	});
+
+
+</script>
+</html>

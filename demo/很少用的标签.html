@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>很少用的标签</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    p:lang(en)>q{
+        quotes: '"' '"';
+    }
+    p:lang(ch)>q{
+        quotes: '“' '”';
+    }
+    p:lang(jp)>q{
+        quotes: '《' '》';
+    }
+    P::before{
+        content: '☀️'attr(lang)'：'
+    }
+</style>
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<dl>
+    <dt>xxxx:</dt>
+    <dd>sss</dd>
+    <dt>xxxx:</dt>
+    <dd>sss</dd>
+    <dt>xxxx:</dt>
+    <dd>sss</dd>
+    <dt>xxxx:</dt>
+    <dd>sss</dd>
+    <dt>xxxx:</dt>
+    <dd>sss</dd>
+</dl>
+<p lang="en"><q>hello</q></p>
+<p lang="ch"><q>你好</q></p>
+<p lang="jp"><q>こんにちは</q></p>
+<body>
+</html>

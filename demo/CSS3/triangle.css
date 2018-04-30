@@ -1,0 +1,15 @@
+.box {
+  margin: 200px auto;
+  width: 200px;
+  height: 200px;
+}
+.triangle {
+  width: 0px;
+  height: 0px;
+  background-color: #ffffff;
+  border: 30px solid aqua;
+  border-top: 50px solid black;
+    border-right: 50px solid red;
+    border-bottom: 50px solid blue;
+    border-left: 50px solid orange;
+}

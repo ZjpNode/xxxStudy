@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>js事件机制</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <h1>打开控制台观察现象</h1>
+    <div id="demoDiv">
+        <ul id="demoUl">
+            <li id="demoli">请点我，阻止事件冒泡stopPropagation</li>
+            <li id="demoli2">请点我，事件冒泡</li>
+            <a href="#123" id="btn3">阻止剩余的事件处理函数执行并且防止事件冒泡</a>
+        </ul>
+    </div>
+    <a href="#123" id="btn">请点我，阻止默认行为preventDefault</a>
+    <br>
+    <a href="#123" id="btn2">请点我，有默认行为</a>
+    <br>
+</body>
+<script>
+    let div = document.getElementById('demoDiv')
+        .addEventListener('click', function (event) {
+            console.log(this.id);
+            console.log(event.currentTarget);   // 返回绑定事件的元素
+            console.log(event.target);          // 返回触发事件的元素
+        });
+    let ul = document.getElementById('demoUl')
+        .addEventListener('click', function () {
+            console.log(this.id);
+        });
+    let li = document.getElementById('demoli')
+        .addEventListener('click', function () {
+            event.stopPropagation();
+            console.log(this.id);
+        });
+    let li2 = document.getElementById('demoli2')
+        .addEventListener('click', function () {
+            console.log(this.id);
+        });
+    let btn = document.getElementById('btn')
+        .addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log(this.id);
+        });
+    let btn2 = document.getElementById('btn2')
+        .addEventListener('click', function (event) {
+            console.log(this.id);
+        });
+    let btn3 = document.getElementById('btn3');
+    btn3.addEventListener('click', function (event) {
+        event.stopImmediatePropagation();   // 阻止
+        console.log(this.id);
+        console.log(event.currentTarget);
+        console.log(event.target);
+    })
+    btn3.addEventListener('click', function (event) {
+        console.log(this.id);
+    })
+</script>
+
+</html>

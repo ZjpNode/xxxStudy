@@ -1,0 +1,87 @@
+body {
+  background: #e3e3e3;
+  text-align: center;
+}
+.card {
+  display: inline-block;
+  background: #ffffff;
+  box-shadow: 0 3px 5px #ddd;
+  padding: 15px;
+  margin: 10px;
+}
+
+.card p {
+  margin: 25px 0 0 0;
+}
+
+.box {
+  background: #dddddd;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background: #03a9f4;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.rotate-45:hover {
+  transform: rotate(45deg);
+}
+
+.rotateX-45:hover {
+  transform: rotateX(45deg);
+}
+.rotateX-90:hover {
+  transform: rotateX(90deg);
+}
+
+.rotateY-45:hover {
+  transform: rotateY(45deg);
+}
+
+.rotateZ-45:hover {
+  transform: rotateZ(45deg);
+}
+.scale-2:hover {
+  transform: scale(2);
+}
+.scaleX-2:hover {
+  transform: scaleX(2);
+}
+.scaleY-2:hover {
+  transform: scaleY(2);
+}
+.skew-45-45:hover {
+  transform: skew(45deg, 45deg);
+}
+.skewX-45:hover {
+  transform: skewX(45deg);
+}
+.skewY-45:hover {
+  transform: skewY(45deg);
+}
+.translate-45-45:hover {
+  transform: translate(45px,45px);
+}
+.translateX-45:hover {
+  transform: translateX(45px);
+}
+.translateY-45:hover {
+  transform: translateY(45px);
+}
+/* 视点 （y轴的长度） */
+.perspective-100{
+  perspective : 100px;
+}
+/* 中心点的位置 */
+.t-o-100-0-0{
+  transform-origin: 100% 0 0; 
+}
+.t-o-0-100-0{
+  transform-origin: 0 100% 0; 
+}

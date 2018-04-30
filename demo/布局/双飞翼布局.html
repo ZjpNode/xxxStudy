@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>双飞翼布局</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 45px;
+            background-color: pink;
+        }
+
+        footer {
+            width: 100%;
+            height: 30px;
+            background-color: darkslategray;
+        }
+
+        .content {
+            height: calc(100vh - 45px - 30px);
+        }
+
+        .main-warp {
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+
+        .main {
+            margin: 0 200px 0 100px;
+            height: 100%;
+            background-color: cyan;
+        }
+
+        .sub {
+            float: left;
+            width: 100px;
+            margin-left: -100%;
+            height: 100%;
+            background-color: red;
+        }
+
+        .extra {
+            float: left;
+            width: 200px;
+            margin-left: -200px;
+            height: 100%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <header>双飞翼布局</header>
+    <div class="content">
+        <div class="main-warp">
+            <div class="main">
+                <span>布局步骤:</span>
+                <ol>
+                    <li>三者都设置向左浮动。</li>
+                    <li>设置main-wrap宽度为100%，设置两个侧栏的宽度。</li>
+                    <li>设置 负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。</li>
+                    <li>设置main的margin值给左右两个子面板留出空间。</li>
+                </ol>
+                <p>一些说明:</p>
+                <ol>
+                    <li>圣杯采用的是padding，而双飞翼采用的margin，解决了圣杯布局main的最小宽度不能小于左侧栏的缺点。</li>
+                    <li>双飞翼布局不用设置相对布局，以及对应的left和right值。</li>
+                    <li>通过引入相对布局，可以实现三栏布局的各种组合，例如对右侧栏设置position: relative; left: 190px; ,可以实现sub+extra+main的布局。</li>
+                </ol>
+            </div>
+        </div>
+        <div class="sub">一些说明</div>
+        <div class="extra">一些说明</div>
+    </div>
+    <footer>双飞翼布局</footer>
+</body>
+
+</html>

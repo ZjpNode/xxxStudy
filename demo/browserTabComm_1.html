@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浏览器标签间的通信-one</title>
+</head>
+<body>
+<h1>浏览器标签间的通信-one</h1>
+<span>调用localStorage、cookies等本地存储方式实现浏览器内多个标签页之间的通信,不能使用sessionStorage</span>
+<div>
+  <input type="text" id="senMsg" value="test"/>
+  <button onclick="setMsg()">SetMsg</button>
+  <button onclick="getMsg()">getMsg</button>
+  <button onclick="clearWin()">clearWin</button>
+  <button onclick="clearMsg()">clearMsg</button>
+  <div>message</div>
+  <div id="recMsg"></div>
+</div>
+</body>
+<script src="./module/util.js"></script>
+<script>
+  const UTIL = Z_MODULE['util'];
+  const REC_MSG_ELE = document.getElementById('recMsg');
+  const SEN_MSG_ELE = document.getElementById('senMsg');
+  const MSG_TAG = 'msg';
+  const MSG_ROLE = 'one';
+
+  let msg = {tag: MSG_TAG};
+
+  Object.defineProperty(msg, 'localMsg', {
+    get () {
+      return JSON.parse(localStorage.getItem(this.tag) || '[]');
+    },
+    set (val) {
+      let localMsg = this.localMsg;
+      localMsg.push({data: val});
+      localStorage.setItem(this.tag, JSON.stringify(localMsg));
+    }
+  });
+  Object.defineProperty(msg, 'sessionMsg', {
+    get () {
+      return JSON.parse(sessionStorage.getItem(this.tag) || '[]');
+    },
+    set (val) {
+      let sessionMsg = this.sessionMsg;
+      sessionMsg.push({data: val});
+      sessionStorage.setItem(this.tag, JSON.stringify(sessionMsg));
+    }
+  });
+  Object.defineProperty(msg, 'cookiesMsg', {
+    get () {
+      let cookie = UTIL.getCookie(this.tag);
+      return JSON.parse(!!cookie ? cookie : '[]');
+    },
+    set (val) {
+      let cookie = this.cookiesMsg;
+      cookie.push({data: val});
+      UTIL.setCookie(this.tag, JSON.stringify(cookie))
+    }
+  });
+
+  function setMsg () {
+    msg.localMsg = `${MSG_ROLE}：${SEN_MSG_ELE.value}`;
+    msg.sessionMsg = `${MSG_ROLE}：${SEN_MSG_ELE.value}`;
+    msg.cookiesMsg = `${MSG_ROLE}：${SEN_MSG_ELE.value}`;
+    REC_MSG_ELE.innerHTML += `<div>${MSG_ROLE}：${SEN_MSG_ELE.value}</div>`;
+  }
+
+  function getMsg () {
+    REC_MSG_ELE.innerHTML = '';
+    let [localMsg, localMsgLn = 0, sessionMsg, sessionMsgLn, cookiesMsg, cookiesMsgLn] =
+      [msg.localMsg, msg.localMsg.length, msg.sessionMsg, msg.sessionMsg.length, msg.cookiesMsg, msg.cookiesMsg.length]
+    for (let i = 0; i < localMsgLn; i++) {
+      REC_MSG_ELE.innerHTML += `<div>${msg.tag}_localMsg：${localMsg[i].data}</div>`;
+    }
+    for (let i = 0; i < sessionMsgLn; i++) {
+      REC_MSG_ELE.innerHTML += `<div>${msg.tag}_sessionMsg：${sessionMsg[i].data}</div>`;
+    }
+    for (let i = 0; i < cookiesMsgLn; i++) {
+      REC_MSG_ELE.innerHTML += `<div>${msg.tag}_cookiesMsg：${cookiesMsg[i].data}</div>`;
+    }
+    if (!localMsgLn && !sessionMsgLn && !cookiesMsgLn) {
+      REC_MSG_ELE.innerHTML = `<div>no Data</div>`;
+    }
+  }
+
+  function clearMsg () {
+    clearWin();
+    localStorage.removeItem(msg.tag);
+    sessionStorage.removeItem(msg.tag);
+    UTIL.clearCookie(msg.tag)
+  }
+
+  function clearWin () {
+    REC_MSG_ELE.innerHTML = '';
+  }
+
+
+</script>
+</html>

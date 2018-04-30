@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>designPatternsDemo</title>
+</head>
+<body>
+<h1>designPatternsDemo</h1>
+<div>
+    <h2>3、观察者模式</h2>
+    <span>订阅者：</span><span id="sub"></span><br>
+    <label for="pub">发布者：</label><input type="text" value="" id="pub">
+</div>
+</body>
+<script src="moduleRequire.js"></script>
+<script>
+
+	;
+	(function (root, factory) {
+		if (typeof exports === 'object') {
+			module.exports = factory();
+		} else if (typeof define === 'function' && define.amd) {
+			define(factory);
+		} else {
+			var z_module = root['Z_MODULE'] = root['Z_MODULE'] || {};
+			var require = z_module['LocalJs']['require'];
+			z_module['designPatternsDemo'] = factory(require);
+		}
+	})(this, function (require) {
+
+		var designPatterns = require('designPatterns');
+		var htmlEleOpt = require('htmlEleOpt');
+		var util = require('util');
+
+		//--------------------------------------------------------------------------------------------------------------
+
+		/**
+		 * 1、单例模式
+		 * @description : 通过singleton构建遮罩层
+		 */
+		var createMaskBySingleton = designPatterns.singleton(function (data) {
+			var ele = htmlEleOpt.createEle('div');
+			htmlEleOpt.setAttr({
+				node: ele,
+				attribute: [{
+					key: 'style',
+					value: 'background:red'
+				}, {
+					key: 'id',
+					value: 'myId'
+				}]
+			});
+			ele.innerText = data;
+			return document.body.appendChild(ele);//返回div实例
+		});
+
+		console.logTime(createMaskBySingleton('1、单例模式'));
+
+		//--------------------------------------------------------------------------------------------------------------
+
+		(function () {
+			function A(name) {
+				this.name = name;
+			}
+
+			/**
+			 *  2、简单工厂模式
+			 * @type {{}}
+			 */
+			var a = designPatterns.objectFactory(A, '2、简单工厂模式');
+			console.logTime(a);
+			var ele = createMaskBySingleton();//使用了单例模式，createMaskBySingleton调用多次只会返回一个div实例
+			ele.innerText = a.name + ' append to ' + ele.innerText;
+
+		})();
+
+		//--------------------------------------------------------------------------------------------------------------
+
+		(function () {
+			/**
+			 * 2、观察者模式
+			 */
+			var adultTv = designPatterns.observerEvents();
+			//订阅者
+			adultTv.listen('play', function (data) {
+				var sub = htmlEleOpt.queryEleById('sub');
+				sub.innerText = data.name;
+			});
+			
+			//发布者
+			var pubBtn = htmlEleOpt.queryEleById('pub');
+			htmlEleOpt.bindEvent(pubBtn, 'keyup', function () {
+				var text = this.value;
+				adultTv.trigger('play', {'name': text})
+			})
+
+		})()
+
+
+	});
+
+
+</script>
+</html>

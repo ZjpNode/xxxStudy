@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>createDocumentFragment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <ul id="ul"></ul>
+</body>
+<script>
+    let element = document.getElementById('ul');
+    let fragment = document.createDocumentFragment();
+    var browsers = ['Firefox', 'Chrome', 'Opera', 'Safari', 'Internet Explorer'];
+    browsers.forEach(function(browser){
+        let li = document.createElement('li');
+        li.innerText = browser;
+        fragment.appendChild(li);
+    });
+    console.log(fragment.childNodes.length) // 5
+    element.appendChild(fragment);
+    console.log(fragment.childNodes.length) // 0，添加完后就不可以操作了
+</script>
+
+</html>

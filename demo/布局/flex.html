@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>flex布局</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .layout {
+            display: flex;
+            background-color: pink;
+        }
+
+        .layout_aside {
+            width: 200px;
+            background-color: yellow;
+        }
+
+        .layout_main {
+            flex: 1;
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="layout">
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+        <div class="layout_main">主内容栏宽度自适应</div>
+    </div>
+    <div class="layout">
+        <div class="layout_main">主内容栏宽度自适应</div>
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+    </div>
+    <div class="layout">
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+        <div class="layout_main">主内容栏宽度自适应</div>
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+    </div>
+    <div class="layout">
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+        <div class="layout_main">主内容栏宽度自适应</div>
+    </div>
+    <div class="layout">
+        <div class="layout_main">主内容栏宽度自适应</div>
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+        <aside class="layout_aside">侧边栏宽度固定</aside>
+    </div>
+</body>
+
+</html>

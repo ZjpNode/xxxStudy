@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>compressJpegWithExif</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <input type="file" id="file" accept=".jpg">
+    <button id="btn">showImg</button>
+    <button id="comBtn">compree-not-exif</button>
+    <button id="comExifBtn">compree-has-exif</button>
+    <br>
+</body>
+
+<script src="moduleRequire.js"></script>
+<script>
+    ; (function (root, factory) {
+        if (typeof exports === 'object') {
+            module.exports = factory();
+        } else if (typeof define === 'function' && define.amd) {
+            define(factory);
+        } else {
+            var z_module = root['Z_MODULE'] = root['Z_MODULE'] || {};
+            var require = z_module['LocalJs']['require'];
+            z_module['thisDemo'] = factory(require);
+        }
+    })(this, function (require) {
+        const FILE_TYPE = 'image/jpeg';
+
+        let compressJpegWithExif = require('compressJpegWithExif');
+        let htmlEleOpt = require('htmlEleOpt');
+
+        let btn = document.getElementById('btn');
+        let fileDom = document.getElementById('file');
+        let imgDom = document.createElement('img');
+        let canvasDom = document.createElement('canvas');
+
+        function fileCheck(file) {
+            if (!file || file.type != FILE_TYPE) {
+                alert('请选择jpg图片');
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        btn.onclick = function () {
+            let file = fileDom.files[0];
+            if (fileCheck(file)) {
+                let reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    imgDom.src = reader.result;
+                    //imgDom.width = 150;
+                    //imgDom.height = 150;
+                    imgDom.alt = '原图';
+                    imgDom.title = '原图';
+                    document.body.appendChild(imgDom);
+                }
+                return true;
+            }
+        }
+        comBtn.onclick = function () {
+            let img = document.getElementsByTagName('img')[0];
+            if (!img) {
+                alert('请先点击showImg')
+            } else {
+                let ctx = canvasDom.getContext('2d');
+                canvasDom.width = img.width;
+                canvasDom.height = img.height;
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+                canvasDom.toBlob(function (blob) {
+                    var link = document.createElement("a");
+                    link.innerHTML = 'compree-not-exif.jpg';
+                    link.download = 'compree-not-exif.jpg';
+                    link.href = URL.createObjectURL(blob);
+                    document.getElementsByTagName("body")[0].appendChild(link);
+                }, FILE_TYPE, 0.5);
+            }
+        }
+
+        comExifBtn.onclick = function () {
+            let file = fileDom.files[0];
+            let img = document.getElementsByTagName('img')[0];
+            if (!img) {
+                alert('请先点击showImg')
+            } else {
+                let ctx = canvasDom.getContext('2d');
+                canvasDom.width = img.width;
+                canvasDom.height = img.height;
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+                canvasDom.toBlob(function (blob) {
+                    debugger
+                    compressJpegWithExif.getSegments(file, function (segments) {//获取 分割 segments
+                        let exif = compressJpegWithExif.getEXIF(segments);  //获取exif信息
+                        compressJpegWithExif.insertEXIF(blob, exif, function (newImage) {
+                            var newBlob = new Blob(newImage, { type: FILE_TYPE });
+                            var reader = new FileReader();
+                            reader.readAsDataURL(newBlob);
+                            reader.onload = function () {
+                                var img = new Image();
+                                img.src = reader.result;
+                                document.body.appendChild(img);
+                            }
+                            // var link = document.createElement("a");
+                            // link.innerHTML = 'compree-has-exif.jpg';
+                            // link.download = 'compree-has-exif.jpg';
+                            // link.href = URL.createObjectURL(newBlob);
+                            // document.getElementsByTagName("body")[0].appendChild(link);
+                        })
+                    })
+                }, FILE_TYPE, 0.5);
+            }
+        }
+
+    });
+
+</script>
+
+</html>

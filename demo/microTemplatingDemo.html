@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>micro template demo</title>
+</head>
+<body>
+<div id="item_tmpl_results"></div>
+<div id="user_tmpl_results"></div>
+</body>
+<script type="text/html" id="item_tmpl">
+    <div id="<%=id%>" class='<%=(i % 2 == 1 ? " even" : "")%>'>
+    <div class="grid_1 alpha right">
+        <img class="righted" src="<%=profile_image_url%>"/>
+    </div>
+    <div class="grid_6 omega contents">
+        <p><b><a href="/<%=from_user%>"><%=from_user%></a>:</b> <%=text%></p>
+        <button id="req-des">require designPatterns.js</button>
+        <input type="file">
+    </div>
+    </div>
+</script>
+<script type="text/html" id="user_tmpl">
+    <% for ( var i = 0; i < users.length; i++ ) { %>
+    <li><a href="<%=users[i].url%>"><%=users[i].name%></a></li>
+    <% } %>
+</script>
+<script src="moduleRequire.js"></script>
+<script>
+	;(function (root, factory) {
+		if (typeof exports === 'object') {
+			module.exports = factory();
+		} else if (typeof define === 'function' && define.amd) {
+			define(factory);
+		} else {
+			var z_module = root['Z_MODULE'] = root['Z_MODULE'] || {};
+			var require = z_module['LocalJs']['require'];
+			z_module['designPatterns'] = factory(require);
+		}
+	})(this, function (require) {
+
+		var microTemplating = require('microTemplating');
+        var htmlEleOpt = require('htmlEleOpt');
+
+		var dataObject = {
+			i:'45681'
+			,id:'id-124244'
+			,profile_image_url:'img/toystory.jpg'
+			,from_user:'fs.html'
+			,text:'hello'
+		};
+
+		var results = document.getElementById("item_tmpl_results");
+		results.innerHTML = microTemplating("item_tmpl", dataObject);
+
+		var dataObject = {
+			users:[{url:'t.html',name:'t'},{url:'t2.html',name:'t2'},{url:'t3.html',name:'t3'}]
+		};
+		var results = document.getElementById("user_tmpl_results");
+		results.innerHTML = microTemplating("user_tmpl", dataObject);
+
+		var ele = htmlEleOpt.queryEleById('req-des');
+		htmlEleOpt.bindEvent(ele,'click',function () {
+           require('designPatterns');
+
+			require('designPatterns');
+		});
+
+	});
+
+
+</script>
+</html>
