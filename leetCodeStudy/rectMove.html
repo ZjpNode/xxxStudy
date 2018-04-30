@@ -1,0 +1,108 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .prect{width: 156px;height: 156px;}
+    .rect{
+      width: 50px;
+      height: 50px;
+      float: left;
+      border: solid 1px black;
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <div class="prect">
+      <div class="rect" id="r1"></div>
+      <div class="rect" id="r2"></div>
+      <div class="rect" id="r3"></div>
+      <div class="rect" id="r4"></div>
+      <div class="rect" id="r5"></div>
+      <div class="rect" id="r6"></div>
+      <div class="rect" id="r7"></div>
+      <div class="rect" id="r8"></div>
+      <div class="rect" id="r9">*</div>
+  </div>
+  </center>
+</body>
+<script>
+function hasClass( elements,cName ){
+    return !!elements.className.match( new RegExp( "(\\s|^)" + cName + "(\\s|$)") );
+};
+function addClass( elements,cName ){
+    if( !hasClass( elements,cName ) ){
+        elements.className += " " + cName;
+    };
+};
+function removeClass( elements,cName ){
+    if( hasClass( elements,cName ) ){
+        elements.className = elements.className.replace( new RegExp( "(\\s|^)" + cName + "(\\s|$)" ), " " );
+    };
+};
+function toggleClass(obj,cls){
+    if(this.hasClass(obj,cls)){
+        this.removeClass(obj,cls);
+    }else{
+        this.addClass(obj,cls);
+    }
+};
+var getActID = function (){
+  var id = document.getElementsByClassName('active')[0].id
+  id = id.replace("r","");
+  return id;
+}
+var moveTop = function(){
+  var id = getActID()*1;
+  id =  id - 3<=0?id:id-3;
+  setAct("r"+id);
+}
+var moveLeft = function(){
+  var id = getActID()*1;
+  id =  id - 1<=0?id:id-1;
+  setAct("r"+id);
+}
+var moveRight = function(){
+  var id = getActID()*1;
+  id =  id + 1>=10?id:id+1;
+  setAct("r"+id);
+}
+var moveDown = function(){
+  var id = getActID()*1;
+  id =  id + 3>=10?id:id+3;
+  setAct("r"+id);
+}
+var setAct = function(id){
+  var rects = document.getElementsByClassName("rect");
+  for (var i=0;i<rects.length;i++){
+    rects[i].innerText = "";
+    removeClass(rects[i],"active");
+  }
+  document.getElementById(id).innerText = "*";
+  addClass(document.getElementById(id),"active");
+}
+document.onkeydown = function (event){
+     var e = event || window.event || arguments.callee.caller.arguments[0];
+     switch (e.keyCode) {
+       case 37://左
+           moveLeft();
+           break;
+       case 38://上
+           moveTop();
+           break;
+       case 39://右
+            moveRight();
+            break;
+       case 40://下
+            moveDown();
+            break;
+       default:
+     }
+   }
+   setAct("r5");
+</script>
+</html>
