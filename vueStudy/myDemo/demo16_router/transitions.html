@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo16_router</title>
+    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <!--<link rel="stylesheet" href="../demo12_transition/transition.css">-->
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s ease;
+        }
+        .fade-enter, .fade-leave-active {
+            opacity: 0
+        }
+        .child-view {
+            position: absolute;
+            transition: all .5s cubic-bezier(.55,0,.1,1);
+        }
+        .slide-left-enter, .slide-right-leave-active {
+            opacity: 0;
+            -webkit-transform: translate(30px, 0);
+            transform: translate(30px, 0);
+        }
+        .slide-left-leave-active, .slide-right-enter {
+            opacity: 0;
+            -webkit-transform: translate(-30px, 0);
+            transform: translate(-30px, 0);
+        }
+    </style>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+</div>
+</body>
+<script src="./transitions.js"></script>
+</html>

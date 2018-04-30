@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO06_自定义事件</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="counter-event-example">
+    <p>{{ total }}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <!--有时候，你可能想在某个组件的根元素上监听一个原生事件。可以使用 .native 修饰 v-on。例如：-->
+    <button-counter-native v-on:click.native="incrementTotal"></button-counter-native>
+    <button-counter-native v-on:click="incrementTotal"></button-counter-native>
+</div>
+</body>
+<script src="component-on.js"></script>
+</html>

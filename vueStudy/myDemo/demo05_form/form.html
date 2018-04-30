@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO05_form</title>
+    <script src="../../node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="my-form">
+    <form>
+        <div>1、input</div>
+        <input v-model="message" placeholder="message"/>
+        <p>message is :{{message}}</p>
+        <div>2、textarea</div>
+        <textarea v-model="MultiMessage" placeholder="MultiMessage"></textarea>
+        <p>MultiMessage is :{{MultiMessage}}</p>
+        <div>3、checkbox</div>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{checked}}</label>
+        <div>4、checkbox Group</div>
+        <input type="checkbox" id="hello" value="hello" v-model="checkeds">
+        <label for="hello">hello</label>
+        <input type="checkbox" id="world" value="world" v-model="checkeds">
+        <label for="world">world</label>
+        <input type="checkbox" id="..." value="。。。" v-model="checkeds">
+        <label for="...">...</label>
+        <span>{{checkeds}}</span>
+        <div>5、radio</div>
+        <input type="radio" id="radio1" value="radio1" v-model="radio"><label for="radio1">radio1</label>
+        <input type="radio" id="radio2" value="radio2" v-model="radio"><label for="radio2">radio2</label>
+        <span>{{radio}}</span>
+        <div>6、select</div>
+        <select v-model="select">
+            <option disabled value="">请选择</option>
+            <option value="a">A</option>
+            <option v-bind:value="{ number: 123 }">B</option>
+            <option>C</option>
+        </select>
+        <span>{{select}}</span>
+        <div>7、Multi select</div>
+        <select v-model="MultiSelect"  multiple style="width: 50px">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>{{MultiSelect}}</span>
+        <div>8、dynamic select</div>
+        <select v-model="dynamicSelect">
+            <option disabled value="">请选择</option>
+            <option v-for="option in dynamicOption" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <span>{{dynamicSelect}}</span>
+        <div>9、 .lazy</div>
+        <label for="lazyMsg">lazyMsg</label><input id="lazyMsg" v-model.lazy="lazyMsg"><span>{{lazyMsg}}</span><br>
+        <label for="msg">msg</label><input id="msg" v-model="msg"><span>{{msg}}</span>
+        <div>9、 .trim</div>
+        <label for="trimMsg">trimMsg</label><input id="trimMsg" v-model.trim="trimMsg"><span>{{trimMsg}}</span><br>
+    </form>
+</div>
+</body>
+<script src="form.js"></script>
+</html>

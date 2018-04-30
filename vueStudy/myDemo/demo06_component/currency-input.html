@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO06_货币输入</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <currency-input v-model="price"></currency-input>
+</div>
+<div id="app">
+    <currency-input
+            label="Price"
+            v-model="price"
+    ></currency-input>
+    <currency-input
+            label="Shipping"
+            v-model="shipping"
+    ></currency-input>
+    <currency-input
+            label="Handling"
+            v-model="handling"
+    ></currency-input>
+    <currency-input
+            label="Discount"
+            v-model="discount"
+    ></currency-input>
+
+    <p>Total: ${{ total }}</p>
+</div>
+</body>
+<script src="currency-input.js"></script>
+</html>

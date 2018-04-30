@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO06_动态组件</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <!--如果把切换出去的组件保留在内存中，可以保留它的状态或避免重新渲染。为此可以添加一个 keep-alive 指令参数：-->
+    <keep-alive>
+        <component :is="currentView">
+            <!-- 非活动组件将被缓存！ -->
+        </component>
+    </keep-alive>
+</div>
+<button id="changBtn">change</button>
+</body>
+<script src="dynamicComponent.js"></script>
+</html>

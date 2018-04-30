@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO04_v-on</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="counterAdd">
+    <button v-on:click="add">+1</button>
+    <button @click="alert">alert</button>
+    <button @click="say('6434','s')">say:6434</button>
+    <button @click="warn('6434',$event)">$event</button>
+    <p>{{counter}}</p>
+    <div><span @mouseup.left="left()">left</span></div>
+    <div><span @mouseup.right="right()">right</span></div>
+    <div><span @mouseup.middle="middle()">right</span></div>
+</div>
+</body>
+<script src="v-on.js"></script>
+</html>

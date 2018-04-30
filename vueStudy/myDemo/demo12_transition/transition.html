@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO12_transition</title>
+    <link rel="stylesheet" href="./transition.css">
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<!---->
+<div id="demo" class="demo">
+    <button @click="show = !show">
+        Toggle
+    </button>
+    <transition name="fade">
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+<!---->
+<div id="example-1" class="demo">
+    <button @click="show = !show">
+        Toggle render
+    </button>
+    <transition name="slide-fade">
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+<!---->
+<div id="example-2" class="demo">
+    <button @click="show = !show">Toggle show</button>
+    <transition name="bounce">
+        <p v-if="show">Look at me!</p>
+    </transition>
+</div>
+<!---->
+<link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+<div id="example-3" class="demo">
+    <button @click="show = !show">
+        Toggle render
+    </button>
+    <transition
+            name="custom-classes-transition"
+            enter-active-class="animated tada"
+            leave-active-class="animated bounceOutRight"
+    >
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+<!---->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<div id="example-4" class="demo">
+    <button @click="show = !show">
+        Toggle
+    </button>
+    <transition
+            v-on:before-enter="beforeEnter"
+            v-on:enter="enter"
+            v-on:leave="leave"
+            v-bind:css="false"
+    >
+        <p v-if="show">
+            Demo
+        </p>
+    </transition>
+</div>
+<!---->
+<div id="btn" class="demo">
+    <p>在 “on” 按钮和 “off” 按钮的过渡中，两个按钮都被重绘了，一个离开过渡的时候另一个开始进入过渡。这是 &lt;transition&gt; 的默认行为 - 进入和离开同时发生。</p>
+    <transition name="slide-fade">
+        <!--
+        当有相同标签名的元素切换时，需要通过 key 特性设置唯一的值来标记以让 Vue 区分它们，
+        否则 Vue 为了效率只会替换相同标签内部的内容。即使在技术上没有必要，
+        给在 <transition> 组件中的多个元素设置 key 是一个更好的实践。
+        -->
+        <button  v-if="show" key="on" @click="show = !show">
+            on
+        </button>
+        <button v-else  key="off" @click="show = !show">
+            off
+        </button>
+    </transition>
+    <p>同时生效的进入和离开的过渡不能满足所有要求，所以 Vue 提供了 过渡模式
+        in-out: 新元素先进行过渡，完成之后当前元素过渡离开。
+        out-in: 当前元素先进行过渡，完成之后新元素过渡进入。
+        用 out-in 重写之前的开关按钮过渡：</p>
+    <transition name="slide-fade" mode="out-in">
+        <!--
+        当有相同标签名的元素切换时，需要通过 key 特性设置唯一的值来标记以让 Vue 区分它们，
+        否则 Vue 为了效率只会替换相同标签内部的内容。即使在技术上没有必要，
+        给在 <transition> 组件中的多个元素设置 key 是一个更好的实践。
+        -->
+        <button  v-if="show2" key="on" @click="show2 = !show2">
+            on
+        </button>
+        <button v-else  key="off" @click="show2 = !show2">
+            off
+        </button>
+    </transition>
+    <p>in-out 模式不是经常用到，但对于一些稍微不同的过渡效果还是有用的。
+        将之前滑动淡出的例子结合：</p>
+    <div class="in-out-translate-demo-wrapper">
+
+        <transition name="in-out-translate-fade" mode="in-out" >
+            <!--
+            当有相同标签名的元素切换时，需要通过 key 特性设置唯一的值来标记以让 Vue 区分它们，
+            否则 Vue 为了效率只会替换相同标签内部的内容。即使在技术上没有必要，
+            给在 <transition> 组件中的多个元素设置 key 是一个更好的实践。
+            -->
+            <button  v-if="show3" key="on" @click="show3 = !show3">
+                on
+            </button>
+            <button  v-else  key="off" @click="show3 = !show3">
+                off
+            </button>
+
+        </transition>
+    </div>
+
+</div>
+<!---->
+<div id="example-5" class="demo">
+    <input type="radio" id="radio1" value="v-a" v-model="view"><label for="radio1">A</label>
+    <input type="radio" id="radio2" value="v-b" v-model="view"><label for="radio2">B</label>
+    <transition name="component-fade" mode="out-in">
+        <component v-bind:is="view"></component>
+    </transition>
+</div>
+</body>
+<script src="transition.js"></script>
+</html>

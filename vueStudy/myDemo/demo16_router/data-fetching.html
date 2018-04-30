@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo16_data-fetching</title>
+    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app" class="demo">
+        <h1>Hello App!</h1>
+        <ul>
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <li>   <router-link to="/foo">foo</router-link></li>
+            <li>  <router-link to="/bar">bar</router-link></li>
+            <li> <router-link to="/post">post--导航完成后获取数据</router-link></li>
+            <li> <router-link to="/post2">post2--在导航完成前获取数据</router-link></li>
+        </ul>
+        <!-- 路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <router-view></router-view>
+    </div>
+</body>
+<script src="./data-fetching.js"></script>
+</html>

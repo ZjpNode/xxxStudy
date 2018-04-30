@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO12_dynamic-transition</title>
+    <link rel="stylesheet" href="./transition.css">
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+</head>
+<body>
+<!---->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<div id="dynamic-fade-demo" class="demo">
+    Fade In: <input type="range" v-model="fadeInDuration" min="0" v-bind:max="maxFadeDuration">
+    Fade Out: <input type="range" v-model="fadeOutDuration" min="0" v-bind:max="maxFadeDuration">
+    <transition
+            v-bind:css="false"
+            v-on:before-enter="beforeEnter"
+            v-on:enter="enter"
+            v-on:leave="leave"
+    >
+        <p v-if="show">hello</p>
+    </transition>
+    <button
+            v-if="stop"
+            v-on:click="stop = false; show = false"
+    >Start animating</button>
+    <button
+            v-else
+            v-on:click="stop = true"
+    >Stop it!</button>
+</div>
+</body>
+<script src="dynamic-transition.js"></script>
+</html>

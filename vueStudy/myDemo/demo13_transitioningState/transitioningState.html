@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo13_transitioningState</title>
+    <style>
+        .example-7-color-preview {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/tween.js@16.3.4"></script>
+    <script src="https://unpkg.com/color-js@1.0.3/color.js"></script>
+</head>
+<body>
+<div id="animated-number-demo" class="demo">
+    <input v-model.number="number" type="number" step="20" onmousewheel="return true;">
+    <p>{{animatedNumber }}</p>
+</div>
+
+<div id="example" class="demo">
+    <input v-model="colorQuery"
+           @keyup.enter="updateColor"
+           placeholder="Enter a color"
+    >
+    <button @click="updateColor">update</button>
+    <p>Preview:</p>
+    <span :style="{ backgroundColor: tweenedCSSColor }" class="example-7-color-preview"></span>
+    <p>{{tweenedCSSColor}}</p>
+</div>
+
+<div id="example-8" class="demo">
+    <input v-model.number="firstNumber" type="number" step="20" onmousewheel="return true;"> +
+    <input v-model.number="secondNumber" type="number" step="20" onmousewheel="return true;"> =
+    {{result }}
+    <p>
+       <!--很多的动画可以提取到专用的子组件。-->
+        <animated-integer :value="firstNumber"></animated-integer> +
+        <animated-integer :value="secondNumber"></animated-integer> =
+        <animated-integer :value="result"></animated-integer>
+    </p>
+</div>
+</body>
+<script src="transitioningState.js"></script>
+</html>

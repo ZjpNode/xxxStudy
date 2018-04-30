@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo16_nested-routes</title>
+    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <style>
+        a{display: block}
+    </style>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app" class="demo">
+        <router-link to="/">/</router-link>
+        <router-link to="/user/zjp">/user/zjp</router-link>
+        <router-link to="/user/jp">/user/jp</router-link>
+        <router-link to="/user/zjp/profile">/user/zjp/profile</router-link>
+        <router-link to="/user/jp/posts">/user/jp/posts</router-link>
+        <router-link to="/user/1235">/user/1235</router-link>
+        <!--
+        router.replace(location)跟 router.push 很像，唯一的不同就是，它不会向 history 添加新记录，而是跟它的方法名一样 —— 替换掉当前的 history 记录。
+        -->
+        <router-link :to="{ name: 'user', params: { id: 123 }}" replace>命名路由{ name: 'user', params: { id: 123 }} replace</router-link>
+        <router-link :to="{ name: 'user', params: { id: 1234 }}">命名路由{ name: 'user', params: { id: 1234 }}</router-link>
+        <router-link :to="{ path: 'user', query: { plan: 'private' }}">命名路由{ path: 'register', query: { plan: 'private' }}</router-link>
+        <a href="javascript:void(0)" id="test" @click="test">test</a>
+        <router-view></router-view>
+    </div>
+</body>
+<script src="./nested-routes.js"></script>
+</html>

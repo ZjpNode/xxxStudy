@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO06_component</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <span>全局注册</span>
+    <!--
+        HTML 特性是不区分大小写的。
+        所以，当使用的不是字符串模版，
+        camelCased (驼峰式) 命名的 prop
+        需要转换为相对应的 kebab-case (短横线隔开式) 命名：
+    -->
+    <my-component
+        my-msg="658"
+        v-bind:parent-msg="parentMsg"
+    ></my-component><!--字面量语法-vs-动态语法:
+    my-msg是一个字面 prop，它的值是字符串 "658" 而不是 number。
+    如果想传递一个实际的 number，需要使用 v-bind，从而让它的值被当作 JavaScript 表达式计算：
+    -->
+
+    <span>局部注册</span>
+    <local-component></local-component>
+    <div>is:simple-counter</div>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+    <div>is:no-simple-counter</div>
+    <no-simple-counter></no-simple-counter>
+    <no-simple-counter></no-simple-counter>
+    <no-simple-counter></no-simple-counter>
+    <div>Prop-验证</div>
+    <props-validate v-bind:prop-a="pa" prop-f="14"></props-validate>
+    <div>非prop属性</div>
+    <no-prop-attr type="large" class="class3"></no-prop-attr>
+</div>
+</body>
+<script src="component.js"></script>
+</html>

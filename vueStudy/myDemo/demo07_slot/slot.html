@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO07_slot</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <h1>我是父组件的标题</h1>
+    <child-component>
+        <p slot="header">header</p>
+        <p>......</p>
+        <p slot="footer">footer</p>
+    </child-component>
+    <child-component></child-component>
+</div>
+</body>
+<script src="slot.js"></script>
+</html>

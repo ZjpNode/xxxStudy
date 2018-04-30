@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO07_作用域插槽</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<my-awesome-list :items="items" :children="parents">
+    <!--
+    在父级中，具有特殊属性 scope 的 <template> 元素必须存在，表示它是作用域插槽的模板。
+    scope 的值对应一个临时变量名，此变量接收从子组件中传递的 props 对象：
+    -->
+    <template slot="itemSlot" scope="test">
+        <li class="my-fancy-item">{{ test.text }}-{{ test.id }}</li>
+    </template>
+</my-awesome-list>
+</body>
+<script src="scope-slot.js"></script>
+</html>

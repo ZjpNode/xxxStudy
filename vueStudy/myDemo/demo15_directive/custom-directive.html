@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo15_custom-directive.html</title>
+    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="demo" class="demo"><input v-focus></div>
+<div id="hook-arguments-example" class="demo" v-demo:foo.a.b="message"></div>
+<div class="demo" id="example3" v-color-swatch="color">{{color}}</div>
+
+</body>
+<script src="custom-directive.js"></script>
+</html>
+
+
+
