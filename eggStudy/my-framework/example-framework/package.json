@@ -1,0 +1,24 @@
+{
+  "name": "example-framework",
+  "version": "0.0.1",
+  "egg": {
+    "framework": "base-framework"
+  },
+  "dependencies": {
+    "base-framework": "../base-framework",
+    "egg": "^2.2.0",
+    "egg-mysql": "^3.0.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.3.5",
+    "egg-mock": "^3.13.1"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "dev": "egg-bin dev",
+    "test": "egg-bin test",
+    "cov": "egg-bin cov"
+  }
+}

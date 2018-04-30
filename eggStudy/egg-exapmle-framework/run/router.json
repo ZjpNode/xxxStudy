@@ -1,0 +1,161 @@
+[
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/",
+    "regexp": "/^(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\home.js#HomeController.index()"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/news",
+    "regexp": "/^\\/news(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\news.js#NewController.list()"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/content/:id",
+    "regexp": "/^\\/content\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\news.js#NewController.contents()"
+    ]
+  },
+  {
+    "name": "api-users",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/v1/users",
+    "regexp": "/^\\/api\\/v1\\/users(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\api\\v1\\users.js#index()"
+    ]
+  },
+  {
+    "name": "new_api-user",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/v1/users/new",
+    "regexp": "/^\\/api\\/v1\\/users\\/new(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\api\\v1\\users.js#new()"
+    ]
+  },
+  {
+    "name": "api-users",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/v1/users",
+    "regexp": "/^\\/api\\/v1\\/users(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\api\\v1\\users.js#create()"
+    ]
+  },
+  {
+    "name": "api-user",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/v1/users/:id",
+    "regexp": "/^\\/api\\/v1\\/users\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\api\\v1\\users.js#show()"
+    ]
+  },
+  {
+    "name": "edit_api-user",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/v1/users/:id/edit",
+    "regexp": "/^\\/api\\/v1\\/users\\/((?:[^\\/]+?))\\/edit(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\api\\v1\\users.js#edit()"
+    ]
+  },
+  {
+    "name": "api-user",
+    "methods": [
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/v1/users/:id",
+    "regexp": "/^\\/api\\/v1\\/users\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\egg-exapmle-framework\\app\\controller\\api\\v1\\users.js#update()"
+    ]
+  }
+]

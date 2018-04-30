@@ -1,0 +1,207 @@
+{
+  "keys": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\test\\fixtures\\test-app\\config\\config.default.js",
+  "session": {
+    "maxAge": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-session\\config\\config.default.js",
+    "key": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-session\\config\\config.default.js",
+    "httpOnly": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-session\\config\\config.default.js",
+    "encrypt": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-session\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+    "protocolWhiteList": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+    "defaultMiddleware": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "useSession": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "ignoreJSON": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "cookieName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "sessionName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "headerName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "bodyName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "queryName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "maxAge": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "includeSubdomains": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js",
+      "policy": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "callback": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "csrf": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-onerror\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-i18n\\config\\config.default.js",
+    "dirs": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-i18n\\config\\config.default.js",
+    "queryField": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieField": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-watcher\\config\\config.unittest.js",
+    "eventSources": {
+      "default": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-watcher\\config\\config.default.js",
+      "development": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-watcher\\config\\config.default.js"
+    }
+  },
+  "multipart": {
+    "autoFields": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "defaultCharset": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldSize": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fields": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileSize": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "files": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileExtensions": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js",
+    "whitelist": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-multipart\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFiles": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxDays": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-static\\config\\config.default.js",
+    "dir": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-static\\config\\config.default.js",
+    "dynamic": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-static\\config\\config.default.js",
+    "preload": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-static\\config\\config.default.js",
+    "buffer": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-static\\config\\config.default.js",
+    "maxFiles": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-static\\config\\config.default.js"
+  },
+  "view": {
+    "root": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-view\\config\\config.default.js",
+    "cache": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-view\\config\\config.default.js",
+    "defaultExtension": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-view\\config\\config.default.js",
+    "defaultViewEngine": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-view\\config\\config.default.js",
+    "mapping": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg-view\\config\\config.default.js"
+  },
+  "gzip": {
+    "threshold": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\config\\config.default.js",
+    "match": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\config\\config.default.js"
+  },
+  "env": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "name": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "proxy": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "protocolHeaders": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "ipHeaders": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "hostHeaders": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "pkg": {
+    "name": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "version": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+  },
+  "baseDir": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "HOME": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "rundir": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "notFound": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "sitefile": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "middlewares": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "httpClient": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "formLimit": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "jsonLimit": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "strict": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "depth": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "parameterLimit": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "env": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "level": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "consoleLevel": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.unittest.js",
+    "disableConsoleAfterReady": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "outputJSON": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "buffer": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.unittest.js",
+    "appLogName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "coreLogName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "agentLogName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "errorLogName": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "allowDebugAtProd": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxAge": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+    "request": {
+      "timeout": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "coreMiddleware": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "workerStartTimeout": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "port": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js",
+      "hostname": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "responseTimeout": "G:\\IdeaProjects\\xxxStudyProject\\eggStudy\\my-plugin\\middleware-gzip\\node_modules\\egg\\config\\config.default.js"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "egg-auto-router",
+  "version": "1.0.0",
+  "eggPlugin": {
+    "name": "auto-router"
+  },
+  "scripts": {
+    "dev": "egg-bin dev",
+    "test": "egg-bin test",
+    "cov": "egg-bin cov"
+  },
+  "author": "zjp",
+  "license": "ISC",
+  "devDependencies": {
+    "egg": "^2.0.0",
+    "egg-bin": "^4.3.7",
+    "egg-mock": "^3.14.0"
+  }
+}

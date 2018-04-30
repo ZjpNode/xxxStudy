@@ -1,0 +1,25 @@
+{
+  "name": "egg-exapmle-framework",
+  "version": "1.0.0",
+  "description": "egg-exapmle-framework",
+  "author": "zjp",
+  "license": "ISC",
+  "scripts": {
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "cross-env EGG_SERVER_ENV=test egg-bin test"
+  },
+  "egg": {
+    "framework": "example-framework"
+  },
+  "dependencies": {
+    "example-framework": "../my-framework/example-framework",
+    "egg-view-nunjucks": "^2.1.4",
+    "moment": "^2.19.4"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.1",
+    "egg-bin": "^4.3.7",
+    "egg-mock": "^3.14.0"
+  }
+}

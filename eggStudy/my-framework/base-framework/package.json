@@ -1,0 +1,22 @@
+{
+  "name": "base-framework",
+  "version": "0.0.1",
+  "dependencies": {
+    "egg": "^1.0.0",
+    "egg-ua": "../../my-plugin/egg-ua",
+    "middleware-gzip": "../../my-plugin/middleware-gzip",
+    "egg-auto-router": "../../my-plugin/egg-auto-router"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.3.5",
+    "egg-mock": "^3.13.1"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "dev": "egg-bin dev",
+    "test": "egg-bin test",
+    "cov": "egg-bin cov"
+  }
+}
