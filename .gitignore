@@ -3,6 +3,14 @@ node_modules/
 npm-debug.log
 yarn-error.log
 selenium-debug.log
+egg-web.log
+egg-agent.log
+common-error.log
+test-app-web.log
+*.log
 .happypack/
 .cache/
 .vscode
+*.zip
+*.rar
+*.msi
