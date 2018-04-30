@@ -1,0 +1,11 @@
+{
+    "name": "net-hello",
+    "version": "0.1.0",
+    "description": "net test",
+    "author": "zjp",
+    "main": "src/index.js",
+    "ruff": {
+        "dependencies": {},
+        "version": 1
+    }
+}

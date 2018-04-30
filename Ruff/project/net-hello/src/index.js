@@ -1,0 +1,12 @@
+'use strict';
+var net = require('net');
+var server = net.createServer(function (c) {
+	console.log('client connected');
+	c.on('end',function () {
+		console.log('client disconnected');
+	});
+	c.write('hello\r\n');
+});
+server.listen(8124, function() { //'listening' listener
+	console.log('server bound');
+});
