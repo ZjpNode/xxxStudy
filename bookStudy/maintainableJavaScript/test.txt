@@ -1,0 +1,9 @@
+name@domain.com
+
+name.3#domain.com
+
+
+name.3@domain.com
+name-3@sum.domain.com
+
+name-4@sub-2.name.com
