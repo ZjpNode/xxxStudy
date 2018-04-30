@@ -1,0 +1,18 @@
+[2016-11-08 10:05:19.763] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0 - 副本\routes\common\errorPage
+[2016-11-08 10:05:19.767] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0 - 副本\routes\index
+[2016-11-08 10:05:19.768] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0 - 副本\routes\users
+[2016-11-08 10:05:19.768] [INFO] route - 路由加载完成
+[2016-11-08 10:06:38.181] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0 - 副本\routes\common\errorPage
+[2016-11-08 10:06:38.184] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0 - 副本\routes\index
+[2016-11-08 10:06:38.185] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0 - 副本\routes\users
+[2016-11-08 10:06:38.185] [INFO] route - 路由加载完成
+[2016-11-08 10:06:48.840] [INFO] index - 信息
+[2016-11-08 10:06:48.863] [ERROR] index - 错误
+[2016-11-08 10:06:48.863] [WARN] index - 警告
+[2016-11-08 10:06:48.863] [FATAL] index - 致命的
+[2016-11-08 10:06:48.865] [INFO] app - ::1 - - "GET / HTTP/1.1" 200 218 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-11-08 10:06:48.877] [INFO] app - ::1 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-11-08 10:06:48.942] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1105 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-11-08 10:07:27.670] [INFO] app - ::1 - - "GET /common/errorPage HTTP/1.1" 404 1105 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-11-08 10:07:48.067] [INFO] viewDefault - params : {}
+[2016-11-08 10:07:48.070] [INFO] app - ::1 - - "GET /errorPage HTTP/1.1" 200 14 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"

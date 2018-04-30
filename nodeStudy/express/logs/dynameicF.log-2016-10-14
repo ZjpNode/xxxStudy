@@ -1,0 +1,22 @@
+[2016-10-14 10:17:58.518] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\index
+[2016-10-14 10:17:58.674] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\test\tt
+[2016-10-14 10:17:58.675] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\users
+[2016-10-14 10:17:58.676] [INFO] route - 路由加载完成
+[2016-10-14 10:18:42.177] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\index
+[2016-10-14 10:18:42.336] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\test\tt
+[2016-10-14 10:18:42.337] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\users
+[2016-10-14 10:18:42.337] [INFO] route - 路由加载完成
+[2016-10-14 10:29:04.056] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\index
+[2016-10-14 10:29:04.206] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\test\tt
+[2016-10-14 10:29:04.207] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF\routes\users
+[2016-10-14 10:29:04.208] [INFO] route - 路由加载完成
+[2016-10-14 15:18:22.596] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-14 15:18:22.759] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-14 15:18:22.759] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-14 15:18:22.760] [INFO] route - 路由加载完成
+[2016-10-14 15:20:09.445] [INFO] index - 信息
+[2016-10-14 15:20:09.454] [ERROR] index - 错误
+[2016-10-14 15:20:09.454] [WARN] index - 警告
+[2016-10-14 15:20:09.454] [FATAL] index - 致命的
+[2016-10-14 15:20:09.457] [INFO] app - ::1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-14 15:20:09.467] [INFO] app - ::1 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"

@@ -1,0 +1,13 @@
+{
+  "appenders": [
+    {
+      "type": "console"
+    },
+    {
+      "type": "dateFile",
+      "filename": "../logs/dynameicF.log",
+      "pattern": "-yyyy-MM-dd",
+      "alwaysIncludePattern": true
+    }
+  ]
+}

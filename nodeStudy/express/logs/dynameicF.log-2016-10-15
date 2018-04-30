@@ -1,0 +1,1090 @@
+[2016-10-15 10:06:02.011] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-15 10:06:03.006] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-15 10:06:03.007] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-15 10:06:03.008] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-15 10:06:03.008] [INFO] route - 路由加载完成
+[2016-10-15 10:06:17.074] [INFO] index - 信息
+[2016-10-15 10:06:17.118] [ERROR] index - 错误
+[2016-10-15 10:06:17.118] [WARN] index - 警告
+[2016-10-15 10:06:17.118] [FATAL] index - 致命的
+[2016-10-15 10:06:17.120] [INFO] app - ::ffff:222.17.107.125 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:06:17.227] [INFO] index - 信息
+[2016-10-15 10:06:17.230] [ERROR] index - 错误
+[2016-10-15 10:06:17.230] [WARN] index - 警告
+[2016-10-15 10:06:17.230] [FATAL] index - 致命的
+[2016-10-15 10:06:17.231] [INFO] app - ::ffff:222.17.107.125 - - "GET / HTTP/1.1" 200 207 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:06:17.245] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:06:17.312] [INFO] app - ::ffff:222.17.107.125 - - "GET /favicon.ico HTTP/1.1" 404 1016 "http://www.zjp.com:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:06:23.502] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls HTTP/1.1" 303 43 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:06:23.504] [INFO] getTpl - getTpls
+[2016-10-15 10:06:23.506] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 205 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:06:23.513] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:16:03.130] [INFO] tt - 请求的参数为：{"url":"http://222.17.107.125:8787/wjjreport/menu/getMenu.do","form":{"testFiled1":"123","testFiled2":"tss"},"cookie":{}}
+[2016-10-15 10:16:03.131] [INFO] HttpRequest - { url: 'http://222.17.107.125:8787/wjjreport/menu/getMenu.do',
+  cookie: {},
+  form: { testFiled1: '123', testFiled2: 'tss' } }
+[2016-10-15 10:16:04.185] [ERROR] HttpRequest - POST ERROR:{"success":false,"msg":{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"222.17.107.125","port":8787},"data":{}}
+[2016-10-15 10:16:04.186] [INFO] app - ::ffff:222.17.107.125 - - "GET /tt HTTP/1.1" 200 531 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:16:04.192] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tt" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:16:16.974] [INFO] tt - 请求的参数为：{"url":"http://222.17.107.125:8787/wjjreport/menu/getMenu.do","form":{"testFiled1":"123","testFiled2":"tss"},"cookie":{}}
+[2016-10-15 10:16:16.974] [INFO] HttpRequest - { url: 'http://222.17.107.125:8787/wjjreport/menu/getMenu.do',
+  cookie: {},
+  form: { testFiled1: '123', testFiled2: 'tss' } }
+[2016-10-15 10:16:17.980] [ERROR] HttpRequest - POST ERROR:{"success":false,"msg":{"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","address":"222.17.107.125","port":8787},"data":{}}
+[2016-10-15 10:16:17.982] [INFO] app - ::ffff:222.17.107.125 - - "GET /tt HTTP/1.1" 200 527 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:16:17.988] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tt" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:16:27.031] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls HTTP/1.1" 303 43 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:16:27.034] [INFO] getTpl - getTpls
+[2016-10-15 10:16:27.036] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:16:27.042] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:17:23.704] [INFO] getTpl - getTpls
+[2016-10-15 10:17:23.707] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 235 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:17:23.714] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:17:55.808] [INFO] getTpl - getTpls
+[2016-10-15 10:17:55.810] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 231 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:17:55.816] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:18:27.657] [INFO] getTpl - getTpls
+[2016-10-15 10:18:27.658] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 257 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:18:27.664] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:18:44.751] [INFO] getTpl - getTpls
+[2016-10-15 10:18:44.753] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 231 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:18:44.759] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:19:47.415] [INFO] getTpl - getTpls
+[2016-10-15 10:19:47.416] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 260 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:19:47.425] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:23:47.466] [INFO] getTpl - getTpls
+[2016-10-15 10:23:47.467] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 773 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:23:47.473] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:24:41.465] [INFO] getTpl - getTpls
+[2016-10-15 10:24:41.466] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 812 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:24:41.472] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:25:35.288] [INFO] getTpl - getTpls
+[2016-10-15 10:25:35.289] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 812 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:25:35.296] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:25:36.789] [INFO] getTpl - getTpls
+[2016-10-15 10:25:36.791] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:25:36.797] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:26:33.808] [INFO] getTpl - getTpls
+[2016-10-15 10:26:33.809] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 968 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:26:33.817] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:26:35.357] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:28:23.169] [INFO] getTpl - getTpls
+[2016-10-15 10:28:23.171] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 996 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:28:23.185] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:29:25.183] [INFO] getTpl - getTpls
+[2016-10-15 10:29:25.184] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1018 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:29:25.193] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:30:27.767] [INFO] getTpl - getTpls
+[2016-10-15 10:30:27.769] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1030 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:30:27.777] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:30:29.109] [INFO] getTpl - getTpls
+[2016-10-15 10:30:29.111] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1030 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:30:29.122] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:31:04.368] [INFO] getTpl - getTpls
+[2016-10-15 10:31:04.370] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1070 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:31:04.378] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:34:08.698] [INFO] getTpl - getTpls
+[2016-10-15 10:34:08.699] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1347 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:34:08.708] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:34:17.638] [INFO] getTpl - getTpls
+[2016-10-15 10:34:17.639] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1280 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:34:17.649] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:34:30.967] [INFO] getTpl - getTpls
+[2016-10-15 10:34:30.969] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1282 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:34:30.979] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:35:04.577] [INFO] getTpl - getTpls
+[2016-10-15 10:35:04.578] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1142 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:35:04.587] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:37:00.262] [INFO] getTpl - getTpls
+[2016-10-15 10:37:00.263] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1280 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:37:00.281] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:37:12.441] [INFO] getTpl - getTpls
+[2016-10-15 10:37:12.442] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1244 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:37:12.461] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:38:07.073] [INFO] getTpl - getTpls
+[2016-10-15 10:38:07.074] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1254 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:38:07.085] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:38:32.840] [INFO] getTpl - getTpls
+[2016-10-15 10:38:32.843] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1274 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:38:32.856] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:40:07.285] [INFO] getTpl - getTpls
+[2016-10-15 10:40:07.286] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1271 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:40:07.297] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:43:26.026] [INFO] getTpl - getTpls
+[2016-10-15 10:43:26.028] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1283 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:43:26.039] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:44:08.089] [INFO] getTpl - getTpls
+[2016-10-15 10:44:08.090] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1291 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:44:08.104] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:45:35.883] [INFO] getTpl - getTpls
+[2016-10-15 10:45:35.885] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1346 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:45:35.897] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:45:53.896] [INFO] getTpl - getTpls
+[2016-10-15 10:45:53.897] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1336 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:45:53.907] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:46:47.314] [INFO] getTpl - getTpls
+[2016-10-15 10:46:47.316] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1288 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:46:47.325] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:47:40.058] [INFO] getTpl - getTpls
+[2016-10-15 10:47:40.059] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1295 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:47:40.067] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:47:58.449] [INFO] getTpl - getTpls
+[2016-10-15 10:47:58.450] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1308 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:47:58.460] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:48:17.530] [INFO] getTpl - getTpls
+[2016-10-15 10:48:17.532] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1319 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:48:17.546] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:48:26.776] [INFO] getTpl - getTpls
+[2016-10-15 10:48:26.778] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1320 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:48:26.787] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:48:42.353] [INFO] getTpl - getTpls
+[2016-10-15 10:48:42.354] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1321 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:48:42.362] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:50:57.395] [INFO] getTpl - getTpls
+[2016-10-15 10:50:57.396] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1288 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:50:57.407] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:51:09.482] [INFO] getTpl - getTpls
+[2016-10-15 10:51:09.483] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1288 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:51:09.493] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:51:21.601] [INFO] getTpl - getTpls
+[2016-10-15 10:51:21.603] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1290 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:51:21.613] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:51:41.706] [INFO] getTpl - getTpls
+[2016-10-15 10:51:41.707] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1294 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:51:41.716] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:52:14.018] [INFO] getTpl - getTpls
+[2016-10-15 10:52:14.019] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1290 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:52:14.028] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:54:18.971] [INFO] getTpl - getTpls
+[2016-10-15 10:54:18.973] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1524 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:54:18.981] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:55:08.847] [INFO] getTpl - getTpls
+[2016-10-15 10:55:08.849] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1522 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:55:08.864] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:55:41.922] [INFO] getTpl - getTpls
+[2016-10-15 10:55:41.923] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1522 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:55:41.932] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:56:10.401] [INFO] getTpl - getTpls
+[2016-10-15 10:56:10.402] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1440 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:56:10.413] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:56:17.192] [INFO] getTpl - getTpls
+[2016-10-15 10:56:17.193] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1394 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:56:17.207] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:58:04.098] [INFO] getTpl - getTpls
+[2016-10-15 10:58:04.099] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1750 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:58:04.108] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:59:33.762] [INFO] getTpl - getTpls
+[2016-10-15 10:59:33.763] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1900 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 10:59:33.774] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:00:01.201] [INFO] getTpl - getTpls
+[2016-10-15 11:00:01.203] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1990 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:00:01.211] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 111 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:00:42.229] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:02:02.018] [INFO] getTpl - getTpls
+[2016-10-15 11:02:02.020] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 1990 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:02:02.030] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:04:58.498] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:19.947] [INFO] getTpl - getTpls
+[2016-10-15 11:06:19.949] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2036 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:19.958] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:34.674] [INFO] getTpl - getTpls
+[2016-10-15 11:06:34.676] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2050 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:34.684] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:43.304] [INFO] getTpl - getTpls
+[2016-10-15 11:06:43.306] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2050 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:43.314] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:51.924] [INFO] getTpl - getTpls
+[2016-10-15 11:06:51.926] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2050 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:06:51.933] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:08:04.764] [INFO] getTpl - getTpls
+[2016-10-15 11:08:04.766] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2050 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:08:04.777] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:11:27.382] [INFO] getTpl - getTpls
+[2016-10-15 11:11:27.383] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2054 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:11:29.023] [INFO] app - ::ffff:222.17.107.125 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://www.zjp.com:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:13:44.812] [INFO] getTpl - getTpls
+[2016-10-15 11:13:44.813] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2087 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:15:07.361] [INFO] getTpl - getTpls
+[2016-10-15 11:15:07.365] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2136 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:15:45.465] [INFO] getTpl - getTpls
+[2016-10-15 11:15:45.467] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2200 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:18:57.505] [INFO] getTpl - getTpls
+[2016-10-15 11:18:57.507] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5971 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:19:14.706] [INFO] getTpl - getTpls
+[2016-10-15 11:19:14.713] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7494 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:20:15.754] [INFO] getTpl - getTpls
+[2016-10-15 11:20:15.757] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5649 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:20:55.101] [INFO] getTpl - getTpls
+[2016-10-15 11:20:55.104] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5664 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:21:21.443] [INFO] getTpl - getTpls
+[2016-10-15 11:21:21.446] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5685 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:21:33.218] [INFO] getTpl - getTpls
+[2016-10-15 11:21:33.220] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5311 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 11:22:01.688] [INFO] getTpl - getTpls
+[2016-10-15 11:22:01.691] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4643 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:40:03.468] [INFO] getTpl - getTpls
+[2016-10-15 14:40:03.473] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 500 1760 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:40:47.830] [INFO] getTpl - getTpls
+[2016-10-15 14:40:47.833] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 500 1760 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:42:09.808] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-15 14:42:09.973] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-15 14:42:09.974] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-15 14:42:09.975] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-15 14:42:09.975] [INFO] route - 路由加载完成
+[2016-10-15 14:42:13.651] [INFO] getTpl - undefined
+[2016-10-15 14:42:13.652] [INFO] getTpl - undefined
+[2016-10-15 14:42:13.662] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2178 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:43:08.996] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-15 14:43:09.154] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-15 14:43:09.156] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-15 14:43:09.157] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-15 14:43:09.157] [INFO] route - 路由加载完成
+[2016-10-15 14:43:11.763] [INFO] getTpl - undefined
+[2016-10-15 14:43:11.764] [INFO] getTpl - undefined
+[2016-10-15 14:43:11.775] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2155 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:48:48.196] [INFO] getTpl - undefined
+[2016-10-15 14:48:48.197] [INFO] getTpl - undefined
+[2016-10-15 14:48:48.201] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2266 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:50:25.836] [INFO] getTpl - undefined
+[2016-10-15 14:50:25.836] [INFO] getTpl - undefined
+[2016-10-15 14:50:25.839] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2266 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:50:40.939] [INFO] getTpl - undefined
+[2016-10-15 14:50:40.939] [INFO] getTpl - undefined
+[2016-10-15 14:50:40.943] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2262 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:52:40.436] [INFO] getTpl - undefined
+[2016-10-15 14:52:40.436] [INFO] getTpl - undefined
+[2016-10-15 14:52:40.438] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 2296 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:55:58.564] [INFO] getTpl - undefined
+[2016-10-15 14:55:58.564] [INFO] getTpl - undefined
+[2016-10-15 14:55:58.569] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4615 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:56:18.243] [INFO] getTpl - undefined
+[2016-10-15 14:56:18.243] [INFO] getTpl - undefined
+[2016-10-15 14:56:18.246] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4619 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:56:29.283] [INFO] getTpl - undefined
+[2016-10-15 14:56:29.283] [INFO] getTpl - undefined
+[2016-10-15 14:56:29.286] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4633 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:56:42.164] [INFO] getTpl - undefined
+[2016-10-15 14:56:42.164] [INFO] getTpl - undefined
+[2016-10-15 14:56:42.171] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:57:40.436] [INFO] getTpl - undefined
+[2016-10-15 14:57:40.436] [INFO] getTpl - undefined
+[2016-10-15 14:57:40.440] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4643 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:57:46.671] [INFO] getTpl - undefined
+[2016-10-15 14:57:46.671] [INFO] getTpl - undefined
+[2016-10-15 14:57:46.673] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4620 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:58:57.180] [INFO] getTpl - undefined
+[2016-10-15 14:58:57.180] [INFO] getTpl - undefined
+[2016-10-15 14:58:57.188] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4664 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:59:10.836] [INFO] getTpl - undefined
+[2016-10-15 14:59:10.837] [INFO] getTpl - undefined
+[2016-10-15 14:59:10.840] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4662 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:59:26.219] [INFO] getTpl - undefined
+[2016-10-15 14:59:26.219] [INFO] getTpl - undefined
+[2016-10-15 14:59:26.222] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4654 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 14:59:34.133] [INFO] getTpl - undefined
+[2016-10-15 14:59:34.133] [INFO] getTpl - undefined
+[2016-10-15 14:59:34.139] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4662 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:06:09.999] [INFO] getTpl - undefined
+[2016-10-15 15:06:09.999] [INFO] getTpl - undefined
+[2016-10-15 15:06:10.002] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4880 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:06:16.908] [INFO] getTpl - undefined
+[2016-10-15 15:06:16.908] [INFO] getTpl - undefined
+[2016-10-15 15:06:16.911] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4882 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:06:30.806] [INFO] getTpl - undefined
+[2016-10-15 15:06:30.807] [INFO] getTpl - undefined
+[2016-10-15 15:06:30.810] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4888 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:06:46.294] [INFO] getTpl - undefined
+[2016-10-15 15:06:46.294] [INFO] getTpl - undefined
+[2016-10-15 15:06:46.296] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4880 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:07:54.637] [INFO] getTpl - undefined
+[2016-10-15 15:07:54.638] [INFO] getTpl - undefined
+[2016-10-15 15:07:54.640] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4970 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:08:23.990] [INFO] getTpl - undefined
+[2016-10-15 15:08:23.992] [INFO] getTpl - undefined
+[2016-10-15 15:08:23.995] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4973 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:08:43.470] [INFO] getTpl - undefined
+[2016-10-15 15:08:43.471] [INFO] getTpl - undefined
+[2016-10-15 15:08:43.473] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 4972 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:14:58.982] [INFO] getTpl - undefined
+[2016-10-15 15:14:58.982] [INFO] getTpl - undefined
+[2016-10-15 15:14:58.987] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5154 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:15:15.045] [INFO] getTpl - undefined
+[2016-10-15 15:15:15.045] [INFO] getTpl - undefined
+[2016-10-15 15:15:15.047] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5150 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:15:36.677] [INFO] getTpl - undefined
+[2016-10-15 15:15:36.677] [INFO] getTpl - undefined
+[2016-10-15 15:15:36.680] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5156 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:15:57.694] [INFO] getTpl - undefined
+[2016-10-15 15:15:57.695] [INFO] getTpl - undefined
+[2016-10-15 15:15:57.697] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5157 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:16:47.501] [INFO] getTpl - undefined
+[2016-10-15 15:16:47.502] [INFO] getTpl - undefined
+[2016-10-15 15:16:47.505] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5402 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:18:04.928] [INFO] getTpl - undefined
+[2016-10-15 15:18:04.928] [INFO] getTpl - undefined
+[2016-10-15 15:18:04.931] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5414 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:19:35.359] [INFO] getTpl - undefined
+[2016-10-15 15:19:35.360] [INFO] getTpl - undefined
+[2016-10-15 15:19:35.364] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8001 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:19:45.812] [INFO] getTpl - undefined
+[2016-10-15 15:19:45.812] [INFO] getTpl - undefined
+[2016-10-15 15:19:45.815] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7999 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:21:49.464] [INFO] getTpl - undefined
+[2016-10-15 15:21:49.464] [INFO] getTpl - undefined
+[2016-10-15 15:21:49.468] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5154 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:23:01.903] [INFO] getTpl - undefined
+[2016-10-15 15:23:01.903] [INFO] getTpl - undefined
+[2016-10-15 15:23:01.905] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5156 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:24:26.166] [INFO] getTpl - undefined
+[2016-10-15 15:24:26.166] [INFO] getTpl - undefined
+[2016-10-15 15:24:26.169] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5179 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:24:46.229] [INFO] getTpl - undefined
+[2016-10-15 15:24:46.229] [INFO] getTpl - undefined
+[2016-10-15 15:24:46.236] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 500 1495 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:25:01.950] [INFO] getTpl - undefined
+[2016-10-15 15:25:01.950] [INFO] getTpl - undefined
+[2016-10-15 15:25:01.954] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5362 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:26:10.527] [INFO] getTpl - undefined
+[2016-10-15 15:26:10.527] [INFO] getTpl - undefined
+[2016-10-15 15:26:10.531] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5416 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:27:00.176] [INFO] getTpl - undefined
+[2016-10-15 15:27:00.176] [INFO] getTpl - undefined
+[2016-10-15 15:27:00.179] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 5416 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:27:11.304] [INFO] getTpl - undefined
+[2016-10-15 15:27:11.304] [INFO] getTpl - undefined
+[2016-10-15 15:27:11.308] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8002 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:30:31.656] [INFO] getTpl - undefined
+[2016-10-15 15:30:31.656] [INFO] getTpl - undefined
+[2016-10-15 15:30:31.664] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8053 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:34:28.196] [INFO] getTpl - undefined
+[2016-10-15 15:34:28.196] [INFO] getTpl - undefined
+[2016-10-15 15:34:28.201] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8200 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:37:36.472] [INFO] getTpl - undefined
+[2016-10-15 15:37:36.472] [INFO] getTpl - undefined
+[2016-10-15 15:37:36.475] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8491 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:38:56.462] [INFO] getTpl - undefined
+[2016-10-15 15:38:56.462] [INFO] getTpl - undefined
+[2016-10-15 15:38:56.464] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8344 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:39:54.359] [INFO] getTpl - undefined
+[2016-10-15 15:39:54.363] [INFO] getTpl - undefined
+[2016-10-15 15:39:54.368] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 500 1146 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:40:18.599] [INFO] getTpl - undefined
+[2016-10-15 15:40:18.600] [INFO] getTpl - undefined
+[2016-10-15 15:40:18.603] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6267 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:43:54.740] [INFO] getTpl - undefined
+[2016-10-15 15:43:54.740] [INFO] getTpl - undefined
+[2016-10-15 15:43:54.745] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 500 1917 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:44:36.119] [INFO] getTpl - undefined
+[2016-10-15 15:44:36.119] [INFO] getTpl - undefined
+[2016-10-15 15:44:36.122] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8496 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:45:12.329] [INFO] getTpl - undefined
+[2016-10-15 15:45:12.329] [INFO] getTpl - undefined
+[2016-10-15 15:45:12.335] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8640 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:51:24.515] [INFO] getTpl - undefined
+[2016-10-15 15:51:24.515] [INFO] getTpl - undefined
+[2016-10-15 15:51:24.519] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8771 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:52:00.846] [INFO] getTpl - undefined
+[2016-10-15 15:52:00.847] [INFO] getTpl - undefined
+[2016-10-15 15:52:00.850] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8771 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:52:43.857] [INFO] getTpl - undefined
+[2016-10-15 15:52:43.857] [INFO] getTpl - undefined
+[2016-10-15 15:52:43.860] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8771 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:53:37.151] [INFO] getTpl - undefined
+[2016-10-15 15:53:37.151] [INFO] getTpl - undefined
+[2016-10-15 15:53:37.156] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8833 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:53:55.088] [INFO] getTpl - undefined
+[2016-10-15 15:53:55.088] [INFO] getTpl - undefined
+[2016-10-15 15:53:55.091] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8834 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:56:05.984] [INFO] getTpl - undefined
+[2016-10-15 15:56:05.984] [INFO] getTpl - undefined
+[2016-10-15 15:56:05.988] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8834 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:56:23.344] [INFO] getTpl - undefined
+[2016-10-15 15:56:23.345] [INFO] getTpl - undefined
+[2016-10-15 15:56:23.348] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8834 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 15:58:13.457] [INFO] getTpl - undefined
+[2016-10-15 15:58:13.458] [INFO] getTpl - undefined
+[2016-10-15 15:58:13.461] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 8866 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:00:40.282] [INFO] getTpl - undefined
+[2016-10-15 16:00:40.283] [INFO] getTpl - undefined
+[2016-10-15 16:00:40.285] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6133 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:01:37.913] [INFO] getTpl - undefined
+[2016-10-15 16:01:37.914] [INFO] getTpl - undefined
+[2016-10-15 16:01:37.917] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6142 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:06:33.664] [INFO] getTpl - undefined
+[2016-10-15 16:06:33.664] [INFO] getTpl - undefined
+[2016-10-15 16:06:33.668] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6144 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:14:34.333] [INFO] getTpl - undefined
+[2016-10-15 16:14:34.333] [INFO] getTpl - undefined
+[2016-10-15 16:14:34.336] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:14:54.568] [INFO] getTpl - undefined
+[2016-10-15 16:14:54.569] [INFO] getTpl - undefined
+[2016-10-15 16:14:54.571] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6870 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:15:34.345] [INFO] getTpl - undefined
+[2016-10-15 16:15:34.346] [INFO] getTpl - undefined
+[2016-10-15 16:15:34.349] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6870 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:18:56.153] [INFO] app - ::ffff:222.17.107.125 - - "GET /favicon.ico HTTP/1.1" 404 1016 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+[2016-10-15 16:18:57.105] [INFO] getTpl - undefined
+[2016-10-15 16:18:57.105] [INFO] getTpl - undefined
+[2016-10-15 16:18:57.109] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6875 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:20:18.486] [INFO] getTpl - undefined
+[2016-10-15 16:20:18.487] [INFO] getTpl - undefined
+[2016-10-15 16:20:18.489] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6873 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:20:23.558] [INFO] getTpl - undefined
+[2016-10-15 16:20:23.559] [INFO] getTpl - undefined
+[2016-10-15 16:20:23.562] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6873 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:20:27.181] [INFO] getTpl - undefined
+[2016-10-15 16:20:27.181] [INFO] getTpl - undefined
+[2016-10-15 16:20:27.184] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6873 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:25:01.089] [INFO] getTpl - undefined
+[2016-10-15 16:25:01.090] [INFO] getTpl - undefined
+[2016-10-15 16:25:01.093] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7027 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:25:04.555] [INFO] getTpl - undefined
+[2016-10-15 16:25:04.555] [INFO] getTpl - undefined
+[2016-10-15 16:25:04.558] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7027 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:25:05.512] [INFO] getTpl - undefined
+[2016-10-15 16:25:05.512] [INFO] getTpl - undefined
+[2016-10-15 16:25:05.515] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7027 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:26:50.866] [INFO] getTpl - undefined
+[2016-10-15 16:26:50.866] [INFO] getTpl - undefined
+[2016-10-15 16:26:50.868] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7010 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:28:54.530] [INFO] getTpl - undefined
+[2016-10-15 16:28:54.530] [INFO] getTpl - undefined
+[2016-10-15 16:28:54.534] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7001 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:29:21.753] [INFO] getTpl - undefined
+[2016-10-15 16:29:21.753] [INFO] getTpl - undefined
+[2016-10-15 16:29:21.758] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6996 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:29:29.876] [INFO] getTpl - undefined
+[2016-10-15 16:29:29.876] [INFO] getTpl - undefined
+[2016-10-15 16:29:29.886] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6996 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:33:18.834] [INFO] getTpl - undefined
+[2016-10-15 16:33:18.834] [INFO] getTpl - undefined
+[2016-10-15 16:33:18.839] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7105 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:35:20.301] [INFO] getTpl - undefined
+[2016-10-15 16:35:20.301] [INFO] getTpl - undefined
+[2016-10-15 16:35:20.306] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7105 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:35:42.011] [INFO] getTpl - undefined
+[2016-10-15 16:35:42.011] [INFO] getTpl - undefined
+[2016-10-15 16:35:42.014] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7132 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:35:45.195] [INFO] getTpl - undefined
+[2016-10-15 16:35:45.195] [INFO] getTpl - undefined
+[2016-10-15 16:35:45.198] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7132 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:37:11.112] [INFO] getTpl - undefined
+[2016-10-15 16:37:11.113] [INFO] getTpl - undefined
+[2016-10-15 16:37:11.115] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7132 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:37:56.289] [INFO] getTpl - undefined
+[2016-10-15 16:37:56.289] [INFO] getTpl - undefined
+[2016-10-15 16:37:56.292] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7132 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:40:00.413] [INFO] getTpl - undefined
+[2016-10-15 16:40:00.413] [INFO] getTpl - undefined
+[2016-10-15 16:40:00.415] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7132 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:40:26.907] [INFO] getTpl - undefined
+[2016-10-15 16:40:26.908] [INFO] getTpl - undefined
+[2016-10-15 16:40:26.911] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7131 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:40:28.008] [INFO] getTpl - undefined
+[2016-10-15 16:40:28.008] [INFO] getTpl - undefined
+[2016-10-15 16:40:28.010] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7131 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:40:28.871] [INFO] getTpl - undefined
+[2016-10-15 16:40:28.871] [INFO] getTpl - undefined
+[2016-10-15 16:40:28.873] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7131 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:40:41.107] [INFO] getTpl - undefined
+[2016-10-15 16:40:41.108] [INFO] getTpl - undefined
+[2016-10-15 16:40:41.110] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7131 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0"
+[2016-10-15 16:40:41.198] [INFO] app - ::ffff:222.17.107.125 - - "GET /favicon.ico HTTP/1.1" 404 1016 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0"
+[2016-10-15 16:40:41.206] [INFO] app - ::ffff:222.17.107.125 - - "GET /favicon.ico HTTP/1.1" 404 1016 "" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0"
+[2016-10-15 16:41:46.917] [INFO] getTpl - undefined
+[2016-10-15 16:41:46.917] [INFO] getTpl - undefined
+[2016-10-15 16:41:46.920] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7231 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:41:58.137] [INFO] getTpl - undefined
+[2016-10-15 16:41:58.137] [INFO] getTpl - undefined
+[2016-10-15 16:41:58.141] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7231 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:42:30.915] [INFO] getTpl - undefined
+[2016-10-15 16:42:30.915] [INFO] getTpl - undefined
+[2016-10-15 16:42:30.918] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7231 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:43:27.460] [INFO] getTpl - undefined
+[2016-10-15 16:43:27.460] [INFO] getTpl - undefined
+[2016-10-15 16:43:27.463] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7291 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:43:57.660] [INFO] getTpl - undefined
+[2016-10-15 16:43:57.660] [INFO] getTpl - undefined
+[2016-10-15 16:43:57.663] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7285 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:44:31.843] [INFO] getTpl - undefined
+[2016-10-15 16:44:31.843] [INFO] getTpl - undefined
+[2016-10-15 16:44:31.847] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7285 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:45:10.536] [INFO] getTpl - undefined
+[2016-10-15 16:45:10.536] [INFO] getTpl - undefined
+[2016-10-15 16:45:10.539] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7261 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:45:30.266] [INFO] getTpl - undefined
+[2016-10-15 16:45:30.266] [INFO] getTpl - undefined
+[2016-10-15 16:45:30.269] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7261 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 16:46:30.116] [INFO] getTpl - undefined
+[2016-10-15 16:46:30.116] [INFO] getTpl - undefined
+[2016-10-15 16:46:30.119] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7261 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:48:21.050] [INFO] getTpl - undefined
+[2016-10-15 16:48:21.050] [INFO] getTpl - undefined
+[2016-10-15 16:48:21.054] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7183 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:48:27.082] [INFO] getTpl - undefined
+[2016-10-15 16:48:27.082] [INFO] getTpl - undefined
+[2016-10-15 16:48:27.085] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:48:28.370] [INFO] getTpl - undefined
+[2016-10-15 16:48:28.370] [INFO] getTpl - undefined
+[2016-10-15 16:48:28.373] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:48:35.412] [INFO] getTpl - undefined
+[2016-10-15 16:48:35.412] [INFO] getTpl - undefined
+[2016-10-15 16:48:35.414] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7183 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:48:38.401] [INFO] getTpl - undefined
+[2016-10-15 16:48:38.401] [INFO] getTpl - undefined
+[2016-10-15 16:48:38.404] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:48:55.195] [INFO] getTpl - undefined
+[2016-10-15 16:48:55.196] [INFO] getTpl - undefined
+[2016-10-15 16:48:55.199] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7183 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:49:02.138] [INFO] getTpl - undefined
+[2016-10-15 16:49:02.139] [INFO] getTpl - undefined
+[2016-10-15 16:49:02.142] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:49:15.954] [INFO] getTpl - undefined
+[2016-10-15 16:49:15.955] [INFO] getTpl - undefined
+[2016-10-15 16:49:15.957] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7165 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:56:19.558] [INFO] getTpl - undefined
+[2016-10-15 16:56:19.558] [INFO] getTpl - undefined
+[2016-10-15 16:56:19.561] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7169 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:56:31.169] [INFO] getTpl - undefined
+[2016-10-15 16:56:31.169] [INFO] getTpl - undefined
+[2016-10-15 16:56:31.172] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:56:53.306] [INFO] getTpl - undefined
+[2016-10-15 16:56:53.306] [INFO] getTpl - undefined
+[2016-10-15 16:56:53.309] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 7187 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:57:47.450] [INFO] getTpl - undefined
+[2016-10-15 16:57:47.450] [INFO] getTpl - undefined
+[2016-10-15 16:57:47.459] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6459 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 16:59:15.164] [INFO] getTpl - undefined
+[2016-10-15 16:59:15.164] [INFO] getTpl - undefined
+[2016-10-15 16:59:15.167] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:00:24.484] [INFO] getTpl - undefined
+[2016-10-15 17:00:24.484] [INFO] getTpl - undefined
+[2016-10-15 17:00:24.488] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6486 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:00:38.394] [INFO] getTpl - undefined
+[2016-10-15 17:00:38.394] [INFO] getTpl - undefined
+[2016-10-15 17:00:38.396] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6480 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:00:44.225] [INFO] getTpl - undefined
+[2016-10-15 17:00:44.225] [INFO] getTpl - undefined
+[2016-10-15 17:00:44.228] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6486 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:01:10.907] [INFO] getTpl - undefined
+[2016-10-15 17:01:10.907] [INFO] getTpl - undefined
+[2016-10-15 17:01:10.910] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6487 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:01:30.482] [INFO] getTpl - undefined
+[2016-10-15 17:01:30.482] [INFO] getTpl - undefined
+[2016-10-15 17:01:30.485] [INFO] app - ::ffff:222.17.107.125 - - "GET /tpls/ HTTP/1.1" 200 6459 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:12:24.817] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-15 17:12:24.999] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-15 17:12:25.001] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-15 17:12:25.002] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-15 17:12:25.002] [INFO] route - 路由加载完成
+[2016-10-15 17:13:07.733] [INFO] getTpl - undefined
+[2016-10-15 17:13:07.734] [INFO] getTpl - undefined
+[2016-10-15 17:13:07.749] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6686 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:13:07.879] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "http://localhost.:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:13:11.896] [INFO] getTpl - undefined
+[2016-10-15 17:13:11.896] [INFO] getTpl - undefined
+[2016-10-15 17:13:11.900] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6686 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:13:12.039] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:13:29.693] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+[2016-10-15 17:13:29.953] [INFO] getTpl - undefined
+[2016-10-15 17:13:29.953] [INFO] getTpl - undefined
+[2016-10-15 17:13:29.956] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6686 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+[2016-10-15 17:13:30.114] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+[2016-10-15 17:16:08.746] [INFO] getTpl - undefined
+[2016-10-15 17:16:08.747] [INFO] getTpl - undefined
+[2016-10-15 17:16:08.752] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6792 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:16:26.843] [INFO] getTpl - undefined
+[2016-10-15 17:16:26.843] [INFO] getTpl - undefined
+[2016-10-15 17:16:26.846] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6792 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:25:17.834] [INFO] getTpl - undefined
+[2016-10-15 17:25:17.835] [INFO] getTpl - undefined
+[2016-10-15 17:25:17.837] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:25:42.362] [INFO] getTpl - undefined
+[2016-10-15 17:25:42.362] [INFO] getTpl - undefined
+[2016-10-15 17:25:42.366] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6789 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:26:17.641] [INFO] getTpl - undefined
+[2016-10-15 17:26:17.642] [INFO] getTpl - undefined
+[2016-10-15 17:26:17.649] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6797 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:26:18.603] [INFO] getTpl - undefined
+[2016-10-15 17:26:18.603] [INFO] getTpl - undefined
+[2016-10-15 17:26:18.606] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:27:17.483] [INFO] getTpl - undefined
+[2016-10-15 17:27:17.484] [INFO] getTpl - undefined
+[2016-10-15 17:27:17.487] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:27:22.238] [INFO] getTpl - undefined
+[2016-10-15 17:27:22.239] [INFO] getTpl - undefined
+[2016-10-15 17:27:22.245] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:30:49.859] [INFO] getTpl - undefined
+[2016-10-15 17:30:49.859] [INFO] getTpl - undefined
+[2016-10-15 17:30:49.863] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:31:41.435] [INFO] getTpl - undefined
+[2016-10-15 17:31:41.435] [INFO] getTpl - undefined
+[2016-10-15 17:31:41.439] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:31:51.275] [INFO] getTpl - undefined
+[2016-10-15 17:31:51.275] [INFO] getTpl - undefined
+[2016-10-15 17:31:51.278] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:31:56.924] [INFO] getTpl - undefined
+[2016-10-15 17:31:56.924] [INFO] getTpl - undefined
+[2016-10-15 17:31:56.928] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:32:18.843] [INFO] getTpl - undefined
+[2016-10-15 17:32:18.844] [INFO] getTpl - undefined
+[2016-10-15 17:32:18.847] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6858 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:32:49.724] [INFO] getTpl - undefined
+[2016-10-15 17:32:49.724] [INFO] getTpl - undefined
+[2016-10-15 17:32:49.728] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6861 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:32:57.163] [INFO] getTpl - undefined
+[2016-10-15 17:32:57.163] [INFO] getTpl - undefined
+[2016-10-15 17:32:57.166] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6863 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:33:12.876] [INFO] getTpl - undefined
+[2016-10-15 17:33:12.876] [INFO] getTpl - undefined
+[2016-10-15 17:33:12.880] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6867 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:33:23.996] [INFO] getTpl - undefined
+[2016-10-15 17:33:23.996] [INFO] getTpl - undefined
+[2016-10-15 17:33:23.999] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6876 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:33:25.836] [INFO] getTpl - undefined
+[2016-10-15 17:33:25.837] [INFO] getTpl - undefined
+[2016-10-15 17:33:25.840] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6876 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:33:34.860] [INFO] getTpl - undefined
+[2016-10-15 17:33:34.860] [INFO] getTpl - undefined
+[2016-10-15 17:33:34.863] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6882 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:33:58.667] [INFO] getTpl - undefined
+[2016-10-15 17:33:58.667] [INFO] getTpl - undefined
+[2016-10-15 17:33:58.670] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6885 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:34:07.898] [INFO] getTpl - undefined
+[2016-10-15 17:34:07.899] [INFO] getTpl - undefined
+[2016-10-15 17:34:07.902] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6882 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:34:52.107] [INFO] getTpl - undefined
+[2016-10-15 17:34:52.107] [INFO] getTpl - undefined
+[2016-10-15 17:34:52.111] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6888 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:34:59.316] [INFO] getTpl - undefined
+[2016-10-15 17:34:59.316] [INFO] getTpl - undefined
+[2016-10-15 17:34:59.319] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6894 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:35:03.260] [INFO] getTpl - undefined
+[2016-10-15 17:35:03.260] [INFO] getTpl - undefined
+[2016-10-15 17:35:03.264] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6900 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:35:07.892] [INFO] getTpl - undefined
+[2016-10-15 17:35:07.893] [INFO] getTpl - undefined
+[2016-10-15 17:35:07.895] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6906 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:35:30.787] [INFO] getTpl - undefined
+[2016-10-15 17:35:30.788] [INFO] getTpl - undefined
+[2016-10-15 17:35:30.795] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6895 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:35:40.203] [INFO] getTpl - undefined
+[2016-10-15 17:35:40.204] [INFO] getTpl - undefined
+[2016-10-15 17:35:40.207] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6895 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:37:07.363] [INFO] getTpl - undefined
+[2016-10-15 17:37:07.363] [INFO] getTpl - undefined
+[2016-10-15 17:37:07.367] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6895 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:38:15.003] [INFO] getTpl - undefined
+[2016-10-15 17:38:15.003] [INFO] getTpl - undefined
+[2016-10-15 17:38:15.006] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6917 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:38:40.343] [INFO] getTpl - undefined
+[2016-10-15 17:38:40.344] [INFO] getTpl - undefined
+[2016-10-15 17:38:40.347] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6918 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:39:06.140] [INFO] getTpl - undefined
+[2016-10-15 17:39:06.141] [INFO] getTpl - undefined
+[2016-10-15 17:39:06.146] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6919 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:39:10.991] [INFO] getTpl - undefined
+[2016-10-15 17:39:10.992] [INFO] getTpl - undefined
+[2016-10-15 17:39:10.995] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6919 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:39:30.027] [INFO] getTpl - undefined
+[2016-10-15 17:39:30.027] [INFO] getTpl - undefined
+[2016-10-15 17:39:30.030] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6919 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:39:34.851] [INFO] getTpl - undefined
+[2016-10-15 17:39:34.851] [INFO] getTpl - undefined
+[2016-10-15 17:39:34.854] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6919 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:39:41.795] [INFO] getTpl - undefined
+[2016-10-15 17:39:41.795] [INFO] getTpl - undefined
+[2016-10-15 17:39:41.798] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6919 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:39:53.220] [INFO] getTpl - undefined
+[2016-10-15 17:39:53.220] [INFO] getTpl - undefined
+[2016-10-15 17:39:53.222] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6919 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:43:21.635] [INFO] getTpl - undefined
+[2016-10-15 17:43:21.636] [INFO] getTpl - undefined
+[2016-10-15 17:43:21.639] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6939 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:43:29.218] [INFO] getTpl - undefined
+[2016-10-15 17:43:29.218] [INFO] getTpl - undefined
+[2016-10-15 17:43:29.222] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6939 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:44:34.243] [INFO] getTpl - undefined
+[2016-10-15 17:44:34.244] [INFO] getTpl - undefined
+[2016-10-15 17:44:34.247] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6962 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:44:41.840] [INFO] getTpl - undefined
+[2016-10-15 17:44:41.840] [INFO] getTpl - undefined
+[2016-10-15 17:44:41.844] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6962 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:46:55.780] [INFO] getTpl - undefined
+[2016-10-15 17:46:55.780] [INFO] getTpl - undefined
+[2016-10-15 17:46:55.782] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 7048 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:47:10.894] [INFO] getTpl - undefined
+[2016-10-15 17:47:10.895] [INFO] getTpl - undefined
+[2016-10-15 17:47:10.898] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 7048 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:47:34.802] [INFO] getTpl - undefined
+[2016-10-15 17:47:34.802] [INFO] getTpl - undefined
+[2016-10-15 17:47:34.806] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6896 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:48:16.705] [INFO] getTpl - undefined
+[2016-10-15 17:48:16.705] [INFO] getTpl - undefined
+[2016-10-15 17:48:16.708] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6936 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:48:31.339] [INFO] getTpl - undefined
+[2016-10-15 17:48:31.339] [INFO] getTpl - undefined
+[2016-10-15 17:48:31.342] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 6936 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:48:31.473] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:48:36.556] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:50:41.657] [INFO] getTpl - undefined
+[2016-10-15 17:50:41.657] [INFO] getTpl - undefined
+[2016-10-15 17:50:41.660] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 7019 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:50:52.676] [INFO] getTpl - undefined
+[2016-10-15 17:50:52.676] [INFO] getTpl - undefined
+[2016-10-15 17:50:52.679] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 7019 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:51:00.418] [INFO] getTpl - undefined
+[2016-10-15 17:51:00.418] [INFO] getTpl - undefined
+[2016-10-15 17:51:00.420] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 7017 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:51:09.519] [INFO] getTpl - undefined
+[2016-10-15 17:51:09.519] [INFO] getTpl - undefined
+[2016-10-15 17:51:09.523] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 7017 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 17:51:39.867] [INFO] getTpl - undefined
+[2016-10-15 17:51:39.867] [INFO] getTpl - undefined
+[2016-10-15 17:51:39.869] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:54:38.979] [INFO] getTpl - undefined
+[2016-10-15 17:54:38.980] [INFO] getTpl - undefined
+[2016-10-15 17:54:38.982] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:54:43.539] [INFO] getTpl - undefined
+[2016-10-15 17:54:43.539] [INFO] getTpl - undefined
+[2016-10-15 17:54:43.541] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:54:50.029] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-15 17:54:50.201] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-15 17:54:50.203] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-15 17:54:50.204] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-15 17:54:50.204] [INFO] route - 路由加载完成
+[2016-10-15 17:54:52.723] [INFO] getTpl - undefined
+[2016-10-15 17:54:52.724] [INFO] getTpl - undefined
+[2016-10-15 17:54:52.740] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23505 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:55:03.756] [INFO] getTpl - undefined
+[2016-10-15 17:55:03.756] [INFO] getTpl - undefined
+[2016-10-15 17:55:03.765] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21074 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:55:32.834] [INFO] getTpl - undefined
+[2016-10-15 17:55:32.834] [INFO] getTpl - undefined
+[2016-10-15 17:55:32.841] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21905 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:55:49.306] [INFO] getTpl - undefined
+[2016-10-15 17:55:49.307] [INFO] getTpl - undefined
+[2016-10-15 17:55:49.313] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22225 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:55:51.722] [INFO] getTpl - undefined
+[2016-10-15 17:55:51.722] [INFO] getTpl - undefined
+[2016-10-15 17:55:51.729] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:56:01.538] [INFO] getTpl - undefined
+[2016-10-15 17:56:01.539] [INFO] getTpl - undefined
+[2016-10-15 17:56:01.549] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22065 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:56:04.419] [INFO] getTpl - undefined
+[2016-10-15 17:56:04.419] [INFO] getTpl - undefined
+[2016-10-15 17:56:04.423] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 17:59:38.234] [INFO] getTpl - undefined
+[2016-10-15 17:59:38.235] [INFO] getTpl - undefined
+[2016-10-15 17:59:38.242] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23185 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:11:47.013] [INFO] getTpl - undefined
+[2016-10-15 18:11:47.014] [INFO] getTpl - undefined
+[2016-10-15 18:11:47.019] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23705 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:12:06.371] [INFO] getTpl - undefined
+[2016-10-15 18:12:06.372] [INFO] getTpl - undefined
+[2016-10-15 18:12:06.376] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23640 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:13:00.316] [INFO] getTpl - undefined
+[2016-10-15 18:13:00.316] [INFO] getTpl - undefined
+[2016-10-15 18:13:00.322] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23658 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:13:15.932] [INFO] getTpl - undefined
+[2016-10-15 18:13:15.932] [INFO] getTpl - undefined
+[2016-10-15 18:13:15.938] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23660 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:13:36.069] [INFO] getTpl - undefined
+[2016-10-15 18:13:36.069] [INFO] getTpl - undefined
+[2016-10-15 18:13:36.075] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23667 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:19:51.366] [INFO] getTpl - undefined
+[2016-10-15 18:19:51.366] [INFO] getTpl - undefined
+[2016-10-15 18:19:51.371] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23676 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:20:17.749] [INFO] getTpl - undefined
+[2016-10-15 18:20:17.750] [INFO] getTpl - undefined
+[2016-10-15 18:20:17.754] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23686 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:20:29.561] [INFO] getTpl - undefined
+[2016-10-15 18:20:29.561] [INFO] getTpl - undefined
+[2016-10-15 18:20:29.566] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23686 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 18:22:47.966] [INFO] getTpl - undefined
+[2016-10-15 18:22:47.967] [INFO] getTpl - undefined
+[2016-10-15 18:22:47.971] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 23686 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:26:43.999] [INFO] getTpl - undefined
+[2016-10-15 18:26:43.999] [INFO] getTpl - undefined
+[2016-10-15 18:26:44.004] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24192 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:27:01.861] [INFO] getTpl - undefined
+[2016-10-15 18:27:01.861] [INFO] getTpl - undefined
+[2016-10-15 18:27:01.866] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24193 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:27:24.836] [INFO] getTpl - undefined
+[2016-10-15 18:27:24.837] [INFO] getTpl - undefined
+[2016-10-15 18:27:24.846] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24191 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:27:42.883] [INFO] getTpl - undefined
+[2016-10-15 18:27:42.884] [INFO] getTpl - undefined
+[2016-10-15 18:27:42.889] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24191 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:29:33.470] [INFO] getTpl - undefined
+[2016-10-15 18:29:33.470] [INFO] getTpl - undefined
+[2016-10-15 18:29:33.475] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24245 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:29:39.804] [INFO] getTpl - undefined
+[2016-10-15 18:29:39.805] [INFO] getTpl - undefined
+[2016-10-15 18:29:39.810] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24245 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:30:37.918] [INFO] getTpl - undefined
+[2016-10-15 18:30:37.919] [INFO] getTpl - undefined
+[2016-10-15 18:30:37.923] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24243 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:31:59.181] [INFO] getTpl - undefined
+[2016-10-15 18:31:59.182] [INFO] getTpl - undefined
+[2016-10-15 18:31:59.187] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24247 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:32:18.236] [INFO] getTpl - undefined
+[2016-10-15 18:32:18.237] [INFO] getTpl - undefined
+[2016-10-15 18:32:18.241] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24258 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:33:54.769] [INFO] getTpl - undefined
+[2016-10-15 18:33:54.769] [INFO] getTpl - undefined
+[2016-10-15 18:33:54.777] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24317 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:38:29.664] [INFO] getTpl - undefined
+[2016-10-15 18:38:29.664] [INFO] getTpl - undefined
+[2016-10-15 18:38:29.669] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 29396 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:42:36.527] [INFO] getTpl - undefined
+[2016-10-15 18:42:36.528] [INFO] getTpl - undefined
+[2016-10-15 18:42:36.534] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 25818 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:43:22.983] [INFO] getTpl - undefined
+[2016-10-15 18:43:22.984] [INFO] getTpl - undefined
+[2016-10-15 18:43:22.990] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 25808 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:44:03.621] [INFO] getTpl - undefined
+[2016-10-15 18:44:03.622] [INFO] getTpl - undefined
+[2016-10-15 18:44:03.626] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 500 1148 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:44:11.790] [INFO] getTpl - undefined
+[2016-10-15 18:44:11.790] [INFO] getTpl - undefined
+[2016-10-15 18:44:11.794] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 25639 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:45:41.854] [INFO] getTpl - undefined
+[2016-10-15 18:45:41.854] [INFO] getTpl - undefined
+[2016-10-15 18:45:41.859] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 25291 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 18:47:31.809] [INFO] getTpl - undefined
+[2016-10-15 18:47:31.809] [INFO] getTpl - undefined
+[2016-10-15 18:47:31.814] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 25291 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:12:07.304] [INFO] getTpl - undefined
+[2016-10-15 19:12:07.305] [INFO] getTpl - undefined
+[2016-10-15 19:12:07.311] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 28870 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:13:25.751] [INFO] getTpl - undefined
+[2016-10-15 19:13:25.751] [INFO] getTpl - undefined
+[2016-10-15 19:13:25.757] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 25882 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:23:21.023] [INFO] getTpl - undefined
+[2016-10-15 19:23:21.023] [INFO] getTpl - undefined
+[2016-10-15 19:23:21.027] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24447 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:23:35.848] [INFO] getTpl - undefined
+[2016-10-15 19:23:35.849] [INFO] getTpl - undefined
+[2016-10-15 19:23:35.854] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24446 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:25:24.008] [INFO] getTpl - undefined
+[2016-10-15 19:25:24.008] [INFO] getTpl - undefined
+[2016-10-15 19:25:24.018] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24446 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:25:35.673] [INFO] getTpl - undefined
+[2016-10-15 19:25:35.674] [INFO] getTpl - undefined
+[2016-10-15 19:25:35.679] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24446 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:26:38.065] [INFO] getTpl - undefined
+[2016-10-15 19:26:38.065] [INFO] getTpl - undefined
+[2016-10-15 19:26:38.071] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24453 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:27:28.935] [INFO] getTpl - undefined
+[2016-10-15 19:27:28.936] [INFO] getTpl - undefined
+[2016-10-15 19:27:28.941] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24430 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:28:33.439] [INFO] getTpl - undefined
+[2016-10-15 19:28:33.443] [INFO] getTpl - undefined
+[2016-10-15 19:28:33.449] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24432 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:30:46.538] [INFO] getTpl - undefined
+[2016-10-15 19:30:46.538] [INFO] getTpl - undefined
+[2016-10-15 19:30:46.543] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24420 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:32:49.992] [INFO] getTpl - undefined
+[2016-10-15 19:32:49.993] [INFO] getTpl - undefined
+[2016-10-15 19:32:49.998] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 24429 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:36:20.497] [INFO] getTpl - undefined
+[2016-10-15 19:36:20.498] [INFO] getTpl - undefined
+[2016-10-15 19:36:20.503] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21874 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:36:20.514] [INFO] app - ::1 - - "GET /javascript/tpl/base.js HTTP/1.1" 404 1016 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:36:48.375] [INFO] getTpl - undefined
+[2016-10-15 19:36:48.375] [INFO] getTpl - undefined
+[2016-10-15 19:36:48.380] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21876 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:36:48.395] [INFO] app - ::1 - - "GET /javascript/tpl/base.js HTTP/1.1" 404 1016 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:37:12.329] [INFO] getTpl - undefined
+[2016-10-15 19:37:12.329] [INFO] getTpl - undefined
+[2016-10-15 19:37:12.334] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21875 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:37:12.355] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2303 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:38:54.090] [INFO] getTpl - undefined
+[2016-10-15 19:38:54.090] [INFO] getTpl - undefined
+[2016-10-15 19:38:54.095] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21875 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:38:54.118] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2316 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:40:38.392] [INFO] getTpl - undefined
+[2016-10-15 19:40:38.392] [INFO] getTpl - undefined
+[2016-10-15 19:40:38.397] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21875 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:40:38.419] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2422 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:41:32.291] [INFO] getTpl - undefined
+[2016-10-15 19:41:32.291] [INFO] getTpl - undefined
+[2016-10-15 19:41:32.297] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21873 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:41:32.312] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2422 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:43:53.858] [INFO] getTpl - undefined
+[2016-10-15 19:43:53.858] [INFO] getTpl - undefined
+[2016-10-15 19:43:53.862] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:43:53.888] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2422 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:44:22.383] [INFO] getTpl - undefined
+[2016-10-15 19:44:22.383] [INFO] getTpl - undefined
+[2016-10-15 19:44:22.387] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:44:22.392] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2422 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:44:25.465] [INFO] getTpl - undefined
+[2016-10-15 19:44:25.465] [INFO] getTpl - undefined
+[2016-10-15 19:44:25.469] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:44:25.484] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:44:26.869] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:47:50.759] [INFO] getTpl - undefined
+[2016-10-15 19:47:50.759] [INFO] getTpl - undefined
+[2016-10-15 19:47:50.763] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:47:50.784] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:49:13.868] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-15 19:49:14.036] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-15 19:49:14.038] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-15 19:49:14.039] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-15 19:49:14.039] [INFO] route - 路由加载完成
+[2016-10-15 19:49:18.587] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+[2016-10-15 19:49:18.591] [INFO] getTpl - undefined
+[2016-10-15 19:49:18.592] [INFO] getTpl - undefined
+[2016-10-15 19:49:18.600] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:49:18.607] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:49:41.232] [INFO] getTpl - undefined
+[2016-10-15 19:49:41.232] [INFO] getTpl - undefined
+[2016-10-15 19:49:41.238] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:49:41.258] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2422 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:51:35.996] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:53:37.340] [INFO] getTpl - undefined
+[2016-10-15 19:53:37.340] [INFO] getTpl - undefined
+[2016-10-15 19:53:37.346] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:53:37.416] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:53:42.872] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:53:50.452] [INFO] getTpl - undefined
+[2016-10-15 19:53:50.452] [INFO] getTpl - undefined
+[2016-10-15 19:53:50.456] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:53:50.475] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2422 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:54:48.285] [INFO] getTpl - undefined
+[2016-10-15 19:54:48.286] [INFO] getTpl - undefined
+[2016-10-15 19:54:48.294] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21920 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:54:48.317] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2442 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:54:52.959] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:56:10.181] [INFO] getTpl - undefined
+[2016-10-15 19:56:10.181] [INFO] getTpl - undefined
+[2016-10-15 19:56:10.187] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21986 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:56:10.202] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2443 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:56:24.032] [INFO] getTpl - undefined
+[2016-10-15 19:56:24.032] [INFO] getTpl - undefined
+[2016-10-15 19:56:24.038] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 21986 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:56:24.043] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2443 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:56:25.185] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:56:35.598] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:57:50.339] [INFO] getTpl - undefined
+[2016-10-15 19:57:50.340] [INFO] getTpl - undefined
+[2016-10-15 19:57:50.345] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22052 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:57:50.365] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2467 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 19:58:01.683] [INFO] getTpl - undefined
+[2016-10-15 19:58:01.684] [INFO] getTpl - undefined
+[2016-10-15 19:58:01.689] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22052 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:58:01.701] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2467 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:58:03.037] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:58:09.565] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 19:58:52.042] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:02:25.074] [INFO] getTpl - undefined
+[2016-10-15 20:02:25.074] [INFO] getTpl - undefined
+[2016-10-15 20:02:25.078] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:02:25.094] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2548 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:02:39.572] [INFO] getTpl - undefined
+[2016-10-15 20:02:39.572] [INFO] getTpl - undefined
+[2016-10-15 20:02:39.577] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22052 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:02:39.584] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2548 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:02:42.806] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:03:57.598] [INFO] getTpl - undefined
+[2016-10-15 20:03:57.598] [INFO] getTpl - undefined
+[2016-10-15 20:03:57.603] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22052 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:03:57.617] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2550 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:04:00.557] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:06:28.884] [INFO] getTpl - undefined
+[2016-10-15 20:06:28.884] [INFO] getTpl - undefined
+[2016-10-15 20:06:28.890] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22120 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:06:28.905] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2593 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:06:40.721] [INFO] getTpl - undefined
+[2016-10-15 20:06:40.722] [INFO] getTpl - undefined
+[2016-10-15 20:06:40.727] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22120 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:06:40.739] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2593 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:06:48.033] [INFO] getTpl - undefined
+[2016-10-15 20:06:48.033] [INFO] getTpl - undefined
+[2016-10-15 20:06:48.038] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22121 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:06:48.049] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2593 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:07:24.345] [INFO] getTpl - undefined
+[2016-10-15 20:07:24.346] [INFO] getTpl - undefined
+[2016-10-15 20:07:24.352] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22124 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:07:24.367] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2593 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:09:38.738] [INFO] getTpl - undefined
+[2016-10-15 20:09:38.738] [INFO] getTpl - undefined
+[2016-10-15 20:09:38.743] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22048 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:09:38.755] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2550 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:10:21.273] [INFO] getTpl - undefined
+[2016-10-15 20:10:21.273] [INFO] getTpl - undefined
+[2016-10-15 20:10:21.282] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22048 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:10:21.287] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2550 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:10:51.525] [INFO] getTpl - undefined
+[2016-10-15 20:10:51.526] [INFO] getTpl - undefined
+[2016-10-15 20:10:51.531] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22048 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:10:51.554] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:11:36.195] [INFO] tt - 请求的参数为：{"url":"http://222.17.107.125:8787/wjjreport/menu/getMenu.do","form":{"testFiled1":"123","testFiled2":"tss"},"cookie":{}}
+[2016-10-15 20:11:36.195] [INFO] HttpRequest - { url: 'http://222.17.107.125:8787/wjjreport/menu/getMenu.do',
+  cookie: {},
+  form: { testFiled1: '123', testFiled2: 'tss' } }
+[2016-10-15 20:11:57.216] [ERROR] HttpRequest - POST ERROR:{"success":false,"msg":{"code":"ETIMEDOUT","errno":"ETIMEDOUT","syscall":"connect","address":"222.17.107.125","port":8787},"data":{}}
+[2016-10-15 20:11:57.217] [INFO] app - ::1 - - "GET /tt HTTP/1.1" 200 527 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:11:57.229] [INFO] app - ::1 - - "GET /stylesheets/style.css HTTP/1.1" 200 104 "http://localhost:3000/tt" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:12:00.931] [INFO] app - ::1 - - "POST /tpls HTTP/1.1" 404 1016 "http://localhost:3000/tt" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:12:41.379] [INFO] app - ::1 - - "GET /tpls HTTP/1.1" 303 43 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:12:41.383] [INFO] getTpl - undefined
+[2016-10-15 20:12:41.384] [INFO] getTpl - undefined
+[2016-10-15 20:12:41.389] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:12:41.399] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:13:22.274] [INFO] getTpl - undefined
+[2016-10-15 20:13:22.274] [INFO] getTpl - undefined
+[2016-10-15 20:13:22.280] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:13:22.289] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:13:55.386] [INFO] getTpl - undefined
+[2016-10-15 20:13:55.386] [INFO] getTpl - undefined
+[2016-10-15 20:13:55.391] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:13:55.496] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:14:06.459] [INFO] app - ::1 - - "GET /tpls?TplType=13 HTTP/1.1" 303 65 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:14:06.466] [INFO] getTpl - undefined
+[2016-10-15 20:14:06.466] [INFO] getTpl - undefined
+[2016-10-15 20:14:06.472] [INFO] app - ::1 - - "GET /tpls/?TplType=13 HTTP/1.1" 200 22048 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:14:06.486] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/?TplType=13" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:14:15.098] [INFO] getTpl - undefined
+[2016-10-15 20:14:15.098] [INFO] getTpl - undefined
+[2016-10-15 20:14:15.104] [INFO] app - ::1 - - "GET /tpls/?TplType=13 HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:14:15.119] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/?TplType=13" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:14:34.021] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-15 20:14:34.195] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-15 20:14:34.197] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-15 20:14:34.198] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-15 20:14:34.198] [INFO] route - 路由加载完成
+[2016-10-15 20:14:43.174] [INFO] getTpl - undefined
+[2016-10-15 20:14:43.175] [INFO] getTpl - undefined
+[2016-10-15 20:14:43.192] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 200 22048 "" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:14:43.200] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/" "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)"
+[2016-10-15 20:15:10.028] [INFO] getTpl - undefined
+[2016-10-15 20:15:10.028] [INFO] getTpl - undefined
+[2016-10-15 20:15:10.036] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:10.042] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:10.371] [INFO] app - ::1 - - "GET /tpls HTTP/1.1" 303 43 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:10.374] [INFO] getTpl - undefined
+[2016-10-15 20:15:10.375] [INFO] getTpl - undefined
+[2016-10-15 20:15:10.382] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:10.400] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:14.734] [INFO] getTpl - undefined
+[2016-10-15 20:15:14.735] [INFO] getTpl - undefined
+[2016-10-15 20:15:14.740] [INFO] app - ::1 - - "GET /tpls/?TplType=13 HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:14.750] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/?TplType=13" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:17.185] [INFO] app - ::1 - - "GET /tpls?TplType=13 HTTP/1.1" 303 65 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:17.189] [INFO] getTpl - undefined
+[2016-10-15 20:15:17.189] [INFO] getTpl - undefined
+[2016-10-15 20:15:17.198] [INFO] app - ::1 - - "GET /tpls/?TplType=13 HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:17.215] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/?TplType=13" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:23.673] [INFO] app - ::1 - - "GET /tpls?TplType=13 HTTP/1.1" 303 65 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:23.676] [INFO] getTpl - undefined
+[2016-10-15 20:15:23.676] [INFO] getTpl - undefined
+[2016-10-15 20:15:23.681] [INFO] app - ::1 - - "GET /tpls/?TplType=13 HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:23.694] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 200 2552 "http://localhost:3000/tpls/?TplType=13" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:30.140] [INFO] app - ::1 - - "GET /tpls?TplType=13 HTTP/1.1" 303 65 "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:30.144] [INFO] getTpl - undefined
+[2016-10-15 20:15:30.144] [INFO] getTpl - undefined
+[2016-10-15 20:15:30.148] [INFO] app - ::1 - - "GET /tpls/?TplType=13 HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-15 20:15:30.169] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/?TplType=13" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"

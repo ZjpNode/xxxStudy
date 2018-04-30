@@ -1,0 +1,5 @@
+{
+  "ykt_ServerUrl":"http://127.0.0.1:8080",
+  "ykt_def_getTplDataUrl":"/yikatong/detail/getEjsTpl.do",
+  "ykt_def_getEjsUrl":"/yikatong/detail/getEjsUrl.do"
+}

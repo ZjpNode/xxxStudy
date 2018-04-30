@@ -1,0 +1,27 @@
+[2016-10-19 09:38:00.534] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-19 09:38:01.503] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-19 09:38:01.516] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-19 09:38:01.516] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-19 09:38:01.516] [INFO] route - 路由加载完成
+[2016-10-19 09:38:18.139] [INFO] index - 信息
+[2016-10-19 09:38:18.183] [ERROR] index - 错误
+[2016-10-19 09:38:18.184] [WARN] index - 警告
+[2016-10-19 09:38:18.184] [FATAL] index - 致命的
+[2016-10-19 09:38:18.186] [INFO] app - ::1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 09:38:18.201] [INFO] app - ::1 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 09:38:18.255] [INFO] app - ::1 - - "GET /favicon.ico HTTP/1.1" 404 1016 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 09:38:19.981] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 09:38:19.993] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 19:01:42.537] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\index
+[2016-10-19 19:01:43.505] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\test\tt
+[2016-10-19 19:01:43.518] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\tpls\getTpl
+[2016-10-19 19:01:43.519] [INFO] route - 加载路由：e:\IdeaProjects\dynameicF_V1.0.0\routes\users
+[2016-10-19 19:01:43.519] [INFO] route - 路由加载完成
+[2016-10-19 19:02:02.642] [INFO] index - 信息
+[2016-10-19 19:02:02.686] [ERROR] index - 错误
+[2016-10-19 19:02:02.686] [WARN] index - 警告
+[2016-10-19 19:02:02.686] [FATAL] index - 致命的
+[2016-10-19 19:02:02.688] [INFO] app - ::1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 19:02:02.696] [INFO] app - ::1 - - "GET /stylesheets/style.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 19:02:06.444] [INFO] app - ::1 - - "GET /tpls/ HTTP/1.1" 304 - "" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+[2016-10-19 19:02:06.512] [INFO] app - ::1 - - "GET /javascripts/tpl/base.js HTTP/1.1" 304 - "http://localhost:3000/tpls/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"

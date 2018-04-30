@@ -1,0 +1,1177 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>健康体检表</title>
+    <!-[if lt IE9]>
+    <script>
+        if (!document.addEventListener) {
+            // IE6~IE8
+            document.write('<script src="./ieBetter-min.js"><\/script>');
+            //document.namespaces.add("v","urn:schemas-microsoft-com:vml","#default#VML");
+        }
+    </script>
+    <script src="./html5shiv.min.js"></script>
+    <script src="./excanvas.js"></script>
+    <![endif]->
+</head>
+<style>
+    #a {
+    border: 1px;
+    margin: auto;
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-all;
+}
+
+.page {
+    float: left;
+    height: 25px;
+    width: 100px;
+    text-align: center;
+    background-color: gainsboro;
+    line-height: 25px;
+    margin-left: 3px;
+}
+
+.page:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.table0 {
+    width: 100%;
+}
+
+.table3 {
+    margin-top: -2px;
+    width: 100%;
+}
+
+.table7 {
+    width: 100%;
+    border: none;
+}
+
+p {
+    page-break-after: always;
+}</style>
+<style type="text/css" media=print>    .noprint {
+    display: none
+}</style>
+
+<body style="font: 14px ‘宋体’, Helvetica, Arial, sans-serif;padding: 50px;"><!--startprint1-->
+<div id="ToolArea" class="noprint" style="align-content: center;position: absolute;">
+    <div class="page" onclick="prints()">打印</div>
+</div>
+<br><br>
+
+<div id="a">
+    <div class="title">
+        <center><p style="font-size:24px;">健康体检表</p></center>
+    </div>
+    <p align="left"><span style="font-size:15px;">姓名：姚土榕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        编号：    </span>
+    </p>
+    <table align="center" border="1" cellpadding="0" cellspacing="0" style="TEXT-ALIGN:center;font-size:15px"
+           class="table0" datapagesize="">
+        <tbody>
+        <tr>
+            <td width="10%" height="35">体检日期</td>
+            <td colspan="4">2016-03-20</td>
+            <td colspan="2">责任医生</td>
+            <td colspan="7">刘智锋</td>
+        </tr>
+        <tr>
+            <td height="35">内容</td>
+            <td colspan="11"><p style="margin-left:16pt;">检&nbsp;查&nbsp;项&nbsp;目</p></td>
+        </tr>
+        <tr>
+            <td height="75">症状</td>
+            <td colspan="11" style="TEXT-ALIGN:left;line-height: 1.4em">                &nbsp;<input name="SYMPTOM"
+                                                                                                     type="checkbox"
+                                                                                                     value="1"/>无症状&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="2"/>头痛&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                    value="3"/>头晕&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="4"/>心悸&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                    value="5"/>胸闷&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="6"/>胸痛&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                    value="7"/>慢性咳嗽&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="8"/>咳痰&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                    value="9"/>呼吸困难&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="10"/>多饮<br> &nbsp;<input name="SYMPTOM" type="checkbox"
+                                                                                   value="11"/>多尿&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="12"/>体重下降&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                       value="13"/>乏力&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="14"/>关节肿痛&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                       value="15"/>视力模糊&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="16"/>手脚麻木&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                       value="17"/>尿急&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="18"/>尿痛&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                     value="19"/>便秘&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="20"/>腹泻<br> &nbsp;<input name="SYMPTOM" type="checkbox"
+                                                                                   value="21"/>恶心呕吐&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="22"/>眼花&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                     value="23"/>耳鸣&nbsp;&nbsp;<input
+                    name="SYMPTOM" type="checkbox" value="24"/>乳房胀痛&nbsp;&nbsp; <input name="SYMPTOM" type="checkbox"
+                                                                                       value="25"/>其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="9" style="TEXT-ALIGN:center">一般状况</td>
+            <td colspan="2" height="35" style="TEXT-ALIGN:center" width="15%">体温</td>
+            <td style="TEXT-ALIGN:center" width="12%">36.5℃</td>
+            <td style="TEXT-ALIGN:center" height="35" width="15%">脉率</td>
+            <td colspan="7" style="TEXT-ALIGN:center">88次/分钟</td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="2" style="TEXT-ALIGN:center" height="35">呼吸频率</td>
+            <td rowspan="2" style="TEXT-ALIGN:center">20次/分钟</td>
+            <td rowspan="2" style="TEXT-ALIGN:center" height="35">血压</td>
+            <td height="35" style="TEXT-ALIGN:center" colspan="2">左侧收缩压</td>
+            <td style="TEXT-ALIGN:center" colspan="2">133mmHg</td>
+            <td style="TEXT-ALIGN:center" height="35" colspan="2">左侧舒张压</td>
+            <td colspan="4" style="TEXT-ALIGN:center">78mmHg</td>
+        </tr>
+        <tr>
+            <td height="35" style="TEXT-ALIGN:center" colspan="2">右侧收缩压</td>
+            <td style="TEXT-ALIGN:center" colspan="2">133mmHg</td>
+            <td style="TEXT-ALIGN:center" colspan="2">右侧舒张压</td>
+            <td colspan="4" style="TEXT-ALIGN:center">88mmHg</td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35" style="TEXT-ALIGN:center">身高</td>
+            <td style="TEXT-ALIGN:center">173cm</td>
+            <td style="TEXT-ALIGN:center">体重</td>
+            <td colspan="7" style="TEXT-ALIGN:center">65kg</td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35" style="TEXT-ALIGN:center">腰围</td>
+            <td style="TEXT-ALIGN:center">85cm</td>
+            <td style="TEXT-ALIGN:center">体质指数（BMI）</td>
+            <td colspan="7" style="TEXT-ALIGN:center">21.72kg/m2</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="TEXT-ALIGN:center" height="45">老年人健康状态<br>自我评估</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                    &nbsp;<input type="radio" name="SELF_ASSESSMENT"
+                                                                                     value="1">满意 <input type="radio"
+                                                                                                         name="SELF_ASSESSMENT"
+                                                                                                         value="2">基本满意
+                <input type="radio" name="SELF_ASSESSMENT" value="3">说不清楚 <input type="radio" name="SELF_ASSESSMENT"
+                                                                                 value="4">不太满意 <input type="radio"
+                                                                                                       name="SELF_ASSESSMENT"
+                                                                                                       value="5">不满意
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="TEXT-ALIGN:center" height="65"> 老年人生活自理能力<br>自我评估</td>
+            <td colspan="9" style="TEXT-ALIGN:left;line-height: 1.4em">                    &nbsp;<input type="radio"
+                                                                                                        name="SELF_CARE_ABILITY"
+                                                                                                        value="1">可自理（0～3分）
+                <input type="radio" name="SELF_CARE_ABILITY" value="2">轻度依赖（4～8分） <input type="radio"
+                                                                                         name="SELF_CARE_ABILITY"
+                                                                                         value="3">中度依赖（9～18分)<br>
+                &nbsp;<input type="radio" name="SELF_CARE_ABILITY" value="4">不能自理（≥19分）
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="TEXT-ALIGN:center" height="45">老年人认知功能</td>
+            <td colspan="2" style="TEXT-ALIGN:left">                    &nbsp;<input type="radio"
+                                                                                     name="COGNITIVE_FUNCTION"
+                                                                                     value="1">粗筛阴性 <input type="radio"
+                                                                                                           name="COGNITIVE_FUNCTION"
+                                                                                                           value="2">粗筛阳性
+            </td>
+            <td colspan="3" style="TEXT-ALIGN:center" height="45">简易智力状态检查，总分</td>
+            <td colspan="5" style="TEXT-ALIGN:center"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="TEXT-ALIGN:center" height="35">老年人情感状态</td>
+            <td colspan="2" style="TEXT-ALIGN:left">                    &nbsp;<input type="radio" name="EMOTION_STATE"
+                                                                                     value="1">粗筛阴性 <input type="radio"
+                                                                                                           name="EMOTION_STATE"
+                                                                                                           value="2">粗筛阳性
+            </td>
+            <td style="TEXT-ALIGN:center" height="35" colspan="3">老年人抑郁评分检查，总分</td>
+            <td colspan="5" style="TEXT-ALIGN:center"></td>
+        </tr>
+        <tr>
+            <td rowspan="19">生活方式</td>
+            <td colspan="2" height="35" rowspan="3">体育锻炼</td>
+            <td height="35">锻炼频率</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="EXERCISE_FREQUENCY"
+                                                                                 value="1">每天 <input type="radio"
+                                                                                                     name="EXERCISE_FREQUENCY"
+                                                                                                     value="2">每周一次以上
+                <input type="radio" name="EXERCISE_FREQUENCY" value="3">偶尔 <input type="radio" name="EXERCISE_FREQUENCY"
+                                                                                  value="4">不锻炼
+            </td>
+        </tr>
+        <tr>
+            <td height="35">每次锻炼时间</td>
+            <td></td>
+            <td colspan="3">坚持锻炼时间</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="35">锻炼方式</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">饮食习惯</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="checkbox" name="DIET_HABITS"
+                                                                                 value="1">荤素均衡 <input type="checkbox"
+                                                                                                       name="DIET_HABITS"
+                                                                                                       value="2">荤食为主
+                <input type="checkbox" name="DIET_HABITS" value="3">素食为主 <input type="checkbox" name="DIET_HABITS"
+                                                                                value="4">嗜盐 <input type="checkbox"
+                                                                                                    name="DIET_HABITS"
+                                                                                                    value="5">嗜油 <input
+                        type="checkbox" name="DIET_HABITS" value="6">嗜糖
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35" rowspan="3">吸烟情况</td>
+            <td height="35">吸烟状况</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="SMOKING_STATUS"
+                                                                                 value="1">从不吸烟 <input type="radio"
+                                                                                                       name="SMOKING_STATUS"
+                                                                                                       value="2">已戒烟
+                <input type="radio" name="SMOKING_STATUS" value="3">吸烟
+            </td>
+        </tr>
+        <tr>
+            <td height="35">日吸烟量</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td height="35">开始吸烟年龄</td>
+            <td></td>
+            <td colspan="3">戒烟年龄</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35" rowspan="5">饮酒情况</td>
+            <td height="35">饮酒频率</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="DRINK_FREQUENCY"
+                                                                                 value="1">从不 <input type="radio"
+                                                                                                     name="DRINK_FREQUENCY"
+                                                                                                     value="2">偶尔 <input
+                    type="radio" name="DRINK_FREQUENCY" value="3">经常 <input type="radio" name="DRINK_FREQUENCY"
+                                                                            value="4">每天
+            </td>
+        </tr>
+        <tr>
+            <td height="35">日饮酒量</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td height="35">是否戒酒</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="IS_QUIT_DRINK"
+                                                                                 value="2">未戒酒 <input type="radio"
+                                                                                                      name="IS_QUIT_DRINK"
+                                                                                                      value="1">已戒酒&nbsp;&nbsp;&nbsp;
+                戒酒年龄：
+            </td>
+        </tr>
+        <tr>
+            <td height="35">开始饮酒年龄</td>
+            <td></td>
+            <td colspan="3">近一年内是否曾醉酒</td>
+            <td colspan="6" style="TEXT-ALIGN:left">                &nbsp;<input name="IS_INEBRIATION" type="radio"
+                                                                                 value="1"/>是 <input
+                    name="IS_INEBRIATION" type="radio" value="2"/>否
+            </td>
+        </tr>
+        <tr>
+            <td height="35">饮酒种类</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="checkbox" name="WINE_TYPES"
+                                                                                 value="1">白酒 <input type="checkbox"
+                                                                                                     name="WINE_TYPES"
+                                                                                                     value="2">啤酒 <input
+                    type="checkbox" name="WINE_TYPES" value="3">红酒 <input type="checkbox" name="WINE_TYPES" value="4">黄酒
+                <input type="checkbox" name="WINE_TYPES" value="5">其他&nbsp; &nbsp;                          </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35" rowspan="7">职业病危害因素<br>接触史</td>
+            <td height="35" colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="radio"
+                                                                                             name="CAREER_HAZARD_EXPOSE_CD"
+                                                                                             value="1">无 <input
+                    type="radio" name="CAREER_HAZARD_EXPOSE_CD" value="2">有
+            </td>
+        </tr>
+        <tr>
+            <td height="35">工种</td>
+            <td colspan="3"></td>
+            <td colspan="2">从业时间
+            <td colspan="5"></td>
+        </tr>
+        <tr>
+            <td rowspan="5">毒物种类</td>
+            <td height="65">粉尘</td>
+            <td colspan="2"></td>
+            <td colspan="2">防护措施</td>
+            <td colspan="5" style="line-height: 1.4em;TEXT-ALIGN:left">                &nbsp;<input
+                    name="IS_DUST_PROTECTION" type="radio" value="1"/>无<br> &nbsp;<input name="IS_DUST_PROTECTION"
+                                                                                         type="radio" value="2"/>有&nbsp;&nbsp;
+            </td>
+        </tr>
+        <p>
+            <tr>
+                <td height="65">放射物质</td>
+                <td colspan="2"></td>
+                <td colspan="2">防护措施</td>
+                <td colspan="5" style="line-height: 1.4em;TEXT-ALIGN:left">                &nbsp;<input
+                        name="IS_RAY_PROTECTION" type="radio" value="1"/>无<br> &nbsp;<input name="IS_RAY_PROTECTION"
+                                                                                            type="radio" value="2"/>有&nbsp;&nbsp;
+                </td>
+            </tr>
+        </p>
+        <tr>
+            <td height="65">物理因素</td>
+            <td colspan="2"></td>
+            <td colspan="2">防护措施</td>
+            <td colspan="5" style="line-height: 1.4em;TEXT-ALIGN:left">                &nbsp;<input
+                    name="IS_PHYSICAL_PROTECTION" type="radio" value="1"/>无<br> &nbsp;<input
+                    name="IS_PHYSICAL_PROTECTION" type="radio" value="2"/>有&nbsp;&nbsp;                            </td>
+        </tr>
+        <tr>
+            <td height="65">化学物质</td>
+            <td colspan="2"></td>
+            <td colspan="2">防护措施</td>
+            <td colspan="5" style="line-height: 1.4em;TEXT-ALIGN:left">                &nbsp;<input
+                    name="IS_CHEMICALS_PROTECTION" type="radio" value="1"/>无<br> &nbsp;<input
+                    name="IS_CHEMICALS_PROTECTION" type="radio" value="2"/>有&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="65">其他</td>
+            <td colspan="2"></td>
+            <td colspan="2">防护措施</td>
+            <td colspan="5" style="TEXT-ALIGN:left;line-height: 1.4em">                &nbsp;<input
+                    name="IS_OTHER_PROTECTION" type="radio" value="1"/>无<br> &nbsp;<input name="IS_OTHER_PROTECTION"
+                                                                                          type="radio" value="2"/>有&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="6">脏器功能</td>
+            <td colspan="2" rowspan="3">口腔</td>
+            <td height="35">口唇</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio"
+                                                                                 name="LIPS_APPEARANCE_EXAM" value="1">红润
+                <input type="radio" name="LIPS_APPEARANCE_EXAM" value="2">苍白 <input type="radio"
+                                                                                    name="LIPS_APPEARANCE_EXAM"
+                                                                                    value="3">发绀 <input type="radio"
+                                                                                                        name="LIPS_APPEARANCE_EXAM"
+                                                                                                        value="4">皲裂
+                <input type="radio" name="LIPS_APPEARANCE_EXAM" value="5">疱疹
+            </td>
+        </tr>
+        <tr>
+            <td height="35">齿列</td>
+            <td colspan="8">
+                <table align="center" cellpadding="0" cellspacing="0" style="TEXT-ALIGN:center;font-size:15px;"
+                       class="table3">
+                    <tbody>
+                    <tr>
+                        <td rowspan="2" style="TEXT-ALIGN:left" width="10%"><input name="DENTITION" type="checkbox"
+                                                                                   value="1"/>正常
+                        </td>
+                        <td rowspan="2" width="10%" style="TEXT-ALIGN:left"><input name="DENTITION" type="checkbox"
+                                                                                   value="2"/>缺齿
+                        </td>
+                        <td style="border-bottom:1px solid #000;border-right:1px solid #000;width:8%"></td>
+                        <td style="border-bottom:1px solid #000;border-left:1px solid #000;width:8%"></td>
+                        <td rowspan="2" style="TEXT-ALIGN:left" width="10%"><input name="DENTITION" type="checkbox"
+                                                                                   value="3"/>龋齿
+                        </td>
+                        <td style="border-bottom:1px solid #000;border-right:1px solid #000;width:8%"></td>
+                        <td style="border-bottom:1px solid #000;border-left:1px solid #000;width:8%"></td>
+                        <td rowspan="2" style="TEXT-ALIGN:left" width="15%"><input name="DENTITION" type="checkbox"
+                                                                                   value="4">义齿(假牙)
+                        </td>
+                        <td style="border-bottom:1px solid #000;border-right:1px solid #000;width:8%"></td>
+                        <td style="border-bottom:1px solid #000;border-left:1px solid #000;width:8%"></td>
+                    </tr>
+                    <tr>
+                        <td style="border-top:1px solid #000;border-right:1px solid #000;width:8%"></td>
+                        <td style="border-top:1px solid #000;border-left:1px solid #000;width:8%"></td>
+                        <td style="border-top:1px solid #000;border-right:1px solid #000;width:8%"></td>
+                        <td style="border-top:1px solid #000;border-left:1px solid #000;width:8%"></td>
+                        <td style="border-top:1px solid #000;border-right:1px solid #000;width:8%"></td>
+                        <td style="border-top:1px solid #000;border-left:1px solid #000;width:8%"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="35">咽部</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="THROAT_EXAM"
+                                                                                 value="1">无充血 <input type="radio"
+                                                                                                      name="THROAT_EXAM"
+                                                                                                      value="2">充血
+                <input type="radio" name="THROAT_EXAM" value="3">淋巴滤泡增生
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">视力</td>
+            <td>左眼</td>
+            <td>4</td>
+            <td width="10%">右眼</td>
+            <td width="5%">4</td>
+            <td width="7%">矫正视力</td>
+            <td width="7%">左眼</td>
+            <td width="5%"></td>
+            <td width="7%">右眼</td>
+            <td width="10%"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">听力</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="LISTENING_EXAM"
+                                                                                 value="1">听见 <input type="radio"
+                                                                                                     name="LISTENING_EXAM"
+                                                                                                     value="2">听不清或无法听见
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">运动功能</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="SPORTS_ABILITY"
+                                                                                 value="1">可顺利完成 <input type="radio"
+                                                                                                        name="SPORTS_ABILITY"
+                                                                                                        value="2">无法独立完成其中任何一个动作
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="21">查体</td>
+            <td height="35" colspan="2">眼底</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="EYE_GROUND_EXAM"
+                                                                                  value="1">正常 <input type="radio"
+                                                                                                      name="EYE_GROUND_EXAM"
+                                                                                                      value="2">异常&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35" colspan="2">皮肤</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="SKIN_EXAM"
+                                                                                  value="1">正常 <input type="radio"
+                                                                                                      name="SKIN_EXAM"
+                                                                                                      value="2">潮红
+                <input type="radio" name="SKIN_EXAM" value="3">苍白 <input type="radio" name="SKIN_EXAM" value="4">发绀
+                <input type="radio" name="SKIN_EXAM" value="5">黄染 <input type="radio" name="SKIN_EXAM" value="6">色素沉着
+                <input type="radio" name="SKIN_EXAM" value="7">其他&nbsp;&nbsp;                            </td>
+        </tr>
+        <tr>
+            <td height="35" colspan="2">巩膜</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="SCLERA_EXAM"
+                                                                                  value="1">正常 <input type="radio"
+                                                                                                      name="SCLERA_EXAM"
+                                                                                                      value="2">黄染
+                <input type="radio" name="SCLERA_EXAM" value="3">充血 <input type="radio" name="SCLERA_EXAM" value="4">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35" colspan="2">淋巴结</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="LYMPH_EXAM"
+                                                                                  value="1">未触及 <input type="radio"
+                                                                                                       name="LYMPH_EXAM"
+                                                                                                       value="2">锁骨上
+                <input type="radio" name="LYMPH_EXAM" value="3">腋窝 <input type="radio" name="LYMPH_EXAM" value="4">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35" rowspan="2" colspan="2">肺</td>
+            <td height="35">桶状胸</td>
+            <td style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_BARREL_CHEST" value="1">是
+                <input type="radio" name="IS_BARREL_CHEST" value="2">否
+            </td>
+            <td>呼吸音</td>
+            <td colspan="6" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_BREATH_ABNOMAL"
+                                                                                  value="1">正常 <input type="radio"
+                                                                                                      name="IS_BREATH_ABNOMAL"
+                                                                                                      value="2">异常&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35">罗音</td>
+            <td colspan="8" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_LUNG_ABNOMAL"
+                                                                                  value="1">无 <input type="radio"
+                                                                                                     name="IS_LUNG_ABNOMAL"
+                                                                                                     value="2">干罗音
+                <input type="radio" name="IS_LUNG_ABNOMAL" value="3">湿罗音 <input type="radio" name="IS_LUNG_ABNOMAL"
+                                                                                value="4">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35" rowspan="2" colspan="2">心脏</td>
+            <td height="35">心率</td>
+            <td> 88次/分钟 &nbsp;            </td>
+            <td>心律</td>
+            <td colspan="6" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="HEART_RHYTHM"
+                                                                                  value="1">齐 <input type="radio"
+                                                                                                     name="HEART_RHYTHM"
+                                                                                                     value="2">不齐 <input
+                    type="radio" name="HEART_RHYTHM" value="3">绝对不齐
+            </td>
+        </tr>
+        <tr>
+            <td height="35">杂音</td>
+            <td colspan="8" style="TEXT-ALIGN:left;">                &nbsp;<input name="IS_HEART_MESSY" type="radio"
+                                                                                  value="1"/>无 <input
+                    name="IS_HEART_MESSY" type="radio" value="2"/>有&nbsp;&nbsp;                            </td>
+        </tr>
+        <tr>
+            <td height="35" rowspan="3" colspan="2">腹部</td>
+            <td height="35">压痛</td>
+            <td style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_BELLY_PAIN" value="1">无
+                <input type="radio" name="IS_BELLY_PAIN" value="2">有&nbsp;                            </td>
+            <td>包块</td>
+            <td colspan="6" style="TEXT-ALIGN:left;">
+                &nbsp;<input type="radio" name="IS_BELLY_NUBBY" value="1">无
+                <input type="radio" name="IS_BELLY_NUBBY" value="2">有&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35">肝大</td>
+            <td style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_LIVER_SWELLING" value="1">无
+                <input type="radio" name="IS_LIVER_SWELLING" value="2">有&nbsp;&nbsp;                            </td>
+            <td>脾大</td>
+            <td colspan="6" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_SPLEEN_SWELLING"
+                                                                                  value="1">无 <input type="radio"
+                                                                                                     name="IS_SPLEEN_SWELLING"
+                                                                                                     value="2">有&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35">移动性浊音</td>
+            <td colspan="8" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_BELLY_MESSY"
+                                                                                  value="1">无 <input type="radio"
+                                                                                                     name="IS_BELLY_MESSY"
+                                                                                                     value="2">有&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35" colspan="2">下肢水肿</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="LEGS_EXAM"
+                                                                                  value="1">无 <input type="radio"
+                                                                                                     name="LEGS_EXAM"
+                                                                                                     value="2">单侧 <input
+                    type="radio" name="LEGS_EXAM" value="3">双侧不对称 <input type="radio" name="LEGS_EXAM" value="4">双侧对称
+            </td>
+        </tr>
+        <tr>
+            <td height="35" colspan="2">足背动脉搏动</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="FOOT_PULSE"
+                                                                                  value="1">未触及 <input type="radio"
+                                                                                                       name="FOOT_PULSE"
+                                                                                                       value="2">触及双侧对称
+                <input type="radio" name="FOOT_PULSE" value="3">触及左侧弱或消失 <input type="radio" name="FOOT_PULSE"
+                                                                                value="4">触及右侧弱或消失
+            </td>
+        </tr>
+        <tr>
+            <td height="35" colspan="2">肛门指诊</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="ANUS_EXAM"
+                                                                                  value="1">未及异常 <input type="radio"
+                                                                                                        name="ANUS_EXAM"
+                                                                                                        value="2">触痛
+                <input type="radio" name="ANUS_EXAM" value="3">包块 <input type="radio" name="ANUS_EXAM" value="4">前列腺异常
+                <input type="radio" name="ANUS_EXAM" value="5">其他&nbsp;&nbsp;                            </td>
+        </tr>
+        <tr>
+            <td height="35" colspan="2">乳腺</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="BREAST_EXAM"
+                                                                                  value="1">未见异常 <input type="radio"
+                                                                                                        name="BREAST_EXAM"
+                                                                                                        value="2">乳房切除
+                <input type="radio" name="BREAST_EXAM" value="3">异常泌乳 <input type="radio" name="BREAST_EXAM" value="4">乳腺包块
+                <input type="radio" name="BREAST_EXAM" value="5">其他&nbsp;&nbsp;                            </td>
+        </tr>
+        <tr>
+            <td rowspan="5">妇科</td>
+            <td height="35">外阴</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_VULUA_ABNOMAL"
+                                                                                  value="1">未见异常 <input type="radio"
+                                                                                                        name="IS_VULUA_ABNOMAL"
+                                                                                                        value="2">异常&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35">阴道</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_VAGINA_ABNOMAL"
+                                                                                  value="1">未见异常 <input type="radio"
+                                                                                                        name="IS_VAGINA_ABNOMAL"
+                                                                                                        value="2">异常&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35">宫颈</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_CERVIX_ABNOMAL"
+                                                                                  value="1">未见异常 <input type="radio"
+                                                                                                        name="IS_CERVIX_ABNOMAL"
+                                                                                                        value="2">异常&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35">宫体</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_CORPUS_ABNOMAL"
+                                                                                  value="1">未见异常 <input type="radio"
+                                                                                                        name="IS_CORPUS_ABNOMAL"
+                                                                                                        value="2">异常&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td height="35">附件</td>
+            <td colspan="9" style="TEXT-ALIGN:left;">                &nbsp;<input type="radio" name="IS_ADJUNCT_ABNOMAL"
+                                                                                  value="1">未见异常 <input type="radio"
+                                                                                                        name="IS_ADJUNCT_ABNOMAL"
+                                                                                                        value="2">异常&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">其 他</td>
+            &nbsp;&nbsp;
+            <td colspan="9"></td>
+        </tr>
+        <tr>
+            <td rowspan="19">辅助检查</td>
+            <td colspan="2" rowspan="2">血常规</td>
+            <td height="35">血红蛋白</td>
+            <td></td>
+            <td height="35">白细胞</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="35">血小板</td>
+            <td></td>
+            <td height="35">其他</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="3">尿常规</td>
+            <td height="35">尿蛋白</td>
+            <td></td>
+            <td height="35">尿糖</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="35">尿酮体</td>
+            <td></td>
+            <td height="35">尿潜血</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="35">其他</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">空腹血糖</td>
+            <td colspan="9"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">尿微量白蛋白</td>
+            <td colspan="2"></td>
+            <td>大便潜血</td>
+            <td colspan="7" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="IS_FOB" value="1">阴性
+                <input type="radio" name="IS_FOB" value="2">阳性
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="3">肝功能</td>
+            <td height="35">血清谷丙转氨酶</td>
+            <td></td>
+            <td>血清谷草转氨酶</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="35">白蛋白</td>
+            <td></td>
+            <td>总胆红素</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="35">结合胆红素</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="2">肾功能</td>
+            <td height="30">血清肌酐</td>
+            <td></td>
+            <td>血尿素氮</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="30">血钾浓度</td>
+            <td></td>
+            <td>血钠浓度</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="3">血 脂</td>
+            <td height="30">总胆固醇</td>
+            <td></td>
+            <td>甘油三酯</td>
+            <td colspan="6"></td>
+        </tr>
+        <tr>
+            <td height="45">血清低密度脂蛋白胆固醇</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td height="45">血清高密度脂蛋白胆固醇</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="30">糖化血红蛋白</td>
+            <td></td>
+            <td>乙型肝炎表面抗原</td>
+            <td colspan="7" style="TEXT-ALIGN:left">                &nbsp;<input name="HBSAG_EXAM" type="radio"
+                                                                                 value="1"/>阴性 <input name="HBSAG_EXAM"
+                                                                                                      type="radio"
+                                                                                                      value="2"/>阳性
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="30">胸部X线片</td>
+            <td colspan="2" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="IS_XRAY_ABNOMAL"
+                                                                                 value="1">正常 <input type="radio"
+                                                                                                     name="IS_XRAY_ABNOMAL"
+                                                                                                     value="2">异常
+            </td>
+            <td>心电图</td>
+            <td colspan="7" style="TEXT-ALIGN:left">                &nbsp;<input name="IS_ECG_ABNOMAL" type="radio"
+                                                                                 value="1"/>正常 <input
+                    name="IS_ECG_ABNOMAL" type="radio" value="2"/>异常
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="30">B 超</td>
+            <td colspan="2" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="IS_BULT_ABNOMAL"
+                                                                                 value="1">正常 <input type="radio"
+                                                                                                     name="IS_BULT_ABNOMAL"
+                                                                                                     value="2">异常
+            </td>
+            <td>宫颈涂片</td>
+            <td colspan="7" style="TEXT-ALIGN:left">                &nbsp;<input name="IS_CERVICAL_ABNOMAL" type="radio"
+                                                                                 value="1"/>正常 <input
+                    name="IS_CERVICAL_ABNOMAL" type="radio" value="2"/>异常
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="30px">其 他</td>
+            <td colspan="9"></td>
+        </tr>
+        <tr>
+            <td rowspan="5">中医体质辨识</td>
+            <td colspan="2" height="35">平和质</td>
+            <td style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="YIN_YANG_HARMONY" value="1">是
+                <input type="radio" name="YIN_YANG_HARMONY" value="2">基本是
+            </td>
+            <td height="35">气虚质</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="QI_ASTHENIA"
+                                                                                 value="1">是 <input type="radio"
+                                                                                                    name="QI_ASTHENIA"
+                                                                                                    value="2">倾向是
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">阳虚质</td>
+            <td style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="YANG_ASTHENIA" value="1">是
+                <input type="radio" name="YANG_ASTHENIA" value="2">倾向是
+            </td>
+            <td>阴虚质</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="YIN_ASTHENIA"
+                                                                                 value="1">是 <input type="radio"
+                                                                                                    name="YIN_ASTHENIA"
+                                                                                                    value="2">倾向是
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">痰湿质</td>
+            <td style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="PHLEGM_DAMPNESS" value="1">是
+                <input type="radio" name="PHLEGM_DAMPNESS" value="2">倾向是
+            </td>
+            <td>湿热质</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="DAMP_HEAT"
+                                                                                 value="1">是 <input type="radio"
+                                                                                                    name="DAMP_HEAT"
+                                                                                                    value="2">倾向是
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">血瘀质</td>
+            <td style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="BLOOD_STASIS" value="1">是 <input
+                    type="radio" name="BLOOD_STASIS" value="2">倾向是
+            </td>
+            <td>气郁质</td>
+            <td colspan="8" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="QI_STAGNATION"
+                                                                                 value="1">是 <input type="radio"
+                                                                                                    name="QI_STAGNATION"
+                                                                                                    value="2">倾向是
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">特秉质</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="radio" name="ALLERGIC" value="1">是
+                <input type="radio" name="ALLERGIC" value="2">倾向是
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="11">现存主要健康问题</td>
+            <td colspan="2" height="65">脑血管疾病</td>
+            <td colspan="9" style="TEXT-ALIGN:left;line-height: 1.4em">                &nbsp;<input type="checkbox"
+                                                                                                    name="BRAIN_DISEASE"
+                                                                                                    value="1">未发现 <input
+                    type="checkbox" name="BRAIN_DISEASE" value="2">缺血性卒中 <input type="checkbox" name="BRAIN_DISEASE"
+                                                                                value="3">脑出血 <input type="checkbox"
+                                                                                                     name="BRAIN_DISEASE"
+                                                                                                     value="4">蛛网膜下腔出血
+                <input type="checkbox" name="BRAIN_DISEASE" value="5">短暂性脑缺血发作<br> &nbsp;<input type="checkbox"
+                                                                                                name="BRAIN_DISEASE"
+                                                                                                value="6">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="65">肾脏疾病</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="checkbox" name="KIDNEY_DISEASE"
+                                                                                 value="1">未发现 <input type="checkbox"
+                                                                                                      name="KIDNEY_DISEASE"
+                                                                                                      value="2">糖尿病肾病
+                <input type="checkbox" name="KIDNEY_DISEASE" value="3">肾功能衰竭 <input type="checkbox"
+                                                                                    name="KIDNEY_DISEASE" value="4">急性肾炎
+                <input type="checkbox" name="KIDNEY_DISEASE" value="5">慢性肾炎<br> &nbsp;<input type="checkbox"
+                                                                                             name="KIDNEY_DISEASE"
+                                                                                             value="6">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="65">心脏疾病</td>
+            <td colspan="9" style="TEXT-ALIGN:left;line-height: 1.4em">                &nbsp;<input type="checkbox"
+                                                                                                    name="HEART_DISEASE"
+                                                                                                    value="1">未发现 <input
+                    type="checkbox" name="HEART_DISEASE" value="2">心肌梗死 <input type="checkbox" name="HEART_DISEASE"
+                                                                               value="3">心绞痛 <input type="checkbox"
+                                                                                                    name="HEART_DISEASE"
+                                                                                                    value="4">冠状动脉血运重建
+                <input type="checkbox" name="HEART_DISEASE" value="5">充血性心力衰竭<br> &nbsp;<input type="checkbox"
+                                                                                               name="HEART_DISEASE"
+                                                                                               value="6">心前区疼痛 <input
+                        type="checkbox" name="HEART_DISEASE" value="7">其他&nbsp;&nbsp;                            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="30">血管疾病</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="checkbox" name="VESSEL_DISEASE"
+                                                                                 value="1">未发现 <input type="checkbox"
+                                                                                                      name="VESSEL_DISEASE"
+                                                                                                      value="2">夹层动脉瘤
+                <input type="checkbox" name="VESSEL_DISEASE" value="3">动脉闭塞性疾病 <input type="checkbox"
+                                                                                      name="VESSEL_DISEASE" value="4">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">眼部疾病</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="checkbox" name="EYE_DISEASE"
+                                                                                 value="1">未发现 <input type="checkbox"
+                                                                                                      name="EYE_DISEASE"
+                                                                                                      value="2">视网膜出血或渗出
+                <input type="checkbox" name="EYE_DISEASE" value="3">视乳头水肿 <input type="checkbox" name="EYE_DISEASE"
+                                                                                 value="4">白内障 <input type="checkbox"
+                                                                                                      name="EYE_DISEASE"
+                                                                                                      value="5">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">神经系统疾病</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="checkbox"
+                                                                                 name="IS_NERVOUS_DISEASE" value="1">未发现
+                <input type="checkbox" name="IS_NERVOUS_DISEASE" value="2">有&nbsp;&nbsp;                          </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">其他系统疾病</td>
+            <td colspan="9" style="TEXT-ALIGN:left">                &nbsp;<input type="checkbox" name="IS_OTHER_DISEASE"
+                                                                                 value="1">未发现 <input type="checkbox"
+                                                                                                      name="IS_OTHER_DISEASE"
+                                                                                                      value="2">有&nbsp;&nbsp;
+                肺结核病
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="2">住院治疗情况</td>
+            <td rowspan="1">住院史</td>
+            <td colspan="8">
+                <table align="center" border="1" cellpadding="0" cellspacing="0"
+                       style="TEXT-ALIGN:center;font-size:15px;" class="table7">
+                    <tr>
+                        <td height="35" width="20%">入院日期</td>
+                        <td width="20%">出院日期</td>
+                        <td width="20%">原因</td>
+                        <td width="20%">医疗机构名称</td>
+                        <td width="20%">病案号</td>
+                    </tr>
+                    <tr>
+                        <td height="35"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="input_field_tag(num2, "
+            " ,"text")">家庭病床史</td>
+            <td colspan="8">
+                <table align="center" border="1" cellpadding="0" cellspacing="0"
+                       style="TEXT-ALIGN:center;font-size:15px;" class="table7">
+                    <tr>
+                        <td height="35" width="20%">建床日期</td>
+                        <td width="20%">撤床日期</td>
+                        <td width="20%">原因</td>
+                        <td width="20%">医疗机构名称</td>
+                        <td width="20%">病案号</td>
+                    </tr>
+                    <tr>
+                        <td height="35"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="input_field_tag(num3, "
+            " ,"text")">主要用药情况</td>
+            <td colspan="9">
+                <table align="center" border="1" cellpadding="0" cellspacing="0"
+                       style="TEXT-ALIGN:center;font-size:15px;" class="table7">
+                    <tr>
+                        <td height="35" width="20%">药物名称</td>
+                        <td width="20%">用法</td>
+                        <td width="20%">用量</td>
+                        <td width="20%">用药时间</td>
+                        <td width="20%">服药依从性</td>
+                    </tr>
+                    <tr>
+                        <td height="35">利福平</td>
+                        <td>口服，每日三次</td>
+                        <td>0.45g</td>
+                        <td>6月</td>
+                        <td>规律</td>
+                    </tr>
+                    <tr>
+                        <td height="35">吡嗪酰胺</td>
+                        <td>口服，每日三次</td>
+                        <td>1.5g</td>
+                        <td>2月</td>
+                        <td>规律</td>
+                    </tr>
+                    <tr>
+                        <td height="35">异烟肼</td>
+                        <td>口服，每日三次</td>
+                        <td>0.3g</td>
+                        <td>6月</td>
+                        <td>规律</td>
+                    </tr>
+                    <tr>
+                        <td height="35">乙胺丁醇</td>
+                        <td>口服，每日三次</td>
+                        <td>0.75g</td>
+                        <td>2月</td>
+                        <td>规律</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="input_field_tag(num4, "
+            " ,"text")">非免疫规划<br>预防接种史</td>
+            <td colspan="9">
+                <table align="center" border="1" cellpadding="0" cellspacing="0"
+                       style="TEXT-ALIGN:center;font-size:15px;" class="table7">
+                    <tr>
+                        <td height="35" width="33.33%">疫苗名称</td>
+                        <td width="33.33%">接种日期</td>
+                        <td width="33.33%">接种机构</td>
+                    </tr>
+                    <tr>
+                        <td height="35"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="3">健康评价</td>
+            <td height="35" colspan="11" style="TEXT-ALIGN:left">                &nbsp;<input type="radio"
+                                                                                              name="HEALTH_ASSESSMENT_CODE"
+                                                                                              value="1">体检无异常 <input
+                    type="radio" name="HEALTH_ASSESSMENT_CODE" value="2">有异常
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">异常1</td>
+            <td colspan="2">肺结核病</td>
+            <td colspan="2">异常2</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="35">异常3</td>
+            <td colspan="2"></td>
+            <td colspan="2">异常4</td>
+            <td colspan="8"></td>
+        </tr>
+        <tr>
+            <td height="100">健康指导</td>
+            <td colspan="3" style="TEXT-ALIGN:left;line-height: 1.4em">                &nbsp;<input type="checkbox"
+                                                                                                    name="HEALTH_GUIDE_CODE"
+                                                                                                    value="1">纳入慢性病患者健康管理<br>
+                &nbsp;<input type="checkbox" name="HEALTH_GUIDE_CODE" value="2">建议复查<br> &nbsp;<input type="checkbox"
+                                                                                                      name="HEALTH_GUIDE_CODE"
+                                                                                                      value="3">建议转诊<br>
+                &nbsp;<input type="checkbox" name="HEALTH_GUIDE_CODE" value="4">定期随访
+            </td>
+            <td height="100">危险因素控制</td>
+            <td colspan="7" style="TEXT-ALIGN:left;line-height: 1.4em">                &nbsp;<input type="checkbox"
+                                                                                                    name="HAZARD_CONTROL_CODE"
+                                                                                                    value="1">戒烟 <input
+                    type="checkbox" name="HAZARD_CONTROL_CODE" value="2">健康饮酒<br> &nbsp;<input type="checkbox"
+                                                                                               name="HAZARD_CONTROL_CODE"
+                                                                                               value="3">饮食 <input
+                    type="checkbox" name="HAZARD_CONTROL_CODE" value="4">锻炼<br> &nbsp;<input type="checkbox"
+                                                                                             name="HAZARD_CONTROL_CODE"
+                                                                                             value="5">减体重 <input
+                    type="checkbox" name="HAZARD_CONTROL_CODE" value="6">建议接种疫苗<br> &nbsp;<input type="checkbox"
+                                                                                                 name="HAZARD_CONTROL_CODE"
+                                                                                                 value="7">其他&nbsp;&nbsp;
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="target"></div>
+</div>
+</body>
+<script src="./getValue.js"></script>
+<script src="./html2canvas.js"></script>
+<script type="text/javascript">
+
+    checkboxCheck("SYMPTOM", "7,8");
+checkboxCheck("DIET_HABITS", "1");
+checkboxCheck("WINE_TYPES", "");
+checkboxCheck("DENTITION", "1");
+checkboxCheck("BRAIN_DISEASE", "1");
+checkboxCheck("KIDNEY_DISEASE", "1");
+checkboxCheck("HEART_DISEASE", "1");
+checkboxCheck("VESSEL_DISEASE", "1");
+checkboxCheck("EYE_DISEASE", "1");
+checkboxCheck("IS_NERVOUS_DISEASE", "1");
+checkboxCheck("IS_OTHER_DISEASE", "2");
+checkboxCheck("HEALTH_GUIDE_CODE", "1,2,4");
+checkboxCheck("HAZARD_CONTROL_CODE", "3,4,7");
+radioCheck("SELF_ASSESSMENT", "");
+radioCheck("SELF_CARE_ABILITY", "");
+radioCheck("COGNITIVE_FUNCTION", "");
+radioCheck("EMOTION_STATE", "");
+radioCheck("EXERCISE_FREQUENCY", "4");
+radioCheck("SMOKING_STATUS", "1");
+radioCheck("DRINK_FREQUENCY", "1");
+radioCheck("IS_QUIT_DRINK", "");
+radioCheck("IS_INEBRIATION", "");
+radioCheck("CAREER_HAZARD_EXPOSE_CD", "1");
+radioCheck("IS_DUST_PROTECTION", "");
+radioCheck("IS_RAY_PROTECTION", "");
+radioCheck("IS_PHYSICAL_PROTECTION", "");
+radioCheck("IS_CHEMICALS_PROTECTION", "");
+radioCheck("IS_OTHER_PROTECTION", "");
+radioCheck("LIPS_APPEARANCE_EXAM", "1");
+radioCheck("THROAT_EXAM", "1");
+radioCheck("LISTENING_EXAM", "1");
+radioCheck("SPORTS_ABILITY", "1");
+radioCheck("EYE_GROUND_EXAM", "");
+radioCheck("SKIN_EXAM", "1");
+radioCheck("SCLERA_EXAM", "1");
+radioCheck("LYMPH_EXAM", "1");
+radioCheck("IS_BARREL_CHEST", "1");
+radioCheck("IS_BREATH_ABNOMAL", "1");
+radioCheck("IS_LUNG_ABNOMAL", "1");
+radioCheck("HEART_RHYTHM", "1");
+radioCheck("IS_HEART_MESSY", "1");
+radioCheck("IS_BELLY_PAIN", "1");
+radioCheck("IS_BELLY_NUBBY", "1");
+radioCheck("IS_LIVER_SWELLING", "1");
+radioCheck("IS_SPLEEN_SWELLING", "1");
+radioCheck("IS_BELLY_MESSY", "1");
+radioCheck("LEGS_EXAM", "1");
+radioCheck("FOOT_PULSE", "2");
+radioCheck("ANUS_EXAM", "");
+radioCheck("BREAST_EXAM", "");
+radioCheck("IS_VULUA_ABNOMAL", "");
+radioCheck("IS_VAGINA_ABNOMAL", "");
+radioCheck("IS_CERVIX_ABNOMAL", "");
+radioCheck("IS_CORPUS_ABNOMAL", "");
+radioCheck("IS_ADJUNCT_ABNOMAL", "");
+radioCheck("IS_FOB", "");
+radioCheck("HBSAG_EXAM", "");
+radioCheck("IS_XRAY_ABNOMAL", "");
+radioCheck("IS_ECG_ABNOMAL", "");
+radioCheck("IS_BULT_ABNOMAL", "");
+radioCheck("IS_CERVICAL_ABNOMAL", "");
+radioCheck("YIN_YANG_HARMONY", "");
+radioCheck("QI_ASTHENIA", "");
+radioCheck("YANG_ASTHENIA", "");
+radioCheck("YIN_ASTHENIA", "");
+radioCheck("PHLEGM_DAMPNESS", "");
+radioCheck("DAMP_HEAT", "");
+radioCheck("BLOOD_STASIS", "");
+radioCheck("QI_STAGNATION", "");
+radioCheck("ALLERGIC", "");
+radioCheck("HEALTH_ASSESSMENT_CODE", "2");
+radioCheck("qitaxitongjibing", "2");
+function prints() {
+    //window.print();
+    html2canvas(document.getElementById("a"), {
+        onrendered: function(canvas) {
+            //var image = new Image();
+            //image.src = canvas.toDataURL("image/png");
+            var printWindow = window.open('', "_blank",'height='+canvas.height+',width='+canvas.width+',top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no');
+            printWindow.document.body.appendChild(canvas);
+            printWindow.print();
+            printWindow.close();
+            //document.body.appendChild(image);
+        }
+    });
+}
+    disableAllInput();
+    var canvas = document.createElement("canvas");
+    document.getElementById("target").appendChild(canvas);
+    if (typeof window.G_vmlCanvasManager != "undefined") {
+        canvas = window.G_vmlCanvasManager.initElement(canvas);
+    }
+    canvas.width = 400;
+    canvas.height = 300;
+    var ctx = canvas.getContext("2d");
+
+    //开始一个新的绘制路径
+    ctx.beginPath();
+    //设置弧线的颜色为蓝色
+    ctx.strokeStyle = "blue";
+    var circle = {
+        x : 100,    //圆心的x轴坐标值
+        y : 100,    //圆心的y轴坐标值
+        r : 50      //圆的半径
+    };
+    //沿着坐标点(100,100)为圆心、半径为50px的圆的顺时针方向绘制弧线
+    ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI / 2, false);
+    //按照指定的路径绘制弧线
+    ctx.stroke();
+    html2canvas(document.getElementById("a"), {
+        onrendered: function(canvas) {
+            if (typeof FlashCanvas != "undefined") {
+                FlashCanvas.initElement(canvas);
+            }
+            document.body.appendChild(canvas);
+        }
+    });
+</script>
+</html>

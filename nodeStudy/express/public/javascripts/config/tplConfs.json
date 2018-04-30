@@ -1,0 +1,16 @@
+{
+  "v_mz_mzgh":{
+    "name":"医院门诊部分-挂号",
+    "url":"",
+    "form":[
+      {
+        "database":"",
+        "id_name":""
+      }
+    ],
+    "fields_name":{},
+    "headFileds":[],
+    "bottomFields":[],
+    "contentFields":[]
+  }
+}
