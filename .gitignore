@@ -11,7 +11,6 @@ test-app-web.log
 .happypack/
 .cache/
 .vscode
-.vscode
 *.zip
 *.rar
 *.msi
