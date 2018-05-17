@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amap</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="container" style="width:793px; height:298px"></div>
+    <div id="container2" style="width:793px; height:298px"></div>
+</body>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=3dd036e852211fae367aab243157100e"></script>
+<script>
+
+    const xy = [['113.900653', '22.515725'], ['113.904634', '22.515095']] // [113.904634,22.515095]
+
+    var mapObj = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom: 15,
+        center: xy[0]
+    });
+
+    AMap.service('AMap.Geocoder', function () {//回调函数
+        //实例化Geocoder
+        geocoder = new AMap.Geocoder();
+        var lnglatXY = xy;//地图上所标点的坐标
+        xy.forEach((lnglatXY) => {
+            geocoder.getAddress(lnglatXY, function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    let address = result.regeocode.formattedAddress
+                    var marker = new AMap.Marker({
+                        position: lnglatXY,
+                        title: address
+                    });
+                    marker.setMap(mapObj);
+                    AMap.event.addListener(marker, 'click', () => {
+                        openInfo(address, lnglatXY)
+                    });
+                    openInfo(address, lnglatXY);
+                } else {
+                    //获取地址失败
+                }
+            });
+        })
+
+
+    })
+
+
+
+    var mapObj2 = new AMap.Map('container2', {
+        resizeEnable: true,
+        zoom: 15,
+        center: xy[0]
+    });
+
+    AMap.service('AMap.Geocoder', function () {//回调函数
+        //实例化Geocoder
+        geocoder = new AMap.Geocoder();
+        var lnglatXY = xy;//地图上所标点的坐标
+        xy.forEach((lnglatXY) => {
+            geocoder.getAddress(lnglatXY, function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    let address = result.regeocode.formattedAddress
+                    var marker = new AMap.Marker({
+                        position: lnglatXY,
+                        title: address
+                    });
+                    marker.setMap(mapObj2);
+                    AMap.event.addListener(marker, 'click', () => {
+                        openInfo2(address, lnglatXY)
+                    });
+                    openInfo2(address, lnglatXY);
+                } else {
+                    //获取地址失败
+                }
+            });
+        })
+
+
+    })
+
+
+
+
+    function openInfo(address, xy) {
+        //构建信息窗体中显示的内容
+        var info = `<div style="padding:0px 4px;">地址 : ${address}</div>`
+        infoWindow = new AMap.InfoWindow({
+            content: info,  //使用默认信息窗体框样式，显示信息内容
+            offset: new AMap.Pixel(0, -15)
+        });
+        infoWindow.open(mapObj, xy);
+    }
+
+
+    function openInfo2(address, xy) {
+        //构建信息窗体中显示的内容
+        var info = `<div style="padding:0px 4px;">地址 : ${address}</div>`
+        infoWindow = new AMap.InfoWindow({
+            content: info,  //使用默认信息窗体框样式，显示信息内容
+            offset: new AMap.Pixel(0, -15)
+        });
+        infoWindow.open(mapObj2, xy);
+    }
+
+
+
+</script>
+
+</html>

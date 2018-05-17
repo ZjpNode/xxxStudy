@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>li进入与离开时下划线</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul {
+            position: absolute;
+            display: flex;
+        }
+
+        li {
+            list-style-type: none;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            font-size: 24px;
+            padding: 20px;
+        }
+
+        li:active {
+            background: #000;
+            color: #fff;
+        }
+
+        li::after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-bottom: 1px solid #000;
+            top: 0;
+            left: 100%;
+            width: 0;
+            height: 100%;
+            transition: 0.2s all linear
+        }
+
+        li:hover::after {
+            transition-delay: 0.1s;
+            width: 100%;
+            left: 0;
+        }
+
+        li:hover~li::after {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <ul>
+        <li>这是测试</li>
+        <li>你好</li>
+        <li>下划线</li>
+        <li>啦啦啦啦啦了</li>
+        <li>议案</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>playTest</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <video id="myPlayer" controls playsInline webkit-playsinline [autoplay] style="width: 500px;height: 500px;">
+        <!-- <source src="rtmp://rtmp.open.ys7.com/openlive/9e6402f491684db595b7ca68dc132b4a" type="" /> -->
+        <source src="http://hls.open.ys7.com/openlive/9e6402f491684db595b7ca68dc132b4a.m3u8" type="application/x-mpegURL" />
+    </video>
+</body>
+<script src="https://open.ys7.com/sdk/js/1.3/ezuikit.js"></script>
+<script>
+
+    var player = new EZUIPlayer('myPlayer');
+    player.on('error', function (err) {
+        console.log(err);
+    });
+    player.on('play', function () {
+        console.log('play');
+    });
+    player.on('pause', function () {
+        console.log('pause');
+    });
+    player.on('log', log);
+
+   function log(str){
+       var div = document.createElement('DIV');
+       div.innerHTML = (new Date()).Format('yyyy-MM-dd hh:mm:ss.S') + JSON.stringify(str);
+       document.body.appendChild(div);
+   }
+</script>
+
+</html>

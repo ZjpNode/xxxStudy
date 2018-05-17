@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>mqtt Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .errormsg {
+            display: block;
+            color: red;
+        }
+
+        .modle {
+            background-color: #e3e3e3;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .modle_title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="modle">
+        <p class="modle_title">mqtt服务器配置</p>
+        <form id="mqtt_config">
+            <label for="hostname">主机名称：</label>
+            <input type="text" id="hostname" name="hostname" value="127.0.0.1">
+            <label for="port">端口：</label>
+            <input type="text" id="port" name="port" value="61623">
+            <label for="username">用户名：</label>
+            <input type="text" id="username" name="username" value="admin">
+            <label for="password">密码：</label>
+            <input type="password" id="password" name="password" value="password">
+            <a href="javascript:void(0);" onclick="connects()">连接</a>
+            <a href="javascript:void(0);" onclick="disConnects()">断开连接</a>
+            <a href="javascript:void(0);" onclick="clearMsg()">清除信息</a>
+        </form>
+    </div>
+    <div class="modle">
+        <p class="modle_title">订阅主题</p>
+        <input type="text" id="subTitle" value="/topic/Hexu.20180318010001.DeviceSub">
+        <a href="javascript:void(0);" onclick="subBtn()">订阅</a>
+        <p class="modle_title">发布主题</p>
+        <input type="text" id="pubTitle" value="/topic/Hexu.20180318010001.DeviceSub">
+        <input type="text" id="pubMsg" value='{"action":"writedata","data":{"device":{"waterpumb":1}},"ts":"1998-02-23T14:23:05","uuid":"20180318010001"}\r\n'>
+        <a href="javascript:void(0);" onclick="pubBtn()">发布</a>
+    </div>
+    <div class="modle">
+        <p class="modle_title">信息</p>
+        <div id="errormsg"></div>
+    </div>
+</body>
+<!-- <script src="../../lib/mqtt/mqttws31.js"></script> -->
+<script src="../../lib/mqtt/sockjs.min.js"></script>
+<script src="../../lib/mqtt/stomp.js"></script>
+<script>
+    var client;
+    var getMqttConfig = function (formId) {
+        var form = document.getElementById(formId);
+        var config = {};
+        var tagElements = form.getElementsByTagName('input');
+        for (var j = 0; j < tagElements.length; j++) {
+            config[tagElements[j].name] = tagElements[j].value
+        }
+        return config;
+    }
+    var DataConsole = function (msg) {
+        if (typeof msg === "string" && (msg.indexOf('>>>') > -1 || msg.indexOf('<<<') > -1)) {
+            console.log(msg)
+        } else {
+            document.getElementById('errormsg').innerHTML = `<div>${msg}</div>` + document.getElementById('errormsg').innerHTML;
+        }
+
+    }
+    var validFormData = function (formData) {
+        let valid = true;
+        for (var i in formData) {
+            if (!formData[i]) {
+                let eleName = document.querySelectorAll(`label[for="${i}"]`)[0].innerText.replace('：', '');
+                DataConsole(`<span class="errormsg">【error】缺少${eleName}<span>`);
+                valid = false;
+                return;
+            }
+        }
+        return valid;
+    }
+    var connects = function () {
+        var mqttConfig = getMqttConfig('mqtt_config');
+        if (validFormData(mqttConfig)) {
+
+            // var ws = new SockJS(`http://${mqttConfig.hostname}:${mqttConfig.port}`);
+            // client = Stomp.over(ws);
+            client = Stomp.client(`ws://${mqttConfig.hostname}:${mqttConfig.port}`, "v11.stomp");
+            client.debug = function (str) {
+                DataConsole(str);
+            };
+            client.connect(mqttConfig.username, mqttConfig.password, connectCallback, errorCallback);
+        }
+    }
+    var disConnects = function () {
+        client.disconnect(function () {
+            DataConsole("See you next time!");
+        });
+    }
+    var clearMsg = function () {
+        document.getElementById('errormsg').innerHTML = '';
+    }
+    var subBtn = function () {
+        var topic = document.getElementById('subTitle').value;//'/topic/AllCustomer';
+        client.subscribe(topic, responseCallback)
+        DataConsole(`subscribe ${topic}`);
+    }
+    var pubBtn = function () {
+        var topic = document.getElementById('pubTitle').value;//'/topic/AllCustomer';
+        var msg = document.getElementById('pubMsg').value;
+        client.send(topic, {}, msg);
+    }
+    // mqttws.js
+    // client = new Paho.MQTT.Client('127.0.0.1', Number('61623'), "","");
+    // client.onConnectionLost = onConnectionLost;
+    // client.onMessageArrived = onMessageArrived;
+    // client.connect({ onSuccess: onConnect });
+
+    // function onConnect() {
+    //     debugger
+    //     // Once a connection has been made, make a subscription and send a message.
+    //     console.log("onConnect");
+    //     client.subscribe("world");
+    //     message = new Paho.MQTT.Message("Hello");
+    //     message.destinationName = "world";
+    //     client.send(message);
+    // };
+
+    // function onConnectionLost(responseObject) {
+    //     debugger
+    //     if (responseObject.errorCode !== 0)
+    //         console.log("onConnectionLost:" + responseObject.errorMessage);
+    // };
+    // function onMessageArrived(message) {
+    //     console.log("onMessageArrived:" + message.payloadString);
+    //     client.disconnect();
+    // };
+
+    // stomp
+
+    var connectCallback = function (frame) {
+        DataConsole(frame.command);
+    }
+    var errorCallback = function (error) {
+        DataConsole(error);
+    }
+    var responseCallback = function (frame) {
+        DataConsole(`【${frame.headers['subscription']}】responseCallback msg=>${frame.body}`)
+    }
+
+
+</script>
+
+</html>
