@@ -1,0 +1,36 @@
+// color
+$blue: #03a9f4; // header
+$dark-blue: #0c82df; // header hover
+
+$grey: #e8ebf1; // body bg
+$bg-grey: #fafcff; // module-header bg
+$input-grey: #f2f4f7; // module-header bg
+$text-grey: #707780;
+$border-grey: #d7dce5;
+$border-black: #7a8ba9;
+
+$black: #333; // font color
+$red: #fa0101;
+
+// size
+$font-large: 18px;
+$font-medium: 16px;
+$font-small: 12px;
+$module-header-font: 22px;
+$zero-size: 0px;
+
+// height
+$header-height: 60px;
+$module-header-height: 56px;
+$blank-height: 10px;
+
+// width
+$sidenav-width: 200px;
+$margin-width: 15px;
+$scrollbar-width: 17px;
+$sidenav-split-width: 5px;
+
+//z-index
+$sidenav-split-index: 10;
+$sidenav-index: 8;
+$module-header-index: 2;

@@ -1,0 +1,40 @@
+.el-checkbox {
+  margin-right: $margin-width;
+  & + .el-checkbox {
+    margin-right: $margin-width;
+    margin-left: $zero-size;
+  }
+}
+
+.el-radio {
+  margin-right: $margin-width;
+  & + .el-radio {
+    margin-right: $margin-width;
+    margin-left: $zero-size;
+  }
+}
+
+.el-select {
+  width: 100%;
+}
+
+.el-col {
+  padding-top: $blank-height/2;
+  padding-bottom: $blank-height/2;
+}
+
+.box-card {
+  margin-bottom: $blank-height;
+}
+
+.table-operate {
+  margin-top: $blank-height;
+}
+
+.easy-scrollbar {
+  height: calc(100% + #{$scrollbar-width} - #{$header-height});
+}
+
+.easy-scrollbar__wrap {
+  height: 100%;
+}
