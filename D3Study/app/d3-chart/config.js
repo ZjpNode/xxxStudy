@@ -7,4 +7,4 @@ export const chartColor = [
   '#9467bd',
   '#ff8c00'
 ]
-export const margin = { top: 10, right: 18, bottom: 30, left: 50 }
+export const margin = { top: 35, right: 18, bottom: 30, left: 40 }
