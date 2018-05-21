@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-05-18 09:11:03
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-05-18 16:18:43
+ * @Last Modified time: 2018-05-21 18:28:28
  * @description:
  */
 const d3 = require('d3')
@@ -96,6 +96,38 @@ function generate(id, data, options) {
     .style('fill', function(d) {
       return color(d.data.name)
     })
+    .transition() // 设置动画
+    .ease('bounce') // 动画效果
+    .duration(1500) // 持续时间
+    .attrTween('d', tweenPie) // 两个属性之间平滑的过渡。
+    // .transition()
+    // .ease('elastic')
+    // .delay(function(d, i) {
+    //   return 2000 + i * 50
+    // }) // 设置了一个延迟时间，让每一个内半径不在同一个时间缩小。
+    // .duration(750)
+    // .attrTween('d', tweenDonut)
+
+  function tweenPie(b) {
+    // 这里将每一个的弧的开始角度和结束角度都设置成了0
+    // 然后向他们原始的角度(b)开始过渡，完成动画。
+    b.innerRadius = 0
+    var i = d3.interpolate({ startAngle: 0, endAngle: 0 }, b)
+    // 下面的函数就是过渡函数，他是执行多次最终达到想要的状态。
+    return function(t) {
+      return arc(i(t))
+    }
+  }
+
+  function tweenDonut(b) {
+    // 设置内半径不为0
+    b.innerRadius = radius * 0.6
+    // 然后内半径由0开始过渡
+    var i = d3.interpolate({ innerRadius: 0 }, b)
+    return function(t) {
+      return arc(i(t))
+    }
+  }
 
   // 事件
   g
@@ -223,7 +255,6 @@ function generateRoseDoughnut(id, data) {
   let maxScale = formatData.sort((a, b) => {
     return b.value - a.value
   })[0].value
-  console.log(maxScale)
   generate(id, data, {
     maxScale
   })
