@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!s</title>
+  <style>
+    html,
+    body {
+      /* 可拖动，但是不能点击 */
+      -webkit-app-region: drag;
+    }
+    .button-sound {
+      /* 不可拖动，但是能点击 */
+      -webkit-app-region: no-drag;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hello World!!!</h1>
+  <a class="button-sound" href="http://www.baidu.com" >百度</a>
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</body>
+
+</html>

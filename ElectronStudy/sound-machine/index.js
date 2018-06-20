@@ -13,12 +13,17 @@ let mainWindow;
 
 function createWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 600, height: 800 });
+  mainWindow = new BrowserWindow({
+    frame: false, // 没有边栏
+    resizable: false, // 固定尺寸
+    width: 368,
+    height: 700
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "index.html"),
+      pathname: path.join(__dirname, "app/index.html"),
       protocol: "file:",
       slashes: true
     })
