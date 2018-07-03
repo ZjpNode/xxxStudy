@@ -43,7 +43,7 @@ function generate(id, data, options) {
     .attr('stroke-linecap', 'round')
     .attr('stroke-width', 1.5)
 
-  function addPoint(xScale) {
+  function addPoint(data, xScale) {
     if (defaultOptions.hasPoint) {
       d3
         .select(id)
@@ -75,6 +75,12 @@ function generate(id, data, options) {
             .transition()
             .duration(100)
             .attr('r', '8px')
+          d3
+            .select(id)
+            .select('svg')
+            .append('title')
+            .attr('id', `${id.replace('#', '')}-title`)
+            .text(`${d['value']}${d['data']['Unit']}`)
         })
         .on('mouseout', function(d) {
           d3
@@ -82,11 +88,16 @@ function generate(id, data, options) {
             .transition()
             .duration(100)
             .attr('r', '6px')
+
+          d3
+            .select(id)
+            .select(`${id}-title`)
+            .remove()
         })
     }
   }
 
-  addPoint(xScale)
+  addPoint(data, xScale)
 
   function redraw(data) {
     let { xScale } = redrawXAxis(data)
@@ -116,7 +127,7 @@ function generate(id, data, options) {
       .attr('stroke-linejoin', 'round') // 描边转角的表现方式
       .attr('stroke-linecap', 'round')
       .attr('stroke-width', 1.5)
-    addPoint(xScale)
+    addPoint(data, xScale)
   }
 
   return { redraw }

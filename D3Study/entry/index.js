@@ -46,10 +46,10 @@ var pre5 = bar.generateBar('#pre-5', per5Data, {
 })
 
 let per6Data = [
-  { name: '电13', value: 13, data: {} },
-  { name: '电14', value: 14, data: {} },
-  { name: '电11', value: 11, data: {} },
-  { name: '电9', value: 9, data: {} }
+  { name: '电13', value: 13, data: { Unit: '台' } },
+  { name: '电14', value: 14, data: { Unit: '台' } },
+  { name: '电11', value: 11, data: { Unit: '台' } },
+  { name: '电9', value: 9, data: { Unit: '台' } }
   // ,
   // { name: "中国罐", value: 3, data: {} },
   // { name: "污水处理设备", value: 5, data: {} },
@@ -59,14 +59,14 @@ let per6Data = [
 
 var pre6 = line.generateLine('#pre-6', per6Data, {
   xName: '设备类型',
-  yName: '数量',
+  yName: '数量/台',
   xNameDirection: 'rotate(25,-20,0)',
   hasPoint: true
 })
 
 setInterval(() => {
   let value = Math.round(Math.random() * 16)
-  per6Data.push({ name: `电${Math.random()}`, value: value, data: {} })
+  per6Data.push({ name: `电${Math.random()}`, value: value, data: { Unit: '台' } })
   if (Object.keys(per6Data).length === 6) per6Data.shift()
   pre6.redraw(per6Data)
 }, 3000)
