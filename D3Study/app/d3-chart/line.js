@@ -43,6 +43,51 @@ function generate(id, data, options) {
     .attr('stroke-linecap', 'round')
     .attr('stroke-width', 1.5)
 
+  function addPoint(xScale) {
+    if (defaultOptions.hasPoint) {
+      d3
+        .select(id)
+        .selectAll('.countPoints')
+        .remove()
+      let points = svg.append('g').attr('class', 'countPoints')
+      points
+        .selectAll('.tipCountPoints')
+        .data(data)
+        .enter()
+        .append('circle')
+        .attr('class', 'tipCountPoints')
+        .attr('transform', function(d) {
+          return 'translate(' + xScale.rangeBand() / 2 + ',-1)'
+        })
+        .attr('cx', function(d) {
+          return xScale(d['name'])
+        })
+        .attr('cy', function(d) {
+          return yScale(d['value'])
+        })
+        .attr('r', '6px')
+        .attr('stroke', '#fff')
+        .attr('stroke-width', '2px')
+        .attr('fill', chartColor[0])
+        .on('mouseover', function(d) {
+          d3
+            .select(this)
+            .transition()
+            .duration(100)
+            .attr('r', '8px')
+        })
+        .on('mouseout', function(d) {
+          d3
+            .select(this)
+            .transition()
+            .duration(100)
+            .attr('r', '6px')
+        })
+    }
+  }
+
+  addPoint(xScale)
+
   function redraw(data) {
     let { xScale } = redrawXAxis(data)
 
@@ -71,6 +116,7 @@ function generate(id, data, options) {
       .attr('stroke-linejoin', 'round') // 描边转角的表现方式
       .attr('stroke-linecap', 'round')
       .attr('stroke-width', 1.5)
+    addPoint(xScale)
   }
 
   return { redraw }
