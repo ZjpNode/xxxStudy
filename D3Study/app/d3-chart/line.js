@@ -12,12 +12,7 @@ function generate(id, data, options) {
   }
   Object.assign(defaultOptions, options)
 
-  let {
-    svg,
-    xScale,
-    yScale,
-    /* height, width, */ redrawXAxis
-  } = xyGrid.generateGrid(id, data, defaultOptions)
+  let { svg, xScale, yScale, /* height, width, */ redrawXAxis, redrawYAxis } = xyGrid.generateGrid(id, data, defaultOptions)
 
   var line = d3.svg
     .line()
@@ -43,10 +38,9 @@ function generate(id, data, options) {
     .attr('stroke-linecap', 'round')
     .attr('stroke-width', 1.5)
 
-  function addPoint(data, xScale) {
+  function addPoint(data, xScale, yScale) {
     if (defaultOptions.hasPoint) {
-      d3
-        .select(id)
+      d3.select(id)
         .selectAll('.countPoints')
         .remove()
       let points = svg.append('g').attr('class', 'countPoints')
@@ -70,37 +64,34 @@ function generate(id, data, options) {
         .attr('stroke-width', '2px')
         .attr('fill', chartColor[0])
         .on('mouseover', function(d) {
-          d3
-            .select(this)
+          d3.select(this)
             .transition()
             .duration(100)
             .attr('r', '8px')
-          d3
-            .select(id)
+          d3.select(id)
             .select('svg')
             .append('title')
             .attr('id', `${id.replace('#', '')}-title`)
             .text(`${d['value']}${d['data']['Unit']}`)
         })
         .on('mouseout', function(d) {
-          d3
-            .select(this)
+          d3.select(this)
             .transition()
             .duration(100)
             .attr('r', '6px')
 
-          d3
-            .select(id)
+          d3.select(id)
             .select(`${id}-title`)
             .remove()
         })
     }
   }
 
-  addPoint(data, xScale)
+  addPoint(data, xScale, yScale)
 
   function redraw(data) {
     let { xScale } = redrawXAxis(data)
+    let { yScale } = redrawYAxis(data)
 
     d3.selectAll(id + ' .countLine').remove()
 
@@ -127,7 +118,7 @@ function generate(id, data, options) {
       .attr('stroke-linejoin', 'round') // 描边转角的表现方式
       .attr('stroke-linecap', 'round')
       .attr('stroke-width', 1.5)
-    addPoint(data, xScale)
+    addPoint(data, xScale, yScale)
   }
 
   return { redraw }

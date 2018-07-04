@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-06-20 11:06:26
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-07-03 17:34:09
+ * @Last Modified time: 2018-07-04 10:10:34
  */
 const d3 = require('d3')
 const config = require('./config')
@@ -28,14 +28,13 @@ function generate(id, data, options) {
   }
   Object.assign(defaultOptions, options)
 
-  margin.right =
-    containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
+  margin.right = containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
 
   let width = containerWidth - margin.right - margin.left
   let height = containerHeight - margin.top - margin.bottom
 
   // x轴比例尺
-  var xScale = d3.scale
+  let xScale = d3.scale
     .ordinal()
     .rangeRoundBands([0, width])
     .domain(
@@ -45,7 +44,7 @@ function generate(id, data, options) {
     )
 
   // y轴比例尺
-  var yScale = d3.scale
+  let yScale = d3.scale
     .linear()
     .range([height, 0])
     .domain([
@@ -112,6 +111,7 @@ function generate(id, data, options) {
   svg
     .append('g')
     .attr('class', 'y axis')
+    .attr('id', `${id.replace('#', '')}-count-y-axis`)
     .call(yAxis)
     .append('text')
     .attr('dy', '-1em')
@@ -123,6 +123,7 @@ function generate(id, data, options) {
   svg
     .append('g')
     .attr('class', 'x axis line')
+    .attr('id', `${id.replace('#', '')}-count-x-grid`)
     .attr('transform', 'translate(' + 0 + ',' + height + ')')
     .call(xGrid)
 
@@ -130,20 +131,24 @@ function generate(id, data, options) {
   svg
     .append('g')
     .attr('class', 'y axis line')
+    .attr('id', `${id.replace('#', '')}-count-y-grid`)
     .call(yGrid)
 
   // 设置X轴和Y轴的样式
-  svg
-    .selectAll('.axis .domain')
-    .style('fill', 'none')
-    .style('stroke', '#000')
-    .style('shape-rendering', 'crispEdges')
-  svg
-    .selectAll('.axis .tick line')
-    .style('fill', 'none')
-    .style('stroke', '#000')
-    .style('shape-rendering', 'crispEdges')
-  // x轴文字方向
+  function setXYaxisStyle() {
+    svg
+      .selectAll('.axis .domain')
+      .style('fill', 'none')
+      .style('stroke', '#000')
+      .style('shape-rendering', 'crispEdges')
+    svg
+      .selectAll('.axis .tick line')
+      .style('fill', 'none')
+      .style('stroke', '#000')
+      .style('shape-rendering', 'crispEdges')
+  }
+
+  // 设置x轴文字方向
   function setXnameDirection() {
     if (options.xNameDirection) {
       svg
@@ -153,17 +158,21 @@ function generate(id, data, options) {
         .style('text-anchor', 'start')
     }
   }
-  setXnameDirection()
 
   // 设置网格样式
-  svg
-    .selectAll('.axis.line line')
-    .style('stroke-width', '.3px')
-    .style('stroke', '#666')
-    .style('stroke-dasharray', '2,3')
+  function setGridStyle() {
+    svg
+      .selectAll('.axis.line line')
+      .style('stroke-width', '.3px')
+      .style('stroke', '#666')
+      .style('stroke-dasharray', '2,3')
+    // 删除网格的 domain
+    svg.selectAll('.axis.line .domain').remove()
+  }
 
-  // 删除
-  svg.selectAll('.axis.line .domain').remove()
+  setXYaxisStyle()
+  setXnameDirection()
+  setGridStyle()
 
   // 重新绘制X轴
   function redrawXAxis(data) {
@@ -181,25 +190,89 @@ function generate(id, data, options) {
       .axis()
       .scale(xScale)
       .orient('bottom')
-    // 动画效果
+    // 生成横向网格
+    let xGrid = d3.svg
+      .axis()
+      .scale(xScale)
+      .ticks(data.length)
+      .tickSize(-height)
+      .tickFormat('')
+      .orient('bottom')
+    // 在svg上重新绘制横向网格
+    svg
+      .select(`${id}-count-x-grid`)
+      .transition()
+      .duration(200)
+      .ease('sin-in-out')
+      // .attr('transform', 'translate(' + 0 + ',' + height + ')')
+      .call(xGrid)
+    // 在svg上重新绘制x轴
     svg
       .select(`${id}-count-x-axis`)
       .transition()
       .duration(200)
       .ease('sin-in-out')
       .call(xAxis)
-    svg
-      .selectAll('.axis .tick line')
-      .style('fill', 'none')
-      .style('stroke', '#000')
-      .style('shape-rendering', 'crispEdges')
 
+    // 设置X轴和Y轴的样式
+    setXYaxisStyle()
+    // 设置x轴文字方向
     setXnameDirection()
+    // 设置网格样式
+    setGridStyle()
 
     return { xScale }
   }
+  // 重新绘制Y轴
+  function redrawYAxis(data) {
+    // y轴比例尺
+    let yScale = d3.scale
+      .linear()
+      .range([height, 0])
+      .domain([
+        0,
+        d3.max(data, function(d) {
+          return d['value'] + 5
+        })
+      ])
+    // 生成y轴
+    let yAxis = d3.svg
+      .axis()
+      .scale(yScale)
+      .orient('left')
+    // 生成纵向网格
+    let yGrid = d3.svg
+      .axis()
+      .scale(yScale)
+      .ticks(10)
+      .tickSize(-width)
+      .tickFormat('')
+      .orient('left')
 
-  return { svg, xScale, yScale, height, width, redrawXAxis }
+    // 在svg上重新绘制纵向网格
+    svg
+      .select(`${id}-count-y-grid`)
+      .transition()
+      .duration(200)
+      .ease('sin-in-out')
+      .call(yGrid)
+    // 在svg上重新绘制y轴
+    svg
+      .select(`${id}-count-y-axis`)
+      .transition()
+      .duration(200)
+      .ease('sin-in-out')
+      .call(yAxis)
+
+    // 设置X轴和Y轴的样式
+    setXYaxisStyle()
+    // 设置网格样式
+    setGridStyle()
+
+    return { yScale }
+  }
+
+  return { svg, xScale, yScale, height, width, redrawXAxis, redrawYAxis }
 }
 
 export function generateGrid(id, data, options) {
