@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-06-20 11:06:26
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-07-04 10:10:34
+ * @Last Modified time: 2018-07-04 17:00:46
  */
 const d3 = require('d3')
 const config = require('./config')
@@ -28,9 +28,9 @@ function generate(id, data, options) {
   }
   Object.assign(defaultOptions, options)
 
-  margin.right = containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
+  let marginRight = containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
 
-  let width = containerWidth - margin.right - margin.left
+  let width = containerWidth - marginRight - margin.left
   let height = containerHeight - margin.top - margin.bottom
 
   // x轴比例尺
@@ -88,7 +88,7 @@ function generate(id, data, options) {
   let svg = d3
     .select(id)
     .append('svg')
-    .attr('width', width + margin.right + margin.left)
+    .attr('width', width + marginRight + margin.left)
     .attr('height', height + margin.top + margin.bottom)
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
