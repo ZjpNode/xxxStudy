@@ -24,14 +24,14 @@ pie.rosePie('#pre-3', [
   { name: '耐斯', value: 4, data: {} }
 ])
 pie.roseDoughnut('#pre-4', [
-  { value: 10, name: 'rose1' },
-  { value: 5, name: 'rose2' },
-  { value: 15, name: 'rose3' },
-  { value: 25, name: 'rose4' },
-  { value: 20, name: 'rose5' },
-  { value: 35, name: 'rose6' },
-  { value: 30, name: 'rose7' },
-  { value: 40, name: 'rose8' }
+  { value: 10, name: 'rose1', data: {} },
+  { value: 5, name: 'rose2', data: {} },
+  { value: 15, name: 'rose3', data: {} },
+  { value: 25, name: 'rose4', data: {} },
+  { value: 20, name: 'rose5', data: {} },
+  { value: 35, name: 'rose6', data: {} },
+  { value: 30, name: 'rose7', data: {} },
+  { value: 40, name: 'rose8', data: {} }
 ])
 let per5Data = [
   { name: 'FreeTank', value: 12, data: {} },
@@ -66,7 +66,11 @@ var pre6 = line.generateLine('#pre-6', per6Data, {
 
 setInterval(() => {
   let value = Math.round(Math.random() * 16)
-  per6Data.push({ name: `电${Math.random()}`, value: value, data: { Unit: '台' } })
+  per6Data.push({
+    name: `电${Math.random()}`,
+    value: value,
+    data: { Unit: '台' }
+  })
   if (Object.keys(per6Data).length === 6) per6Data.shift()
   pre6.redraw(per6Data)
 }, 3000)

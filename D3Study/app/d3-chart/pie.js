@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-05-18 09:11:03
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-07-11 11:02:54
+ * @Last Modified time: 2018-07-11 15:56:59
  * @description:
  */
 
@@ -13,12 +13,15 @@ const config = require('./config')
 
 let margin = config.margin
 let chartColor = config.chartColor
-let color = d3.scale.ordinal().range(chartColor)
 let legendSize = 12
 let textOffset = 14
 
 // 根据data和options生成配置信息
-function getConfig(id, options) {
+function getConfig(id, data, options) {
+  let colorFn = d3.scale.ordinal().range(chartColor)
+  let color = d => {
+    return d.data.color || colorFn(d.name)
+  }
   let containerWidth = d3
     .select(id)
     .style('width')
@@ -46,9 +49,9 @@ function getConfig(id, options) {
     radius,
     svg,
     width,
-    height
+    height,
+    color
   }
-
   Object.assign(defaultOptions, options)
   // let outerRadius = defaultOptions.outerRadius
   // let innerRadius = defaultOptions.innerRadius
@@ -69,7 +72,7 @@ function getAncestors(node) {
 
 // 图形生成器
 function generate(id, data, options) {
-  let { outerRadius, innerRadius, maxScale, radius, svg, height, width } = getConfig(id, options)
+  let { outerRadius, innerRadius, maxScale, radius, svg, height, width, clickEvent, color } = getConfig(id, data, options)
 
   // 内圆半径计算公式
   function innerRadiusFn(d) {
@@ -112,14 +115,14 @@ function generate(id, data, options) {
     .enter()
     .append('g')
     .attr('class', 'arc')
-    .style('cursor', 'pointer')
+    .style('cursor', clickEvent ? 'pointer' : '')
 
   // 为每个圆环填充颜色
   g.append('path')
     .attr('class', 'solidArc')
     .attr('d', arc)
     .style('fill', function(d) {
-      return color(d.data.name)
+      return color(d.data)
     })
     .transition() // 设置动画
     .ease('bounce') // 动画效果
@@ -188,7 +191,7 @@ function generate(id, data, options) {
     })
     .style('user-select', 'none')
     .style('fill', function(d) {
-      return color(d.data.name)
+      return color(d.data)
     })
 
   function addLine(d, addValue) {
@@ -216,7 +219,7 @@ function generate(id, data, options) {
       return addLine(d, 0)
     })
     .style('stroke', function(d) {
-      return color(d.data.name)
+      return color(d.data)
     })
   // g.append('text')
   //   .attr('transform', function(d) {
@@ -305,7 +308,7 @@ function generate(id, data, options) {
       }
       return `translate(${translateX},${translateY})`
     })
-    .style('cursor', 'pointer')
+    .style('cursor', clickEvent ? 'pointer' : '')
 
   // 图例样式
   legend
@@ -314,7 +317,7 @@ function generate(id, data, options) {
     .attr('height', legendSize)
     .attr('ry', legendSize / 4)
     .style('fill', function(d) {
-      return color(d.data.name)
+      return color(d.data)
     })
 
   // 图例文字
@@ -334,7 +337,7 @@ function generate(id, data, options) {
       .transition()
       .duration(200)
       .style('fill', function(d) {
-        return d3.rgb(color(d.data.name)).brighter(0.5)
+        return d3.rgb(color(d.data)).brighter(0.5)
       })
       .attr(
         'd',
@@ -348,7 +351,7 @@ function generate(id, data, options) {
       .transition()
       .duration(200)
       .style('stroke', function(d) {
-        return d3.rgb(color(d.data.name)).brighter(0.5)
+        return d3.rgb(color(d.data)).brighter(0.5)
       })
     // 改变文字的颜色
     d3.select(_this)
@@ -356,7 +359,7 @@ function generate(id, data, options) {
       .transition()
       .duration(200)
       .style('fill', function(d) {
-        return d3.rgb(color(d.data.name)).brighter(0.5)
+        return d3.rgb(color(d.data)).brighter(0.5)
       })
     // 改变图例的颜色
     d3.select(_this)
@@ -365,16 +368,16 @@ function generate(id, data, options) {
       .transition()
       .duration(200)
       .style('fill', function(d) {
-        return d3.rgb(color(d.data.name)).brighter(0.5)
+        return d3.rgb(color(d.data)).brighter(0.5)
       })
 
+    // count the sum
+    let count = 0
+    for (let i = 0; i < data.length; i++) {
+      count += data[i]['value'] * 1
+    }
     // 如果内圆半径大于（圆环），则在中心空白处增加文字
     if (innerRadiusFn(d) > 0) {
-      // count the sum
-      let count = 0
-      for (let i = 0; i < data.length; i++) {
-        count += data[i]['value'] * 1
-      }
       // add name text
       svg
         .append('svg:text')
@@ -383,7 +386,7 @@ function generate(id, data, options) {
         .attr('text-anchor', 'middle')
         .transition()
         .duration(200)
-        .text(`${d['data']['name']}（${d['value']}）`)
+        .text(`${d['data']['name']}：${d['value']}`)
 
       // add value text
       svg
@@ -394,6 +397,12 @@ function generate(id, data, options) {
         .transition()
         .duration(200)
         .text(`${d3.format('.00%')(d['value'] / count)}`)
+    } else {
+      d3.select(id)
+        .select('svg')
+        .append('title')
+        .attr('id', `${id.replace('#', '')}-title`)
+        .text(`${d['data']['name']}：${d['value']}（${d3.format('.00%')(d['value'] / count)}）`)
     }
   }
   function ArcMouseout(_this, d) {
@@ -404,7 +413,7 @@ function generate(id, data, options) {
       .duration(200)
       .attr('d', arc.innerRadius(innerRadiusFn).outerRadius(outerRadiusFn))
       .style('fill', function(d) {
-        return color(d.data.name)
+        return color(d.data)
       })
     // 还原方位线的颜色
     d3.select(_this)
@@ -412,7 +421,7 @@ function generate(id, data, options) {
       .transition()
       .duration(200)
       .style('stroke', function(d) {
-        return color(d.data.name)
+        return color(d.data)
       })
     // 还原文字的颜色
     d3.select(_this)
@@ -420,7 +429,7 @@ function generate(id, data, options) {
       .transition()
       .duration(200)
       .style('fill', function(d) {
-        return color(d.data.name)
+        return color(d.data)
       })
     // 还原图例的颜色
     d3.select(_this)
@@ -429,12 +438,16 @@ function generate(id, data, options) {
       .transition()
       .duration(200)
       .style('fill', function(d) {
-        return color(d.data.name)
+        return color(d.data)
       })
     // 删除圆环中心的文字
     if (innerRadiusFn(d) > 0) {
       d3.select(id)
         .selectAll('.donutCenterText')
+        .remove()
+    } else {
+      d3.select(id)
+        .select(`${id}-title`)
         .remove()
     }
   }
@@ -442,16 +455,22 @@ function generate(id, data, options) {
   // .arc 事件
   g.on('mouseover', function(d) {
     ArcMouseover(this, d)
-  }).on('mouseout', function(d) {
-    ArcMouseout(this, d)
   })
+    .on('mouseout', function(d) {
+      ArcMouseout(this, d)
+    })
+    .on('click', function(d) {
+      if (typeof clickEvent === 'function') {
+        d.data.data['color'] = color(d.data)
+        clickEvent(d)
+      }
+    })
 }
 
 // 旭日图生成器 https://bl.ocks.org/kerryrodden/7090426
-function sunburst(id, data) {
-  let options
+function sunburst(id, data, options) {
   let countValue = 0
-  let { innerRadius, radius, svg } = getConfig(id, options)
+  let { innerRadius, radius, svg, color } = getConfig(id, data, options)
 
   svg.attr('transform', 'translate(' + (radius * 1 + 50) + ',' + (radius * 1 + 50) + ')')
 
@@ -493,7 +512,7 @@ function sunburst(id, data) {
       if (!d.children) {
         countValue = countValue + d.value
       }
-      return color((d.children ? d : d.parent).name)
+      return color(d)
     })
     .style('fill-rule', 'evenodd')
     .each(function(d) {
@@ -541,7 +560,7 @@ function sunburst(id, data) {
         return points.join(' ')
       })
       .style('fill', function(d) {
-        return color(d.name)
+        return color(d)
       })
 
     entering
@@ -577,7 +596,7 @@ function sunburst(id, data) {
           .attr('x', (i + 1) * breadcrumb.s + breadcrumb.t + addW + getBW(nodeArray[nodeArray.length - 1]))
           .attr('y', breadcrumb.h / 2)
           .attr('dy', '0.35em')
-          .text(percentageString)
+          .text(`${d.value}（${percentageString}）`)
       }
       return 'translate(' + (i * breadcrumb.s + addW) + ', 0)'
     })
@@ -661,7 +680,7 @@ function sunburst(id, data) {
         .transition()
         .duration(200)
         .style('fill', function(d) {
-          return color(d.name)
+          return color(d)
         })
       if (!clickData) {
         svg.selectAll('.solidArc').style('opacity', 1)
@@ -676,36 +695,29 @@ function sunburst(id, data) {
 }
 
 // 环形南丁格尔玫瑰图
-function roseDoughnut(id, data) {
+function roseDoughnut(id, data, options) {
   let formatData = JSON.parse(JSON.stringify(data))
   let maxScale = formatData.sort((a, b) => {
     return b.value - a.value
   })[0].value
-  generate(id, data, {
-    maxScale
-  })
+  generate(id, data, Object.assign({ maxScale }, options))
 }
 // 南丁格尔玫瑰图
-function rosePie(id, data) {
+function rosePie(id, data, options) {
   let formatData = JSON.parse(JSON.stringify(data))
   let maxScale = formatData.sort((a, b) => {
     return b.value - a.value
   })[0].value
-  generate(id, data, {
-    maxScale,
-    innerRadius: 0
-  })
+  generate(id, data, Object.assign({ maxScale, innerRadius: 0 }, options))
 }
 
 // 环形图
-function doughnut(id, data) {
-  generate(id, data)
+function doughnut(id, data, options) {
+  generate(id, data, options)
 }
 // 饼图
-function pie(id, data) {
-  generate(id, data, {
-    innerRadius: 0
-  })
+function pie(id, data, options) {
+  generate(id, data, Object.assign({ innerRadius: 0 }, options))
 }
 
 export default {
