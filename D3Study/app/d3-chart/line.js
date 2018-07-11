@@ -12,7 +12,13 @@ function generate(id, data, options) {
   }
   Object.assign(defaultOptions, options)
 
-  let { svg, xScale, yScale, /* height, width, */ redrawXAxis, redrawYAxis } = xyGrid.generateGrid(id, data, defaultOptions)
+  let {
+    svg,
+    xScale,
+    yScale,
+    /* height, width, */ redrawXAxis,
+    redrawYAxis
+  } = xyGrid.generateGrid(id, data, defaultOptions)
 
   var line = d3.svg
     .line()
@@ -40,7 +46,8 @@ function generate(id, data, options) {
 
   function addPoint(data, xScale, yScale) {
     if (defaultOptions.hasPoint) {
-      d3.select(id)
+      d3
+        .select(id)
         .selectAll('.countPoints')
         .remove()
       let points = svg.append('g').attr('class', 'countPoints')
@@ -59,28 +66,32 @@ function generate(id, data, options) {
         .attr('cy', function(d) {
           return yScale(d['value'])
         })
-        .attr('r', '6px')
-        .attr('stroke', '#fff')
-        .attr('stroke-width', '2px')
-        .attr('fill', chartColor[0])
+        .attr('r', '2px')
+        .attr('stroke', chartColor[0])
+        .attr('stroke-width', '1px')
+        .attr('fill', '#fff')
         .on('mouseover', function(d) {
-          d3.select(this)
+          d3
+            .select(this)
             .transition()
             .duration(100)
-            .attr('r', '8px')
-          d3.select(id)
+            .attr('r', '4px')
+          d3
+            .select(id)
             .select('svg')
             .append('title')
             .attr('id', `${id.replace('#', '')}-title`)
             .text(`${d['value']}${d['data']['Unit']}`)
         })
         .on('mouseout', function(d) {
-          d3.select(this)
+          d3
+            .select(this)
             .transition()
             .duration(100)
-            .attr('r', '6px')
+            .attr('r', '2px')
 
-          d3.select(id)
+          d3
+            .select(id)
             .select(`${id}-title`)
             .remove()
         })
