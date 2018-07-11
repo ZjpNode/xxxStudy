@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-05-18 09:11:03
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-06-29 15:13:40
+ * @Last Modified time: 2018-07-11 11:02:54
  * @description:
  */
 
@@ -14,7 +14,8 @@ const config = require('./config')
 let margin = config.margin
 let chartColor = config.chartColor
 let color = d3.scale.ordinal().range(chartColor)
-let legendSize = 10
+let legendSize = 12
+let textOffset = 14
 
 // 根据data和options生成配置信息
 function getConfig(id, options) {
@@ -36,11 +37,11 @@ function getConfig(id, options) {
     .attr('width', containerWidth)
     .attr('height', containerHeight)
     .append('g')
-    .attr('transform', 'translate(' + radius + ',' + radius + ')')
+    .attr('transform', 'translate(' + (radius * 2 + margin.left) + ',' + (radius + margin.top) + ')')
 
   let defaultOptions = {
-    outerRadius: radius - Math.max(margin.left, margin.right),
-    innerRadius: (radius - Math.max(margin.left, margin.right)) * 0.8,
+    outerRadius: radius,
+    innerRadius: radius * 0.8,
     maxScale: 0,
     radius,
     svg,
@@ -57,8 +58,8 @@ function getConfig(id, options) {
 
 // 获取顶级节点
 function getAncestors(node) {
-  var path = []
-  var current = node
+  let path = []
+  let current = node
   while (current.parent) {
     path.unshift(current)
     current = current.parent
@@ -68,14 +69,15 @@ function getAncestors(node) {
 
 // 图形生成器
 function generate(id, data, options) {
-  let { outerRadius, innerRadius, maxScale, radius, svg, height } = getConfig(id, options)
+  let { outerRadius, innerRadius, maxScale, radius, svg, height, width } = getConfig(id, options)
 
+  // 内圆半径计算公式
   function innerRadiusFn(d) {
     return innerRadius !== 0 && maxScale
       ? innerRadius / 2 // RoseDoughnut 环形南丁格尔玫瑰图(内环半径/2)
       : innerRadius
   }
-
+  // 外圆半径计算公式
   function outerRadiusFn(d) {
     // 如果是南丁格尔玫瑰图，则外环半径由value决定
     if (maxScale) {
@@ -110,12 +112,12 @@ function generate(id, data, options) {
     .enter()
     .append('g')
     .attr('class', 'arc')
+    .style('cursor', 'pointer')
 
   // 为每个圆环填充颜色
   g.append('path')
-    .attr('d', arc)
     .attr('class', 'solidArc')
-    .style('cursor', 'pointer')
+    .attr('d', arc)
     .style('fill', function(d) {
       return color(d.data.name)
     })
@@ -135,7 +137,7 @@ function generate(id, data, options) {
     // 这里将每一个的弧的开始角度和结束角度都设置成了0
     // 然后向他们原始的角度(b)开始过渡，完成动画。
     b.innerRadius = 0
-    var i = d3.interpolate({ startAngle: 0, endAngle: 0 }, b)
+    let i = d3.interpolate({ startAngle: 0, endAngle: 0 }, b)
     // 下面的函数就是过渡函数，他是执行多次最终达到想要的状态。
     return function(t) {
       return arc(i(t))
@@ -146,85 +148,77 @@ function generate(id, data, options) {
   //   // 设置内半径不为0
   //   b.innerRadius = radius * 0.6
   //   // 然后内半径由0开始过渡
-  //   var i = d3.interpolate({ innerRadius: 0 }, b)
+  //   let i = d3.interpolate({ innerRadius: 0 }, b)
   //   return function(t) {
   //     return arc(i(t))
   //   }
   // }
 
-  // 事件
-  g.selectAll('.solidArc')
-    .on('mouseover', function(d) {
-      d3.select(this)
-        .transition()
-        .duration(200)
-        .style('fill', function(d) {
-          return d3.rgb(color(d.data.name)).brighter(0.5)
-        })
-        .attr(
-          'd',
-          arc.innerRadius(innerRadiusFn).outerRadius(function(d) {
-            return outerRadiusFn(d) * 1.05
-          })
-        )
-
-      if (innerRadiusFn(d) > 0) {
-        // count the sum
-        let count = 0
-        for (let i = 0; i < data.length; i++) {
-          count += data[i]['value'] * 1
-        }
-        // add name text
-        svg
-          .append('svg:text')
-          .attr('class', 'donutCenterText')
-          .attr('dy', '-.3em')
-          .attr('text-anchor', 'middle')
-          .transition()
-          .duration(200)
-          .text(d['data']['name'])
-
-        // add value text
-        svg
-          .append('svg:text')
-          .attr('class', 'donutCenterText')
-          .attr('dy', '.8em')
-          .attr('text-anchor', 'middle')
-          .transition()
-          .duration(200)
-          .text(d3.format('.00%')(d['value'] / count))
-      }
-    })
-    .on('mouseout', function(d) {
-      d3.select(this)
-        .transition()
-        .duration(200)
-        .attr('d', arc.innerRadius(innerRadiusFn).outerRadius(outerRadiusFn))
-        .style('fill', function(d) {
-          return color(d.data.name)
-        })
-      if (innerRadiusFn(d) > 0) {
-        d3.select(id)
-          .selectAll('.donutCenterText')
-          .remove()
-      }
-    })
-
   // 设置文字
-  // g
-  //   .append('text')
-  //   .attr('transform', function(d) {
-  //     return 'translate(' + arc.centroid(d) + ')'
-  //   })
-  //   .attr('dy', '.35em')
-  //   .attr('dx', '-2em')
-  //   .text(function(d) {
-  //     return d.data.name
-  //   })
-  //   .style('user-select', 'none')
+  let textLabels = g
+    .append('text')
+    .attr('class', 'label-text')
+    .attr('transform', function(d) {
+      // 根据开始和结束的弧度，通过三角函计算x,y坐标
+      return (
+        'translate(' +
+        Math.cos((d.startAngle + d.endAngle - Math.PI) / 2) * (radius + textOffset) +
+        ',' +
+        Math.sin((d.startAngle + d.endAngle - Math.PI) / 2) * (radius + textOffset) +
+        ')'
+      )
+    })
+    .attr('dx', function(d) {
+      let centroid = arc.centroid(d)
+      let midAngle = Math.atan2(centroid[1], centroid[0])
+      let x1 = Math.cos(midAngle) * (radius + textOffset)
+      centroid = arc.centroid(d)
+      return x1 > 0 ? '1.5em' : '-1.5em'
+    })
+    .attr('dy', '0.3em')
+    .attr('text-anchor', function(d) {
+      if ((d.startAngle + d.endAngle) / 2 < Math.PI) {
+        return 'beginning'
+      } else {
+        return 'end'
+      }
+    })
+    .text(function(d) {
+      return d.data.value ? d.data.name : ''
+    })
+    .style('user-select', 'none')
+    .style('fill', function(d) {
+      return color(d.data.name)
+    })
 
-  // g
-  //   .append('text')
+  function addLine(d, addValue) {
+    let x0 = arc.centroid(d)[0]
+    let y0 = arc.centroid(d)[1]
+    let centroid = arc.centroid(d)
+    let midAngle = Math.atan2(centroid[1], centroid[0])
+    let x1 = Math.cos(midAngle) * (radius + textOffset)
+    centroid = arc.centroid(d)
+    let x2 = x1 > 0 ? x1 + textOffset : x1 - textOffset
+    midAngle = Math.atan2(centroid[1], centroid[0])
+    centroid = arc.centroid(d)
+    midAngle = Math.atan2(centroid[1], centroid[0])
+    let y1 = Math.sin(midAngle) * (radius + textOffset)
+    let ret = []
+    ret.push('M', x0, y0, 'L', x1, y1 + addValue, 'L', x2, y1 + addValue)
+    return ret.join(' ')
+  }
+
+  // 为文字添加方位线
+  let textLines = g
+    .append('path')
+    .attr('class', 'label-line')
+    .attr('d', function(d, i) {
+      return addLine(d, 0)
+    })
+    .style('stroke', function(d) {
+      return color(d.data.name)
+    })
+  // g.append('text')
   //   .attr('transform', function(d) {
   //     return 'translate(' + arc.centroid(d) + ')'
   //   })
@@ -234,43 +228,223 @@ function generate(id, data, options) {
   //   })
   //   .style('user-select', 'none')
 
+  // 调整文字和方位线
+  function relax() {
+    let spacing = 12
+    let alpha = 6.5
+    // again = false
+    textLabels.each(function(d, i) {
+      let a = this
+      // console.log(a)
+      let da = d3.select(a)
+      // console.log(da)
+      let y1 =
+        da
+          .attr('transform')
+          .match(/translate\((.*?)\)/)[1]
+          .split(',')[1] * 1
+      textLabels.each(function(d, j) {
+        let b = this
+        // a & b are the same element and don't collide.
+        if (a === b) return
+        let db = d3.select(b)
+        // a & b are on opposite sides of the chart and
+        // don't collide
+        if (da.attr('text-anchor') !== db.attr('text-anchor')) return
+        // Now let's calculate the distance between
+        // these elements.
+        let y2 =
+          db
+            .attr('transform')
+            .match(/translate\((.*?)\)/)[1]
+            .split(',')[1] * 1
+        let deltaY = y1 - y2
+
+        // If spacing is greater than our specified spacing,
+        // they don't collide.
+        if (Math.abs(deltaY) > spacing) return
+
+        // If the labels collide, we'll push each
+        // of the two labels up and down a little bit.
+        // again = true
+        let sign = deltaY > 0 ? 1 : -1
+        let adjust = sign * alpha
+        da.attr('y', adjust)
+        db.attr('y', -1 * adjust)
+        d3.select(textLines[0][i]).attr('d', function(d, i) {
+          return addLine(d, adjust)
+        })
+        d3.select(textLines[0][j]).attr('d', function(d, i) {
+          return addLine(d, -1 * adjust)
+        })
+      })
+    })
+    // Adjust our line leaders here
+    // so that they follow the labels.
+    // if (again) {
+    //   console.log('yizhi??????????????????')
+    //   setTimeout(relax, 20)
+    // }
+  }
+
+  // 重新调整文字和方位线，防止文字重叠
+  relax()
+
   // 设置图例
-  let legend = svg
-    .selectAll('.legend')
-    .data(data)
-    .enter()
+  let legend = g
     .append('g')
     .attr('class', 'legend')
     .attr('transform', function(d, i) {
       let translateX, translateY
       if (data.length > 3) {
-        translateX = radius
-        translateY = i * 30 - radius + margin.top * 2
+        translateX = width - radius * 4
+        translateY = i * 30 - radius
       } else {
         translateX = i * 10 * legendSize
         translateY = height / 2 + margin.bottom - legendSize * 1.2
       }
       return `translate(${translateX},${translateY})`
     })
+    .style('cursor', 'pointer')
 
   // 图例样式
   legend
     .append('rect')
-    .attr('width', legendSize)
+    .attr('width', legendSize * 2)
     .attr('height', legendSize)
+    .attr('ry', legendSize / 4)
     .style('fill', function(d) {
-      return color(d.name)
+      return color(d.data.name)
     })
 
   // 图例文字
   legend
     .append('text')
     .data(data)
-    .attr('x', legendSize * 1.2)
+    .attr('x', legendSize * 2 * 1.2)
     .attr('y', legendSize / 1.1)
     .text(function(d) {
       return d.name
     })
+
+  function ArcMouseover(_this, d) {
+    // 改变圆弧的颜色和大小
+    d3.select(_this)
+      .select('.solidArc')
+      .transition()
+      .duration(200)
+      .style('fill', function(d) {
+        return d3.rgb(color(d.data.name)).brighter(0.5)
+      })
+      .attr(
+        'd',
+        arc.innerRadius(innerRadiusFn).outerRadius(function(d) {
+          return outerRadiusFn(d) * 1.05
+        })
+      )
+    // 改变方位线的颜色
+    d3.select(_this)
+      .select('.label-line')
+      .transition()
+      .duration(200)
+      .style('stroke', function(d) {
+        return d3.rgb(color(d.data.name)).brighter(0.5)
+      })
+    // 改变文字的颜色
+    d3.select(_this)
+      .select('.label-text')
+      .transition()
+      .duration(200)
+      .style('fill', function(d) {
+        return d3.rgb(color(d.data.name)).brighter(0.5)
+      })
+    // 改变图例的颜色
+    d3.select(_this)
+      .select('.legend')
+      .select('rect')
+      .transition()
+      .duration(200)
+      .style('fill', function(d) {
+        return d3.rgb(color(d.data.name)).brighter(0.5)
+      })
+
+    // 如果内圆半径大于（圆环），则在中心空白处增加文字
+    if (innerRadiusFn(d) > 0) {
+      // count the sum
+      let count = 0
+      for (let i = 0; i < data.length; i++) {
+        count += data[i]['value'] * 1
+      }
+      // add name text
+      svg
+        .append('svg:text')
+        .attr('class', 'donutCenterText')
+        .attr('dy', '-.3em')
+        .attr('text-anchor', 'middle')
+        .transition()
+        .duration(200)
+        .text(`${d['data']['name']}（${d['value']}）`)
+
+      // add value text
+      svg
+        .append('svg:text')
+        .attr('class', 'donutCenterText')
+        .attr('dy', '.8em')
+        .attr('text-anchor', 'middle')
+        .transition()
+        .duration(200)
+        .text(`${d3.format('.00%')(d['value'] / count)}`)
+    }
+  }
+  function ArcMouseout(_this, d) {
+    // 还原圆弧的颜色和大小
+    d3.select(_this)
+      .select('.solidArc')
+      .transition()
+      .duration(200)
+      .attr('d', arc.innerRadius(innerRadiusFn).outerRadius(outerRadiusFn))
+      .style('fill', function(d) {
+        return color(d.data.name)
+      })
+    // 还原方位线的颜色
+    d3.select(_this)
+      .select('.label-line')
+      .transition()
+      .duration(200)
+      .style('stroke', function(d) {
+        return color(d.data.name)
+      })
+    // 还原文字的颜色
+    d3.select(_this)
+      .select('.label-text')
+      .transition()
+      .duration(200)
+      .style('fill', function(d) {
+        return color(d.data.name)
+      })
+    // 还原图例的颜色
+    d3.select(_this)
+      .select('.legend')
+      .select('rect')
+      .transition()
+      .duration(200)
+      .style('fill', function(d) {
+        return color(d.data.name)
+      })
+    // 删除圆环中心的文字
+    if (innerRadiusFn(d) > 0) {
+      d3.select(id)
+        .selectAll('.donutCenterText')
+        .remove()
+    }
+  }
+
+  // .arc 事件
+  g.on('mouseover', function(d) {
+    ArcMouseover(this, d)
+  }).on('mouseout', function(d) {
+    ArcMouseout(this, d)
+  })
 }
 
 // 旭日图生成器 https://bl.ocks.org/kerryrodden/7090426
@@ -309,11 +483,11 @@ function sunburst(id, data) {
     .enter()
     .append('path')
     .attr('class', 'solidArc')
-    .style('cursor', 'pointer')
     .attr('display', function(d) {
       return d.depth ? null : 'none'
     }) // hide inner ring
     .attr('d', arc)
+    .style('cursor', 'pointer')
     .style('stroke', '#fff')
     .style('fill', function(d) {
       if (!d.children) {
@@ -354,7 +528,7 @@ function sunburst(id, data) {
     entering
       .append('svg:polygon')
       .attr('points', function(d, i) {
-        var points = []
+        let points = []
         points.push('0,0')
         points.push(getBW(d) + ',0')
         points.push(getBW(d) + breadcrumb.t + ',' + breadcrumb.h / 2)
@@ -439,9 +613,9 @@ function sunburst(id, data) {
     svg
       .append('foreignObject')
       .attr('class', 'donutCenterText')
-      .attr('width', innerRadius * 2)
+      .attr('width', innerRadius)
       .attr('height', '1.5em')
-      .attr('transform', 'translate(' + innerRadius * -1 + ',-14)')
+      .attr('transform', 'translate(' + innerRadius * -0.5 + ',-14)')
       .append('xhtml:body')
       .style('background-color', '#fff')
       .style('text-align', 'center')
