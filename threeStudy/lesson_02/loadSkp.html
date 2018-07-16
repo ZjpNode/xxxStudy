@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>three.js_lesson02_load .skp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <script src="../lib/three.js-dev/build/three.min.js"></script>
+    <script src="../lib/three.js-dev/examples/js/loaders/ColladaLoader.js"></script>
+    <script src="../lib/three.js-dev/examples/js/controls/OrbitControls.js"></script>
+    <script src="../lib/three.js-dev/examples/js/libs/stats.min.js"></script>
+    <script>
+        let camera, scene, renderer;
+        let geometry, material, mesh;
+        let stats, clock, controls;
+        let loader, skpData;
+
+        // 初始化tree.js
+        function initTree() {
+            // 相机
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 2000);
+            camera.position.set(8, 10, 8);
+            camera.lookAt(new THREE.Vector3(0, 3, 0));
+
+
+            clock = new THREE.Clock();
+
+            // 场景
+            scene = new THREE.Scene();
+            // 环境光
+            var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
+            scene.add(ambientLight);
+            // 平行光
+            var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(1, 1, 0).normalize();
+            scene.add(directionalLight);
+
+            // 启用轨道控制（即允许鼠标点击拖拽、滚轮放大）
+            controls = new THREE.OrbitControls(camera);
+
+            // 渲染器
+            renderer = new THREE.WebGLRenderer({ antialias: true })
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            // renderer.setClearColor('#fff', 1.0);
+
+            document.body.appendChild(renderer.domElement);
+        }
+
+        // 添加性能插件
+        function AddStats() {
+            //stats对象初始化
+            stats = new Stats();
+            stats.domElement.style.position = 'absolute'; //绝对坐标
+            stats.domElement.style.left = '0px';// (0,0)px,左上角
+            stats.domElement.style.top = '0px';
+            document.body.appendChild(stats.domElement);
+
+        }
+
+        // 加载数据
+        function loadData() {
+            loader = new THREE.ColladaLoader();
+            loader.load('../models/edbyg.dae', function (result) {
+                skpData = result.scene
+                console.log(result)
+                scene.add(result.scene)
+            })
+        }
+
+        function render() {
+            renderer.render(scene, camera);
+            stats.update();
+        }
+
+        // 动画
+        function animate() {
+            requestAnimationFrame(animate);
+            let delta = clock.getDelta();
+            if (skpData !== undefined) {
+                // skpData.rotation.z += delta * 0.5;
+            }
+            render()
+        }
+
+        function addTouchListener() {
+            var startX, endX, startY, endY;
+            // 禁用右键菜单
+            document.body.oncontextmenu = function (event) {
+                event.returnValue = false;
+            };
+            document.body.onmousedown = function (event) {
+                startX = event.clientX;
+                startY = event.clientY;
+            };
+            document.body.onmousemove = function (event) {
+                if (event.buttons === 2) {
+                    endX = event.clientX;
+                    endY = event.clientY;
+                    var x = endX - startX;
+                    var y = endY - startY;
+                    if (Math.abs(x) > Math.abs(y)) {
+                        camera.position.x = camera.position.x - x * 0.05;
+                    } else {
+                        camera.position.y = camera.position.y + y * 0.05;
+                    }
+                    startX = endX;
+                    startY = endY;
+                }
+                render();
+            };
+        }
+
+        (function () {
+            initTree();
+            AddStats();
+            loadData();
+            animate();
+            // addTouchListener();
+        })()
+    </script>
+</body>
+
+</html>
