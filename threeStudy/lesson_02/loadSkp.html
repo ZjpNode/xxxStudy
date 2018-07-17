@@ -38,11 +38,13 @@
             // 相机
             camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 20000);
             camera.position.set(15, 15, 10);
-            camera.lookAt(scene.position);
-
+            // camera.lookAt(scene.position);
 
             clock = new THREE.Clock();
 
+            // 在网页上显示坐标系，其中坐标系的长度为6
+            var axisHelper = new THREE.AxisHelper(6);
+            scene.add(axisHelper)
 
             // 环境光
             var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
@@ -99,6 +101,50 @@
             render()
         }
 
+
+
+        let select = true;
+        function rotateByOwn(selected, mesh) {
+
+            // dummy = new THREE.Object3D();
+            // plane = mesh;
+            // plane.position.set(5, 5, 0);
+            // dummy.add(plane);
+            // dummy.position.set(0, 0, 0);
+            // scene.add(dummy);
+            // dummy.rotation.y += 0.5 * Math.PI;
+            scene.remove(mesh)
+
+
+        }
+
+        function fixMatrix(mesh) {
+            bakeRotation(mesh);
+            rotate180(mesh);
+            bakeRotation(mesh);
+        }
+
+        function rotate180(mesh) {
+            var m = new THREE.Matrix4();
+            m.makeRotationY(Math.PI);
+            mesh.matrix.multiplyMatrices(mesh.matrix, m);
+            mesh.matrix.decompose(mesh.position, mesh.quaternion, mesh.scale);
+        }
+
+        function bakeRotation(mesh) {
+            mesh.updateMatrixWorld();
+            var geom = mesh.geometry;
+            var rotMatrix = mesh.matrix.clone();
+            rotMatrix.setPosition(new THREE.Vector3(0, 0, 0));
+            var pos = new THREE.Vector3();
+            pos.setFromMatrixPosition(mesh.matrix);
+            geom.applyMatrix(rotMatrix);
+            mesh.matrix.identity();
+            mesh.matrix.setPosition(pos);
+            mesh.matrix.decompose(mesh.position, mesh.quaternion, mesh.scale);
+            mesh.updateMatrixWorld();
+        }
+
         function addTouchListener() {
             var mouse = { x: 0, y: 0 };
 
@@ -134,11 +180,16 @@
                     var intersected = SELECTED.object;
                     console.log(SELECTED, intersected)
                     // change the color of the closest face.
-                    SELECTED.face.color.setRGB(0.8 * Math.random() + 0.2, 0, 0);
-                    intersected.geometry.colorsNeedUpdate = true;
+                    // SELECTED.face.color.setRGB(0.8 * Math.random() + 0.2, 0, 0);
+                    // intersected.geometry.colorsNeedUpdate = true;
+                    rotateByOwn(SELECTED, intersected)
                     render();
                 }
             };
+            // document.body.onmousemove = function(e){
+            //     console.log("Move.");
+            //     event.preventDefault();
+            // }
         }
 
         (function () {
