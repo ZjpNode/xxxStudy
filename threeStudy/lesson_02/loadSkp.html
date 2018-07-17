@@ -28,20 +28,22 @@
         let camera, scene, renderer;
         let geometry, material, mesh;
         let stats, clock, controls;
-        let loader, skpData;
+        let loader, skpObj;
 
         // 初始化tree.js
         function initTree() {
+            // 场景
+            scene = new THREE.Scene();
+
             // 相机
-            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 2000);
-            camera.position.set(8, 10, 8);
-            camera.lookAt(new THREE.Vector3(0, 3, 0));
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 20000);
+            camera.position.set(15, 15, 10);
+            camera.lookAt(scene.position);
 
 
             clock = new THREE.Clock();
 
-            // 场景
-            scene = new THREE.Scene();
+
             // 环境光
             var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
             scene.add(ambientLight);
@@ -76,7 +78,7 @@
         function loadData() {
             loader = new THREE.ColladaLoader();
             loader.load('../models/edbyg.dae', function (result) {
-                skpData = result.scene
+                skpObj = result.scene
                 console.log(result)
                 scene.add(result.scene)
             })
@@ -91,37 +93,51 @@
         function animate() {
             requestAnimationFrame(animate);
             let delta = clock.getDelta();
-            if (skpData !== undefined) {
-                // skpData.rotation.z += delta * 0.5;
+            if (skpObj !== undefined) {
+                // skpObj.rotation.z += delta * 0.5;
             }
             render()
         }
 
         function addTouchListener() {
-            var startX, endX, startY, endY;
-            // 禁用右键菜单
-            document.body.oncontextmenu = function (event) {
-                event.returnValue = false;
-            };
+            var mouse = { x: 0, y: 0 };
+
             document.body.onmousedown = function (event) {
-                startX = event.clientX;
-                startY = event.clientY;
-            };
-            document.body.onmousemove = function (event) {
-                if (event.buttons === 2) {
-                    endX = event.clientX;
-                    endY = event.clientY;
-                    var x = endX - startX;
-                    var y = endY - startY;
-                    if (Math.abs(x) > Math.abs(y)) {
-                        camera.position.x = camera.position.x - x * 0.05;
-                    } else {
-                        camera.position.y = camera.position.y + y * 0.05;
-                    }
-                    startX = endX;
-                    startY = endY;
+                console.log("Click.");
+                event.preventDefault();
+
+                // update the mouse variable
+                /* 推导过程：
+                    设A点为点击点(x1,y1),x1=e.clintX, y1=e.clientY
+                    设A点在世界坐标中的坐标值为B(x2,y2);
+                    由于A点的坐标值的原点是以屏幕左上角为(0,0);
+                    我们可以计算可得以屏幕中心为原点的B'值
+                    x2' = x1 - innerWidth/2
+                    y2' = innerHeight/2 - y1
+                    又由于在世界坐标的范围是[-1,1],要得到正确的B值我们必须要将坐标标准化
+                    x2 = (x1 -innerWidth/2)/(innerwidth/2) = (x1/innerWidth)*2-1
+                    同理得 y2 = -(y1/innerHeight)*2 +1
+                */
+                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+                // 新建一个三维单位向量 假设z方向就是1
+                // 根据照相机，把这个向量转换到视点坐标系
+                var vector = new THREE.Vector3(mouse.x, mouse.y, 1).unproject(camera);
+                // 在视点坐标系中形成射线,射线的起点向量是照相机， 射线的方向向量是照相机到点击的点，这个向量应该归一标准化。
+                var raycaster = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
+                //射线和模型求交，选中一系列直线
+                var intersects = raycaster.intersectObjects(skpObj.children[0].children);
+                console.log('intersects=' + intersects)
+                if (intersects.length > 0) {
+                    //选中第一个射线相交的物体
+                    SELECTED = intersects[0];
+                    var intersected = SELECTED.object;
+                    console.log(SELECTED, intersected)
+                    // change the color of the closest face.
+                    SELECTED.face.color.setRGB(0.8 * Math.random() + 0.2, 0, 0);
+                    intersected.geometry.colorsNeedUpdate = true;
+                    render();
                 }
-                render();
             };
         }
 
@@ -130,7 +146,7 @@
             AddStats();
             loadData();
             animate();
-            // addTouchListener();
+            addTouchListener();
         })()
     </script>
 </body>
