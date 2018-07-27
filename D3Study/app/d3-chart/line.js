@@ -29,7 +29,7 @@ function generate(id, data, options) {
     .y(function(d) {
       return yScale(d['value'])
     })
-  var path = svg.append('g').attr('class', 'countLines')
+  var path = svg.append('g').attr('class', 'countLine')
 
   path
     .append('path')

@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-05-18 09:11:03
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-07-11 15:56:59
+ * @Last Modified time: 2018-07-11 15:42:10
  * @description:
  */
 
@@ -40,7 +40,7 @@ function getConfig(id, data, options) {
     .attr('width', containerWidth)
     .attr('height', containerHeight)
     .append('g')
-    .attr('transform', 'translate(' + (radius * 2 + margin.left) + ',' + (radius + margin.top) + ')')
+    .attr('transform', 'translate(' + (radius * 1.5 + margin.left) + ',' + (radius + margin.top) + ')')
 
   let defaultOptions = {
     outerRadius: radius,
@@ -300,7 +300,7 @@ function generate(id, data, options) {
     .attr('transform', function(d, i) {
       let translateX, translateY
       if (data.length > 3) {
-        translateX = width - radius * 4
+        translateX = width - radius * 3
         translateY = i * 30 - radius
       } else {
         translateX = i * 10 * legendSize
