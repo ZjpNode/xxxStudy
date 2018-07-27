@@ -64,16 +64,21 @@ var pre6 = line.generateLine('#pre-6', per6Data, {
   hasPoint: true
 })
 
-setInterval(() => {
-  let value = Math.round(Math.random() * 16)
-  per6Data.push({
-    name: `电${Math.random()}`,
-    value: value,
-    data: { Unit: '台' }
-  })
-  if (Object.keys(per6Data).length === 6) per6Data.shift()
-  pre6.redraw(per6Data)
-}, 3000)
+// setInterval(() => {
+//   let value = Math.round(Math.random() * 16)
+//   per6Data.push({
+//     name: `电${Math.random()}`,
+//     value: value,
+//     data: { Unit: '台' }
+//   })
+//   console.log(per6Data)
+//   let data = per6Data.slice(
+//     per6Data.length - 6 < 0 ? 0 : per6Data.length - 6,
+//     per6Data.length
+//   )
+//   // if (Object.keys(per6Data).length === 6) per6Data.shift()
+//   pre6.redraw(data)
+// }, 3000)
 
 // --------------------------- hot-reload ----------------------------------------
 var hotClient = require('webpack-hot-middleware/client?noInfo=true&reload=true')
