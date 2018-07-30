@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-06-20 11:06:26
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-07-04 16:58:18
+ * @Last Modified time: 2018-07-30 17:09:45
  */
 const d3 = require('d3')
 const config = require('./config')
@@ -28,7 +28,8 @@ function generate(id, data, options) {
   }
   Object.assign(defaultOptions, options)
 
-  let marginRight = containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
+  let marginRight =
+    containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
 
   let width = containerWidth - marginRight - margin.left
   let height = containerHeight - margin.top - margin.bottom
@@ -42,11 +43,30 @@ function generate(id, data, options) {
         return d.name
       })
     )
+  // x轴比例尺
+  let xScale2 = d3.scale
+    .ordinal()
+    .rangeRoundBands([0, width * 2])
+    .domain(
+      data.map(function(d) {
+        return d.name
+      })
+    )
 
   // y轴比例尺
   let yScale = d3.scale
     .linear()
     .range([height, 0])
+    .domain([
+      0,
+      d3.max(data, function(d) {
+        return d['value'] + 5
+      })
+    ])
+  // y轴比例尺
+  let yScale2 = d3.scale
+    .linear()
+    .range([height * 2, 0])
     .domain([
       0,
       d3.max(data, function(d) {
@@ -90,6 +110,8 @@ function generate(id, data, options) {
     .append('svg')
     .attr('width', width + marginRight + margin.left)
     .attr('height', height + margin.top + margin.bottom)
+    .attr('x', 0)
+    .attr('y', 0)
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
@@ -272,7 +294,17 @@ function generate(id, data, options) {
     return { yScale }
   }
 
-  return { svg, xScale, yScale, height, width, redrawXAxis, redrawYAxis }
+  return {
+    svg,
+    xScale,
+    xScale2,
+    yScale,
+    yScale2,
+    height,
+    width,
+    redrawXAxis,
+    redrawYAxis
+  }
 }
 
 export function generateGrid(id, data, options) {

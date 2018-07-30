@@ -49,7 +49,21 @@ let per6Data = [
   { name: '电13', value: 13, data: { Unit: '台' } },
   { name: '电14', value: 14, data: { Unit: '台' } },
   { name: '电11', value: 11, data: { Unit: '台' } },
-  { name: '电9', value: 9, data: { Unit: '台' } }
+  { name: '电9', value: 9, data: { Unit: '台' } },
+  { name: '电10', value: 9, data: { Unit: '台' } },
+  { name: '电131', value: 13, data: { Unit: '台' } },
+  { name: '电141', value: 14, data: { Unit: '台' } },
+  { name: '电111', value: 11, data: { Unit: '台' } },
+  { name: '电91', value: 9, data: { Unit: '台' } },
+  { name: '电1x', value: 9, data: { Unit: '台' } },
+  { name: '电141x', value: 14, data: { Unit: '台' } },
+  { name: '电111x', value: 11, data: { Unit: '台' } },
+  { name: '电91x', value: 9, data: { Unit: '台' } },
+  { name: '电101x', value: 9, data: { Unit: '台' } },
+  { name: '电141y', value: 14, data: { Unit: '台' } },
+  { name: '电111y', value: 11, data: { Unit: '台' } },
+  { name: '电91y', value: 9, data: { Unit: '台' } },
+  { name: '电101y', value: 9, data: { Unit: '台' } }
   // ,
   // { name: "中国罐", value: 3, data: {} },
   // { name: "污水处理设备", value: 5, data: {} },
@@ -64,21 +78,21 @@ var pre6 = line.generateLine('#pre-6', per6Data, {
   hasPoint: true
 })
 
-// setInterval(() => {
-//   let value = Math.round(Math.random() * 16)
-//   per6Data.push({
-//     name: `电${Math.random()}`,
-//     value: value,
-//     data: { Unit: '台' }
-//   })
-//   console.log(per6Data)
-//   let data = per6Data.slice(
-//     per6Data.length - 6 < 0 ? 0 : per6Data.length - 6,
-//     per6Data.length
-//   )
-//   // if (Object.keys(per6Data).length === 6) per6Data.shift()
-//   pre6.redraw(data)
-// }, 3000)
+setInterval(() => {
+  let value = Math.round(Math.random() * 16)
+  per6Data.push({
+    name: `电${Math.random()}`,
+    value: value,
+    data: { Unit: '台' }
+  })
+  console.log(per6Data)
+  let data = per6Data.slice(
+    per6Data.length - 6 < 0 ? 0 : per6Data.length - 6,
+    per6Data.length
+  )
+  // if (Object.keys(per6Data).length === 6) per6Data.shift()
+  pre6.redraw(data)
+}, 3000)
 
 // --------------------------- hot-reload ----------------------------------------
 var hotClient = require('webpack-hot-middleware/client?noInfo=true&reload=true')
