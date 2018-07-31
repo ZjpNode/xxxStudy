@@ -12,52 +12,66 @@ function generate(id, data, options) {
   }
   Object.assign(defaultOptions, options)
 
-  let dataLn = data.length
-  let FrontData = data.slice(0, dataLn / 3 + 1)
-  let middleData = data.slice(dataLn / 3, dataLn / 3 * 2 + 1)
-  let EndData = data.slice(dataLn / 3 * 2, dataLn)
-
-  console.log(FrontData, middleData, EndData)
-
   let {
     svg,
     xScale,
     yScale,
-    /* height, width, */ redrawXAxis,
+    /* height, width, */
+    width,
+    redrawXAxis,
     redrawYAxis
   } = xyGrid.generateGrid(id, data, defaultOptions)
 
   let dataView = svg
     .append('svg')
     .attr('class', 'dataView')
-    .attr('x', xScale.rangeBand() / 2)
-    .attr('width', xScale.rangeBand() * (data.length - 1))
+    .attr('x', d3.min([xScale.rangeBand() / 2, 20]))
+    .attr('width', d3.max([xScale.rangeBand() * (data.length - 1), width - 40]))
 
-  let xAxisTicks = d3.selectAll(`${id} ${id}-count-x-axis .tick`)
-  xAxisTicks
-    .attr('transform', function() {
-      let tick = d3.select(this)
-      let tickT = d3.transform(tick.attr('transform'))
-      let tickDx =
-        3 * tickT.translate[0] -
-        xScale.rangeBand() * dataLn -
-        xScale.rangeBand()
-      return 'translate(' + tickDx + ',0)'
-    })
-    .style('opacity', function() {
-      let tick = d3.select(this)
-      let tickT = d3.transform(tick.attr('transform'))
-      if (
-        tickT.translate[0] > 0 &&
-        tickT.translate[0] < xScale.rangeBand() * (data.length - 1)
-      ) {
-        return 1
-      } else {
-        return 0
-      }
-    })
+  function updateXAxisTick(data, xScale) {
+    let xAxisTicks = d3.selectAll(`${id} ${id}-count-x-axis .tick`)
+    let num = 0
+    console.log('-------------------')
+    xAxisTicks
+      .attr('transform', function() {
+        let tick = d3.select(this)
+        let tickT = d3.transform(tick.attr('transform'))
+        let tickDx =
+          tickT.translate[0] + (2 * num - data.length) * xScale.rangeBand()
+        console.log(
+          tickT.translate[0],
+          2 * num - data.length,
+          xScale.rangeBand()
+        )
+        num++
+        return 'translate(' + tickDx + ',0)'
+      })
+      .style('opacity', function() {
+        let tick = d3.select(this)
+        let tickT = d3.transform(tick.attr('transform'))
+        if (
+          tickT.translate[0] > 0 &&
+          tickT.translate[0] < xScale.rangeBand() * (data.length - 1)
+        ) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+  }
+
+  function initData(data) {
+    let dataLn = data.length
+    let FrontData = data.slice(0, dataLn / 3 + 1)
+    let middleData = data.slice(dataLn / 3, dataLn / 3 * 2 + 1)
+    let EndData = data.slice(dataLn / 3 * 2, dataLn)
+    console.log(FrontData, middleData, EndData)
+    return { FrontData, middleData, EndData }
+  }
 
   function addLine(data, xScale, yScale) {
+    let { FrontData, middleData, EndData } = initData(data)
+
     var line = d3.svg
       .line()
       .interpolate(defaultOptions.lineType)
@@ -73,21 +87,21 @@ function generate(id, data, options) {
       .append('g')
       .attr(
         'transform',
-        'translate(' + -dataLn * xScale.rangeBand() + ',0)scale(3,1)'
+        'translate(' + -data.length * xScale.rangeBand() + ',0)scale(3,1)'
       )
       .attr('class', 'countLine')
     var path2 = dataView
       .append('g')
       .attr(
         'transform',
-        'translate(' + -dataLn * xScale.rangeBand() + ',0)scale(3,1)'
+        'translate(' + -data.length * xScale.rangeBand() + ',0)scale(3,1)'
       )
       .attr('class', 'countLine')
     var path3 = dataView
       .append('g')
       .attr(
         'transform',
-        'translate(' + -dataLn * xScale.rangeBand() + ',0)scale(3,1)'
+        'translate(' + -data.length * xScale.rangeBand() + ',0)scale(3,1)'
       )
       .attr('class', 'countLine')
 
@@ -138,7 +152,7 @@ function generate(id, data, options) {
         .attr('class', 'countPoints')
         .attr(
           'transform',
-          'translate(' + -dataLn * xScale.rangeBand() + ',0)scale(3,1)'
+          'translate(' + -data.length * xScale.rangeBand() + ',0)scale(3,1)'
         )
       points
         .selectAll('.tipCountPoints')
@@ -256,10 +270,14 @@ function generate(id, data, options) {
     d3.selectAll(id + ' .countLine').remove()
     d3.selectAll(id + ' .countPoints').remove()
 
+    setTimeout(function() {
+      updateXAxisTick(data, xScale)
+    }, 300)
     addLine(data, xScale, yScale)
     addPoint(data, xScale, yScale)
   }
 
+  updateXAxisTick(data, xScale)
   addLine(data, xScale, yScale)
   addPoint(data, xScale, yScale)
   onDrag(id)
@@ -267,8 +285,16 @@ function generate(id, data, options) {
   return { redraw }
 }
 
+function dragLine(id, data, options) {
+  
+}
+
 function generateLine(id, data, options) {
-  return generate(id, data, options)
+  if (options.canDrop) {
+    return dragLine(id, data, options)
+  } else {
+    return generate(id, data, options)
+  }
 }
 export default {
   generateLine

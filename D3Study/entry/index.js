@@ -46,24 +46,24 @@ var pre5 = bar.generateBar('#pre-5', per5Data, {
 })
 
 let per6Data = [
-  { name: '电13', value: 13, data: { Unit: '台' } },
-  { name: '电14', value: 14, data: { Unit: '台' } },
-  { name: '电11', value: 11, data: { Unit: '台' } },
-  { name: '电9', value: 9, data: { Unit: '台' } },
-  { name: '电10', value: 9, data: { Unit: '台' } },
-  { name: '电131', value: 13, data: { Unit: '台' } },
-  { name: '电141', value: 14, data: { Unit: '台' } },
-  { name: '电111', value: 11, data: { Unit: '台' } },
-  { name: '电91', value: 9, data: { Unit: '台' } },
-  { name: '电1x', value: 9, data: { Unit: '台' } },
-  { name: '电141x', value: 14, data: { Unit: '台' } },
-  { name: '电111x', value: 11, data: { Unit: '台' } },
-  { name: '电91x', value: 9, data: { Unit: '台' } },
-  { name: '电101x', value: 9, data: { Unit: '台' } },
-  { name: '电141y', value: 14, data: { Unit: '台' } },
-  { name: '电111y', value: 11, data: { Unit: '台' } },
-  { name: '电91y', value: 9, data: { Unit: '台' } },
-  { name: '电101y', value: 9, data: { Unit: '台' } }
+  { name: '电1', value: 13, data: { Unit: '台' } },
+  { name: '电2', value: 14, data: { Unit: '台' } },
+  { name: '电3', value: 11, data: { Unit: '台' } },
+  { name: '电4', value: 9, data: { Unit: '台' } },
+  { name: '电5', value: 10, data: { Unit: '台' } },
+  { name: '电6', value: 3, data: { Unit: '台' } },
+  { name: '电7', value: 4, data: { Unit: '台' } },
+  { name: '电8', value: 8, data: { Unit: '台' } },
+  { name: '电9', value: 7, data: { Unit: '台' } },
+  { name: '电10', value: 6, data: { Unit: '台' } },
+  { name: '电11', value: 6, data: { Unit: '台' } },
+  { name: '电12', value: 7, data: { Unit: '台' } },
+  { name: '电13', value: 9, data: { Unit: '台' } },
+  { name: '电14', value: 1, data: { Unit: '台' } },
+  { name: '电15', value: 14, data: { Unit: '台' } },
+  { name: '电16', value: 11, data: { Unit: '台' } },
+  { name: '电17', value: 9, data: { Unit: '台' } },
+  { name: '电18', value: 10, data: { Unit: '台' } }
   // ,
   // { name: "中国罐", value: 3, data: {} },
   // { name: "污水处理设备", value: 5, data: {} },
@@ -78,20 +78,20 @@ var pre6 = line.generateLine('#pre-6', per6Data, {
   hasPoint: true
 })
 
-setInterval(() => {
+setTimeout(() => {
   let value = Math.round(Math.random() * 16)
   per6Data.push({
     name: `电${Math.random()}`,
     value: value,
     data: { Unit: '台' }
   })
-  console.log(per6Data)
-  let data = per6Data.slice(
-    per6Data.length - 6 < 0 ? 0 : per6Data.length - 6,
-    per6Data.length
-  )
+  // console.log(per6Data)
+  // let data = per6Data.slice(
+  //   per6Data.length - 6 < 0 ? 0 : per6Data.length - 6,
+  //   per6Data.length
+  // )
   // if (Object.keys(per6Data).length === 6) per6Data.shift()
-  pre6.redraw(data)
+  pre6.redraw(per6Data)
 }, 3000)
 
 // --------------------------- hot-reload ----------------------------------------

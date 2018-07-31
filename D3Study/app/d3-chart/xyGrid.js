@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-06-20 11:06:26
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-07-30 17:09:45
+ * @Last Modified time: 2018-07-31 11:11:16
  */
 const d3 = require('d3')
 const config = require('./config')
@@ -43,30 +43,11 @@ function generate(id, data, options) {
         return d.name
       })
     )
-  // x轴比例尺
-  let xScale2 = d3.scale
-    .ordinal()
-    .rangeRoundBands([0, width * 2])
-    .domain(
-      data.map(function(d) {
-        return d.name
-      })
-    )
 
   // y轴比例尺
   let yScale = d3.scale
     .linear()
     .range([height, 0])
-    .domain([
-      0,
-      d3.max(data, function(d) {
-        return d['value'] + 5
-      })
-    ])
-  // y轴比例尺
-  let yScale2 = d3.scale
-    .linear()
-    .range([height * 2, 0])
     .domain([
       0,
       d3.max(data, function(d) {
@@ -297,9 +278,7 @@ function generate(id, data, options) {
   return {
     svg,
     xScale,
-    xScale2,
     yScale,
-    yScale2,
     height,
     width,
     redrawXAxis,
