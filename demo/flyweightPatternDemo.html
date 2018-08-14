@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>享元模式</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="container"></div>
+    <div id="next_page">下一页</div>
+</body>
+<script>
+    let data = [], num = 5
+    for (let i = 0; i < 12; i++) {
+        data.push(`第${i + 1}条信息`)
+    }
+    // 享元类
+    let Flyweight = function () {
+        // 内部数据
+        let create = []
+        // 内部方法
+        function created() {
+            let dom = document.createElement('div')
+            document.getElementById('container').appendChild(dom)
+            create.push(dom)
+            return dom
+        }
+        return {
+            getDiv() {
+                let ln = create.length
+                if (ln < num) {
+                    return created()
+                } else {
+                    let div = create.shift()
+                    create.push(div)
+                    return div
+                }
+            }
+        }
+    }();
+    let page = 0, len = data.length
+    for (let i = 0; i < num; i++) {
+        if (data[i]) {
+            Flyweight.getDiv().innerHTML = data[i]
+        }
+    }
+    document.getElementById('next_page').onclick = function () {
+        if (data.length < num) return;
+        let n = ++page * num % len, j = 0 // 获取当前页的第一条信息的索引
+        for (; j < num; j++) {
+            if (data[n + j]) {
+                Flyweight.getDiv().innerHTML = data[n + j]
+            } else if (data[n + j - len]) {
+                Flyweight.getDiv().innerHTML = data[n + j - len]
+            } else {
+                Flyweight.getDiv().innerHTML = ""
+            }
+        }
+    }
+</script>
+
+</html>
