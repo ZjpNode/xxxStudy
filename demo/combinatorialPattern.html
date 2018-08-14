@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>组合模式</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+</body>
+<script>
+    /**
+     * 寄生式组合继承 继承原型
+     * @param {Object} subClass     子类
+     * @param {Object} superClasss  父类
+    */
+    let inheritPrototype = function (subClass, superClasss) {
+        // 原型式继承
+        function inheritObjecct(o) {
+            // 声明一个过渡函数对象
+            function F() { }
+            // 过渡对象的原型继承父对象
+            F.prototype = o
+            // 返回过渡对象的一个实例，该实例的原型继承了父对象
+            return new F()
+        }
+        // 复制一份父类的原型副本保存在变量中
+        let p = inheritObjecct(superClasss.prototype)
+        // 修正因重写子类原型导致子类的constructor属性被修改
+        p.constructor = subClass
+        // 设置子类的原型
+        subClass.prototype = p
+    }
+    // --------------------- 基类 --------------------------------
+    let Base = function () {
+        this.children = []  // 子组件容器
+        this.element = null // 当前组件元素
+    }
+    Base.prototype = {
+        init: function () { throw new Error("请重写你的方法") },
+        add: function () { throw new Error("请重写你的方法") },
+        getElement: function () { throw new Error("请重写你的方法") }
+    }
+    // -------------------- form类 (组合类) ------------------------------
+    let FromItem = function (id, parent) {
+        // 构造函数继承父类
+        Base.call(this)
+        // 模块id
+        this.id = id
+        // 模块的父容器
+        this.parent = parent
+        // 构建方法
+        this.init()
+    }
+    // 寄生式继承父类的原型方法
+    inheritPrototype(FromItem, Base)
+    // 重写父类的原型方法
+    // 构建方法
+    FromItem.prototype.init = function () {
+        this.element = document.createElement('form')
+        this.element.id = this.id
+        this.element.className = 'from-item'
+    }
+    // 添加子元素方法
+    FromItem.prototype.add = function (child) {
+        // 在子组件容器中插入子元素
+        this.children.push(child)
+        // 插入当前组件元素树中
+        this.element.appendChild(child.getElement())
+        return this
+    }
+    // 获取当前元素方法
+    FromItem.prototype.getElement = function () {
+        return this.element
+    }
+    FromItem.prototype.show = function () {
+        this.parent.appendChild(this.element)
+    }
+    // ------------------------- fieldset 元素类 (组合类)------------------------------
+    let FieldsetItem = function (name, legendText) {
+        Base.call(this)
+        this.name = name
+        this.legendText = legendText
+        this.init()
+    }
+    inheritPrototype(FieldsetItem, Base)
+    FieldsetItem.prototype.init = function () {
+        let legend = document.createElement('legend')
+        legend.innerText = this.legendText
+        this.element = document.createElement('fieldset')
+        this.element.name = this.id
+        this.element.className = 'fieldset-item'
+        this.element.appendChild(legend)
+    }
+    FieldsetItem.prototype.add = function (child) {
+        this.children.push(child)
+        this.element.appendChild(child.getElement())
+        return this
+    }
+    FieldsetItem.prototype.getElement = function () {
+        return this.element
+    }
+    // ------------------------- Group 元素类 (组合类)------------------------------
+    let Group = function () {
+        Base.call(this)
+        this.init()
+    }
+    inheritPrototype(Group, Base)
+    Group.prototype.init = function () {
+        this.element = document.createElement('div')
+        this.element.className = 'group'
+    }
+    Group.prototype.add = function (child) {
+        this.children.push(child)
+        this.element.appendChild(child.getElement())
+        return this
+    }
+    Group.prototype.getElement = function () {
+        return this.element
+    }
+    // ------------------------- input 元素类 （成员类，不能拥有子成员，所以没有add方法） ------------------------------
+    let InputItem = function (id) {
+        Base.call(this)
+        this.id = id
+        this.init()
+    }
+    inheritPrototype(InputItem, Base)
+    InputItem.prototype.init = function () {
+        this.element = document.createElement('input')
+        this.element.id = this.id
+        this.element.name = this.id
+    }
+    InputItem.prototype.add = function () { }
+    InputItem.prototype.getElement = function () {
+        return this.element
+    }
+    // ------------------------- label 元素类（成员类，不能拥有子成员，所以没有add方法） ------------------------------
+    let LabelItem = function (for_id, text) {
+        Base.call(this)
+        this.for_id = for_id
+        this.text = text
+        this.init()
+    }
+    inheritPrototype(LabelItem, Base)
+    LabelItem.prototype.init = function () {
+        this.element = document.createElement('label')
+        this.element.innerHTML = this.text
+        this.element.setAttribute('for', this.for_id)
+    }
+    LabelItem.prototype.add = function () { }
+    LabelItem.prototype.getElement = function () {
+        return this.element
+    }
+    // ------------------------- span 元素类（成员类，不能拥有子成员，所以没有add方法） ------------------------------
+    let SpanItem = function (text) {
+        Base.call(this)
+        this.text = text
+        this.init()
+    }
+    inheritPrototype(SpanItem, Base)
+    SpanItem.prototype.init = function () {
+        this.element = document.createElement('span')
+        this.element.innerText = this.text
+    }
+    SpanItem.prototype.add = function (child) {
+        return this
+    }
+    SpanItem.prototype.getElement = function () {
+        return this.element
+    }
+    // ------------------------- button 元素类（成员类，不能拥有子成员，所以没有add方法） ------------------------------
+    let buttonItem = function (text) {
+        Base.call(this)
+        this.text = text
+        this.init()
+    }
+    inheritPrototype(buttonItem, Base)
+    buttonItem.prototype.init = function () {
+        this.element = document.createElement('input')
+        this.element.setAttribute('value', this.text)
+        this.element.setAttribute('type', 'button')
+    }
+    buttonItem.prototype.add = function () { }
+    buttonItem.prototype.getElement = function () {
+        return this.element
+    }
+    // ------------------------- texterea 元素类 ------------------------------
+    let TextereaItem = function () { }
+    //
+    var form = new FromItem('from-item', document.body)
+    form.add(
+        new FieldsetItem('account', '账号')
+            .add(new Group()
+                .add(new LabelItem('user_name', '用户名：'))
+                .add(new InputItem('user_name'))
+                .add(new SpanItem('4到6位数字或字母')))
+            .add(new Group()
+                .add(new LabelItem('user_password', '密&emsp;码：'))
+                .add(new InputItem('user_password'))
+                .add(new SpanItem('6到12位数字或字母')))
+    ).add(
+        new FieldsetItem('info', '信息')
+            .add(new Group()
+                .add(new LabelItem('nick_name', '昵称：'))
+                .add(new InputItem('nick_name')))
+            .add(new Group()
+                .add(new LabelItem('user_state', '状态：'))
+                .add(new InputItem('user_state')))
+    ).add(new Group()
+        .add(new buttonItem('提交'))
+    ).show()
+</script>
+
+</html>
