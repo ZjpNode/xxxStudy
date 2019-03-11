@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2018-06-20 11:06:26
  * @Last Modified by: jiapeng.Zheng
- * @Last Modified time: 2018-07-31 11:11:16
+ * @Last Modified time: 2018-07-31 11:43:37
  */
 const d3 = require('d3')
 const config = require('./config')
@@ -28,8 +28,7 @@ function generate(id, data, options) {
   }
   Object.assign(defaultOptions, options)
 
-  let marginRight =
-    containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
+  let marginRight = containerWidth * 0.15 > margin.right ? containerWidth * 0.15 : margin.right
 
   let width = containerWidth - marginRight - margin.left
   let height = containerHeight - margin.top - margin.bottom
@@ -91,8 +90,6 @@ function generate(id, data, options) {
     .append('svg')
     .attr('width', width + marginRight + margin.left)
     .attr('height', height + margin.top + margin.bottom)
-    .attr('x', 0)
-    .attr('y', 0)
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
@@ -275,15 +272,7 @@ function generate(id, data, options) {
     return { yScale }
   }
 
-  return {
-    svg,
-    xScale,
-    yScale,
-    height,
-    width,
-    redrawXAxis,
-    redrawYAxis
-  }
+  return { svg, xScale, yScale, height, width, redrawXAxis, redrawYAxis }
 }
 
 export function generateGrid(id, data, options) {
