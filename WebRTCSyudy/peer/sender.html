@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>sender</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <input id="val" value="1" />
+    <button onclick="send()">send</button>
+    <button onclick="openVideo()">openVideo</button>
+    <video id="local" autoplay></video>
+    <video id="remote" autoplay></video>
+    <div id="log"></div>
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@0.3.20/dist/peer.min.js"></script>
+    <script>
+      //访问用户媒体设备的兼容方法
+      function getUserMedia(constrains, success, error) {
+        if (navigator.mediaDevices.getUserMedia) {
+          //最新标准API
+          navigator.mediaDevices
+            .getUserMedia(constrains)
+            .then(success)
+            .catch(error);
+        } else if (navigator.webkitGetUserMedia) {
+          //webkit内核浏览器
+          navigator
+            .webkitGetUserMedia(constrains)
+            .then(success)
+            .catch(error);
+        } else if (navigator.mozGetUserMedia) {
+          //Firefox浏览器
+          navagator
+            .mozGetUserMedia(constrains)
+            .then(success)
+            .catch(error);
+        } else if (navigator.getUserMedia) {
+          //旧版API
+          navigator
+            .getUserMedia(constrains)
+            .then(success)
+            .catch(error);
+        }
+      }
+      //成功的回调函数
+      function success(stream) {
+        //兼容webkit内核浏览器
+        var CompatibleURL = window.URL || window.webkitURL;
+        document.querySelector("video#local").srcObject = stream;
+        const call = peer.call("receiver", stream);
+        document.getElementById("log").innerHTML += "....stream::" + "<br>";
+        call.on("stream", remoteStream => {
+          document.querySelector("video#remote").srcObject = remoteStream;
+        });
+        // //将视频流设置为video元素的源
+        // video.src = CompatibleURL.createObjectURL(stream);
+        // //播放视频
+        // video.play();
+      }
+
+      //异常的回调函数
+      function error(error) {
+        // console.log("访问用户媒体设备失败：", error.name, error.message);
+        var copy = Array.prototype.slice.call(arguments).join(" ");
+        document.getElementById("log").innerHTML +=
+          "访问用户媒体设备失败：" + copy + "<br>";
+        console.log(copy);
+      }
+
+      const peer = new Peer("sender", {
+        host: "192.168.40.8",
+        port: 9000,
+        path: "/",
+        secure: true,
+        debug: 3,
+        logFunction: function() {
+          var copy = Array.prototype.slice.call(arguments).join(" ");
+          document.getElementById("log").innerHTML += copy + "<br>";
+        }
+      });
+      const conn = peer.connect("receiver");
+      conn.on("open", () => {
+        conn.send("hi!");
+      });
+      function send() {
+        let v = document.getElementById("val");
+        conn.send(v.value);
+      }
+      const openVideo = () => {
+        if (
+          navigator.mediaDevices.getUserMedia ||
+          navigator.getUserMedia ||
+          navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia
+        ) {
+          //调用用户媒体设备，访问摄像头
+          getUserMedia(
+            {
+              video: { width: 480, height: 320 }
+            },
+            success,
+            error
+          );
+        } else {
+          alert("你的浏览器不支持访问用户媒体设备");
+        }
+      };
+      // openVideo();
+    </script>
+  </body>
+</html>
