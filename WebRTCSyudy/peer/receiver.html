@@ -97,7 +97,7 @@
             // document.querySelector("video#remote").srcObject = stream;
 
             document.querySelector("video#local").srcObject = stream;
-            call.answer(stream); // 一定按 answer ，不然的话 call.on("stream",remoteStream=>{}) 获取不到远程的视频流
+            call.answer(stream); // 一定要 answer ，不然的话 call.on("stream",remoteStream=>{}) 获取不到远程的视频流
           },
           error
         );
