@@ -1,0 +1,14 @@
+html {
+  background: #e3e3e3;
+}
+.container {
+  display: flex;
+}
+.box {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 165px;
+  height: 165px;
+  margin: 10px;
+  padding: 10px;
+}

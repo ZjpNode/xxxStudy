@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2、多重边框_p20</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <style>
+      .box {
+        margin: 20px;
+        padding: 20px;
+      }
+      .borders {
+        background: green;
+        border: 10px solid grey;
+        cursor: pointer;
+      }
+      .borders.multiple-borders {
+        box-shadow: 0 0 0 10px yellowgreen, 0 0 0 20px deeppink,
+          0 2px 15px 30px rgba(0, 0, 0, 0.6);
+      }
+      .borders.multiple-borders-inset {
+        box-shadow: 0 0 0 10px yellowgreen inset, 0 0 0 20px deeppink inset,
+          0 2px 15px 10px rgba(0, 0, 0, 0.6);
+      }
+      .borders.multiple-borders-outline {
+        outline: 10px dashed yellowgreen;
+        outline-offset: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="container">
+      <div class="box borders"></div>
+      <div class="box borders multiple-borders">
+        <span>使用box-shadow实现多重边框</span>
+        <span
+          >不会影响布局、也不受box-sizing影响、<b>只能模拟实线</b>，同时也并不会响应鼠标事件</span
+        >
+      </div>
+      <div class="box borders multiple-borders-inset">
+        <span>使用box-shadow实现多重边框（inset）</span>
+        <span>不会影响布局、也不受box-sizing影响</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="box borders multiple-borders-outline">
+        <span>使用 outline 实现多重边框（只适用双层边框）</span>
+        <span>优点：边框样式灵活</span>
+        <span>可以通过outline-offset属性来控制它和元素边缘之间的间距</span>
+      </div>
+      <div
+        class="box borders multiple-borders-outline"
+        style="outline-offset: -20px"
+      >
+        <span>使用 outline 实现多重边框（只适用双层边框）</span>
+        <span>outline-offset 接受负值</span>
+      </div>
+      <div
+        class="box"
+        style="
+              background:dimgray;
+              border-radius: 10px;
+              outline: 1px dashed white;
+              outline-offset: -10px;"
+      >
+        使用outline-offset 的负值 实现封边效果
+      </div>
+      <div
+        class="box borders"
+        style="
+              border-radius: 20px;
+              outline: 5px solid yellowgreen;"
+      >
+        <span
+          >通过outline实现的边框不会贴合圆角，不过这一行为在未来可能发生改变</span
+        >
+      </div>
+    </div>
+  </body>
+</html>
