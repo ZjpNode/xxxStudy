@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>readWasm</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+  </body>
+  <script>
+  function f2(x) {
+        if (x === 1 || x === 2) {
+            return 1;
+        }
+        return f2(x - 1) + f2(x - 2)
+    }
+    fetch("f.wasm") // 网络加载 f.wasm 文件
+      .then(res => res.arrayBuffer()) // 转成 ArrayBuffer
+      .then(bytes => {
+          // 编译为当前 CPU 架构的机器码 + 实例化
+          WebAssembly.instantiate(bytes,{
+              window:{alert:window.alert}
+          }).then(mod => {
+            let { f } = mod.instance.exports
+            console.time('time f2');
+            console.log(f2(41))
+            console.timeEnd('time f2');
+            console.time('time f');
+            // 调用模块实例上的 f 函数计算
+            console.log(f(41));
+            console.timeEnd('time f');
+          }).catch(err=>{
+              console.log(err)
+          })
+      }) 
+      
+
+  </script>
+</html>
