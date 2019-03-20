@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:f": "asc f.ts -o f.wasm",
+    "test:f": "asc fs.ts -o f.wasm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
