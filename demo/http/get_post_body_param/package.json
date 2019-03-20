@@ -1,0 +1,15 @@
+{
+  "name": "get_post_body_param",
+  "version": "1.0.0",
+  "description": "验证前端能 get 请求时能否在 body 传参数",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0"
+  }
+}

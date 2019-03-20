@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <button onclick="onPost()">post</button>
+    <button onclick="onGet()">get</button>
+    <button onclick="onGetByAjax()">onGetByAjax</button>
+    <script src="" async defer></script>
+    <script>
+      let url = "http://127.0.0.1:3000/12?a=1&d=2";
+      let data = { x: "1", y: 131, z: "正" };
+      function onPost() {
+        fetch(url, {
+          body: JSON.stringify(data), // must match 'Content-Type' header
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors" // no-cors, cors, *same-origin
+        }).then(response => {
+          console.log(response);
+        }); // parses response to JSON
+      }
+      //
+      function onGet() {
+        fetch(url, {
+          // get 请求不能携带 body ，否则浏览器会报 TypeError: Failed to execute 'fetch' on 'Window': Request with GET/HEAD method cannot have body.
+          // body: JSON.stringify(data),
+          method: "GET", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors" // no-cors, cors, *same-origin
+        }).then(response => {
+          console.log(response);
+        }); // parses response to JSON
+      }
+      function onGetByAjax() {
+        var xhr = new XMLHttpRequest();
+        xhr.timeout = 3000;
+        xhr.ontimeout = function(event) {
+          alert("请求超时！");
+        };
+        xhr.open("GET", url);
+        xhr.send(JSON.stringify(data));
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+          } else {
+            console.log(xhr.statusText);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
