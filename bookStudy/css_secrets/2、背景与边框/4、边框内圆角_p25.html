@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>边框内圆角</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <style>
+      .box {
+        background: tan;
+      }
+      .box.outside {
+        background: #655;
+      }
+      .box.inside {
+        border-radius: 0.8em;
+        padding: 0;
+        margin: 0;
+      }
+      .box.ouline {
+        outline: 0.6em solid #655;
+        border-radius: 0.8em;
+        box-shadow: 0 0 0 0.6em #655;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="container">
+      <div class="box outside">
+        <div class="box inside">
+          使用两个元素实现边框内圆角
+        </div>
+      </div>
+      <div class="box ouline">
+        <span>使用outline 实现边框内圆角</span>
+        <span>原理1：outline实现的边框不会贴合圆角</span>
+        <span>原理2：box-shadow实现的边框会贴合圆角</span>
+      </div>
+      <div class="box ouline" style="outline-width:0.4em">
+        <span>
+          限制：outline的宽度 &lt;= box-shadow &lt;= 比(√2 - 1)*r，所以若
+          outline的宽度小于(√2 - 1)*r，则无法实现
+        </span>
+        <span>r表示 border-radius</span>
+      </div>
+    </div>
+  </body>
+</html>

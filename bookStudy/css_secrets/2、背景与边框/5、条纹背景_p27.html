@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .container.horizontal .box_1 {
+        background: linear-gradient(#fb3, #58a);
+      }
+      .container.horizontal .box_2 {
+        background: linear-gradient(#fb3 20%, #58a 80%);
+      }
+      .container.horizontal .box_3 {
+        background: linear-gradient(#fb3 50%, #58a 50%);
+      }
+      .container.horizontal .box_4 {
+        background: linear-gradient(#fb3 50%, #58a 50%);
+        background-size: 100% 30px;
+      }
+      .container.horizontal .box_5_1 {
+        background: linear-gradient(#fb3 30%, #58a 30%);
+      }
+      .container.horizontal .box_5 {
+        background: linear-gradient(#fb3 30%, #58a 30%);
+        background-size: 100% 30px;
+      }
+      .container.horizontal .box_6 {
+        background: linear-gradient(#fb3 30%, #58a 0);
+        background-size: 100% 30px;
+      }
+      .container.horizontal .box_7_1 {
+        background: linear-gradient(
+          #fb3 33.3%,
+          #58a 0,
+          #58a 66.6%,
+          yellowgreen 0
+        );
+      }
+      .container.vertical .box_1 {
+        background: linear-gradient(to right, #fb3, #58a);
+      }
+      .container.vertical .box_2 {
+        background: linear-gradient(to right, #fb3 20%, #58a 80%);
+      }
+      .container.vertical .box_3 {
+        background: linear-gradient(to right, #fb3 50%, #58a 50%);
+      }
+      .container.vertical .box_4 {
+        background: linear-gradient(to right, #fb3 50%, #58a 50%);
+        background-size: 30px 100%;
+      }
+      .container.vertical .box_5_1 {
+        background: linear-gradient(to right, #fb3 30%, #58a 30%);
+      }
+      .container.vertical .box_5 {
+        background: linear-gradient(to right, #fb3 30%, #58a 30%);
+        background-size: 30px 100%;
+      }
+      .container.vertical .box_6 {
+        background: linear-gradient(to right, #fb3 30%, #58a 0);
+        background-size: 30px 100%;
+      }
+      .container.vertical .box_7_1 {
+        background: linear-gradient(
+          to right,
+          #fb3 33.3%,
+          #58a 0,
+          #58a 66.6%,
+          yellowgreen 0
+        );
+      }
+      .container.Oblique .box_1 {
+        background: linear-gradient(45deg, #fb3, #58a);
+      }
+      .container.Oblique .box_2 {
+        background: linear-gradient(45deg, #fb3 20%, #58a 80%);
+      }
+      .container.Oblique .box_3 {
+        background: linear-gradient(45deg, #fb3 50%, #58a 50%);
+      }
+      .container.Oblique .box_4 {
+        background: linear-gradient(45deg, #fb3 50%, #58a 50%);
+        background-size: 30px 30px;
+      }
+      .container.Oblique .box_5 {
+        background: linear-gradient(
+          45deg,
+          #fb3 25%,
+          #58a 0,
+          #58a 50%,
+          #fb3 0,
+          #fb3 75%,
+          #58a 0
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div class="container horizontal">
+      <div class="box box_1"></div>
+      <div class="box box_2"></div>
+      <div class="box box_3"></div>
+      <div class="box box_4"></div>
+      <div class="box box_5_1"></div>
+      <div class="box box_5"></div>
+      <div class="box box_6"></div>
+      <div class="box box_7_1"></div>
+      <div class="box box_7_1" style="background-size: 100% 30px;"></div>
+    </div>
+    <div class="container vertical">
+      <div class="box box_1"></div>
+      <div class="box box_2"></div>
+      <div class="box box_3"></div>
+      <div class="box box_4"></div>
+      <div class="box box_5_1"></div>
+      <div class="box box_5"></div>
+      <div class="box box_6"></div>
+      <div class="box box_7_1"></div>
+      <div class="box box_7_1" style="background-size: 30px 100% ;"></div>
+    </div>
+    <div class="container Oblique">
+      <div class="box box_1"></div>
+      <div class="box box_2"></div>
+      <div class="box box_3"></div>
+      <div class="box box_4"></div>
+      <div class="box box_5"></div>
+      <div
+        class="box box_5"
+        style="background-size: 42.426406871px 42.426406871px"
+      ></div>
+      <!-- 42.426406871 =  -->
+    </div>
+    <div class="container">
+      <div
+        class="box"
+        style="background: repeating-linear-gradient(45deg,#fb3,#fb3 15px,#58a 0,#58a 30px);"
+      ></div>
+      <div
+        class="box"
+        style="background: repeating-linear-gradient(60deg,#fb3,#fb3 15px,#58a 0,#58a 30px);"
+      ></div>
+      <div
+        class="box"
+        style="background: repeating-linear-gradient(30deg,#79b,#79b 15px,#58a 0,#58a 30px);"
+      ></div>
+      <div
+        class="box"
+        style="background:#58a; 
+              background-image: 
+              repeating-linear-gradient(30deg,
+              hsla(0,0%,100%,0.1),
+              hsla(0,0%,100%,0.1) 15px,
+              transparent 0,
+              transparent 30px);"
+      ></div>
+      <div
+        class="box"
+        style="background: repeating-linear-gradient(30deg,#79b,#79b 15px,#58a 0,#58a 30px);"
+      ></div>
+      <div
+        class="box"
+        style="background:#58a; 
+        background-image: 
+        repeating-linear-gradient(30deg, 
+              hsla(0,0%,100%,.1), hsla(0,0%,100%,.1) 15px,
+              transparent 0, transparent 30px);"
+      ></div>
+    </div>
+    <!-- Oblique -->
+  </body>
+</html>
