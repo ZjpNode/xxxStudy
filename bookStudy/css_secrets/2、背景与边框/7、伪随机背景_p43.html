@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>伪随机背景</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <style>
+      .pseudorandom {
+        background-image: linear-gradient(
+          90deg,
+          #fb3 15%,
+          #655 0,
+          #655 40%,
+          #ab4 0,
+          #ab4 65%,
+          hsla(20, 40%, 90%) 0
+        );
+        background-size: 80px 100%;
+      }
+      /* 每隔240px重复一次（240即 80、60、40的最小公倍数） */
+      .pseudorandom2 {
+        width: 100%;
+        background: hsla(20, 40%, 90%);
+        background-image: linear-gradient(90deg, #fb3, 10px, transparent 0),
+          linear-gradient(90deg, #655, 20px, transparent 0),
+          linear-gradient(90deg, #ab4, 20px, transparent 0);
+        background-size: 80px 100%, 60px 100%, 40px 100%;
+      }
+      /* “蝉原则”：通过质数来增加随机真实性 */
+      /* 每隔207583px重复一次（207583即 41、61、83的最小公倍数）  */
+      .pseudorandom3 {
+        width: 100%;
+        background: hsla(20, 40%, 90%);
+        background-image: linear-gradient(90deg, #fb3, 11px, transparent 0),
+          linear-gradient(90deg, #655, 23px, transparent 0),
+          linear-gradient(90deg, #ab4, 41px, transparent 0);
+        background-size: 41px 100%, 61px 100%, 83px 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="container">
+      <div class="box pseudorandom"></div>
+    </div>
+    <div class="container">
+      <div class="box pseudorandom2"></div>
+    </div>
+    <div class="container">
+      <div class="box pseudorandom3"></div>
+    </div>
+  </body>
+</html>

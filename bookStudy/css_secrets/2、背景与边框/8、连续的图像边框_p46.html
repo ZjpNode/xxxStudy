@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>连续的图像边框</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <style>
+      .box {
+        background: url("../img/stone-art.jpg");
+        background-size: cover;
+        padding: 1em;
+      }
+      .box > div {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background: white;
+        padding: 1em;
+      }
+      .border-img {
+        border: 40px solid transparent;
+        border-image: 33.334%
+          url('data:image/svg+xml,<svg xmlns="http:%2F%2Fwww.w3.org%2F2000%2Fsvg" width="30" height="30"> \
+                       <circle cx="5" cy="5" r="5" fill="%23ab4"%2F><circle cx="15" cy="5" r="5" fill=" %23655"%2F> \
+                       <circle cx="25" cy="5" r="5" fill="%23e07"%2F><circle cx="5" cy="15" r="5" fill=" %23655"%2F> \
+                       <circle cx="15" cy="15" r="5" fill="hsl(15, 25%, 75%)"%2F> \
+                       <circle cx="25" cy="15" r="5" fill=" %23655"%2F><circle cx="5" cy="25" r="5" fill="%23fb3"%2F> \
+                       <circle cx="15" cy="25" r="5" fill=" %23655"%2F><circle cx="25" cy="25" r="5" fill="%2358a"%2F><%2Fsvg>');
+        padding: 1em;
+        max-width: 20em;
+        font: 130%/1.6 Baskerville, Palatino, serif;
+      }
+      .border-img:nth-child(2) {
+        margin-top: 1em;
+        border-image-repeat: round;
+      }
+      .no-border-img {
+        padding: 1em;
+        border: 1em transparent solid;
+        background: linear-gradient(white, white), url("../img/stone-art.jpg");
+        background-clip: padding-box, border-box;
+        background-origin: border-box;
+      }
+      .vintage-envelope {
+        padding: 1em;
+        border: 1em solid transparent;
+        background: linear-gradient(white, white) padding-box,
+          repeating-linear-gradient(
+              -45deg,
+              red 0,
+              red 12.5%,
+              transparent 0,
+              transparent 25%,
+              #58a 0,
+              #58a 37.5%,
+              transparent 0,
+              transparent 50%
+            )
+            0 / 5em 5em;
+      }
+      .vintage-envelope-border-img {
+        background: none;
+        padding: 1em;
+        border: 14px solid transparent;
+        border-image: 16
+          repeating-linear-gradient(
+            -45deg,
+            red 0,
+            red 1em,
+            transparent 0,
+            transparent 2em,
+            #58a 0,
+            #58a 3em,
+            transparent 0,
+            transparent 4em
+          );
+      }
+      @keyframes ants {
+        to {
+          background-position: 100%;
+        }
+      }
+      .marching-ants {
+        padding: 1em;
+        border: 1px solid transparent;
+        background: linear-gradient(white, white) padding-box,
+          repeating-linear-gradient(
+              -45deg,
+              black 0,
+              black 25%,
+              white 0,
+              white 50%
+            )
+            0 / 0.6em 0.6em;
+        animation: ants 12s linear infinite;
+      }
+      .footnote {
+        color: blueviolet;
+        font-size: 30px;
+        padding-top: 1em;
+        border-top: 0.2em solid transparent;
+        border-image: 100% 0 0
+          linear-gradient(90deg, currentColor 4em, transparent 0);
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="border-img">
+      Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback
+      proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit.
+      Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola
+      ribeye biltong landjaeger. Chuck pork belly sed sausage.
+    </div>
+    <div class="border-img">
+      Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback
+      proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit.
+      Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola
+      ribeye biltong landjaeger. Chuck pork belly sed sausage.
+    </div>
+    <div class="container">
+      <div class="box">
+        <div>
+          <span>1233123</span>
+          <span>1233123</span>
+          <span>1233123</span>
+          <span>1233123</span>
+        </div>
+      </div>
+      <div class="box" style="height:240px">
+        <div>
+          <span>1233123</span>
+          <span>1233123</span>
+          <span>1233123</span>
+          <span>1233123</span>
+        </div>
+      </div>
+      <div class="box no-border-img">
+        <span>1233123</span>
+        <span>1233123</span>
+        <span>1233123</span>
+        <span>1233123</span>
+      </div>
+      <div class="box no-border-img" style="height:240px">
+        <span>1233123</span>
+        <span>1233123</span>
+        <span>1233123</span>
+        <span>1233123</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="box vintage-envelope"></div>
+      <div class="box vintage-envelope-border-img"></div>
+    </div>
+    <div class="container">
+      <div class="box marching-ants"></div>
+    </div>
+    <div class="container">
+      <div class="footnote">这是一个脚注</div>
+    </div>
+  </body>
+</html>
