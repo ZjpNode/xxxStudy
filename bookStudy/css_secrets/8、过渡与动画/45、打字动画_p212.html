@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>打字动画</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+      }
+      @keyframes caret {
+        50% {
+          border-color: currentColor;
+        }
+      }
+      h1 {
+        font: bold 200% Consolas, Monaco, monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 0.05em solid transparent;
+        animation: typing 6s steps(15), caret 1s steps(1) infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <h1>CSS is awesome!</h1>
+    <h2 id="inp"></h2>
+  </body>
+  <script>
+    let h1Ele = document.querySelectorAll("h1");
+    Array.prototype.forEach.call(h1Ele, h1 => {
+      let len = h1.textContent.length;
+      let s = h1.style;
+      s.width = `${len}ch`;
+      s.animationTimingFunction = `steps(${len}),steps(1)`;
+    });
+  </script>
+</html>
