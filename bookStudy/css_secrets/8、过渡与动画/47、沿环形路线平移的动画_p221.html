@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>47、沿环形路线平移的动画</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background: #eee;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+      @keyframes spin-reverse {
+        from {
+          transform: rotate(1turn);
+        }
+      }
+      .path {
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 50%;
+        background: yellowgreen;
+        text-align: center;
+      }
+      .avatar {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        animation: spin 3s infinite linear;
+        transform-origin: 50% 150px;
+        animation-play-state: paused;
+      }
+      .path:hover .avatar {
+        animation-play-state: running;
+      }
+      .avatar > img {
+        animation: spin-reverse 3s infinite linear;
+        animation-play-state: paused;
+      }
+      .path:hover > .avatar > img {
+        animation-play-state: running;
+      }
+      /* --------------------------------------------- */
+      @keyframes spin2 {
+        from {
+          transform: translate(50%, 150px) rotate(0turn) translate(-50%, -150px)
+            translate(50%, 50%) rotate(1turn) translate(-50%, -50%);
+        }
+        to {
+          transform: translate(50%, 150px) rotate(1turn) translate(-50%, -150px)
+            translate(50%, 50%) rotate(0turn) translate(-50%, -50%);
+        }
+      }
+      .path2 {
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 50%;
+        background: yellowgreen;
+        text-align: center;
+      }
+      .avatar2 {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        animation: spin2 10s infinite linear;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="path">
+      <img src="../img/cat.jpg" class="avatar" />
+    </div>
+    <div class="path">
+      <div class="avatar">
+        <img src="../img/cat.jpg" />
+      </div>
+    </div>
+    <div class="path2">
+      <img src="../img/cat.jpg" class="avatar2" />
+    </div>
+  </body>
+</html>

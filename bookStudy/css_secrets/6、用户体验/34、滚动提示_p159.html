@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>滚动提示</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      ul {
+        list-style: none;
+        border: 1px solid silver;
+        width: 10em;
+        height: 8em;
+        overflow: auto;
+        background: linear-gradient(white, hsla(0, 0%, 100%, 0)) no-repeat local,
+          radial-gradient(at top, rgba(0, 0, 0, 0.2), transparent 70%) no-repeat
+            scroll,
+          linear-gradient(to top, white, hsla(0, 0%, 100%, 0)) bottom no-repeat
+            local,
+          radial-gradient(at bottom, rgba(0, 0, 0, 0.2), transparent 70%) bottom
+            no-repeat scroll;
+        background-size: 100% 50px, 100% 15px, 100% 50px, 100% 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <ul>
+      <li>asd 1</li>
+      <li>asd 2</li>
+      <li>asd 3</li>
+      <li>asd 4</li>
+      <li>asd 5</li>
+      <li>asd 6</li>
+      <li>asd 7</li>
+      <li>asd 8</li>
+      <li>asd 9</li>
+      <li>asd 10</li>
+    </ul>
+    <script src="" async defer></script>
+  </body>
+</html>
