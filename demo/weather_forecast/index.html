@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>天气预报</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://at.alicdn.com/t/font_1132282_rbffum0nqw.css"
+    />
+    <link rel="stylesheet" href="./css/base.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <main id="main">
+      <section class="container">
+        <header>{{ weatherData.city }}</header>
+        <article class="weather now">
+          <span class="tem-wea">
+            <span class="tem">{{ weatherData.tem }}<sup>℃</sup></span>
+            <span class="wea">{{ weatherData.wea }}</span>
+          </span>
+          <span class="time">{{ nowTime }}</span>
+          <span
+            class="wea-svg iconfont"
+            :class="`icon${getPinyin(weatherData.wea).split('zhuan')[0]}`"
+          ></span>
+        </article>
+        <article class="weather desc">
+          <span class="desc-item air_level"
+            >空气{{ weatherData.air_level }} {{ weatherData.air }}</span
+          >
+          <span class="desc-item tem" v-if="weatherData.data[0]"
+            >温度 {{ weatherData.data[0].tem1 }}~{{
+              weatherData.data[0].tem2
+            }}</span
+          >
+          <span class="desc-item humidity"
+            >湿度 {{ weatherData.humidity }}</span
+          >
+          <span class="desc-item win_speed"
+            >{{ weatherData.win }} {{ weatherData.win_speed }}</span
+          >
+        </article>
+        <article
+          class="weather alarm box"
+          v-if="weatherData.alarm && weatherData.alarm_type"
+        >
+          <span>{{ weatherData.alarm.alarm_type }}</span>
+          <strong class="type"
+            >{{ weatherData.alarm.alarm_level }}预警：</strong
+          >
+          <span class="content" :title="weatherData.alarm.alarm_content">
+            <span class="marquee">{{ weatherData.alarm.alarm_content }}</span>
+          </span>
+        </article>
+        <article class="weather future box">
+          <div class="future-item" v-for="futureData in weatherData.data">
+            <span class="day">{{ futureData.day }}</span>
+            <span class="wea">{{ futureData.wea }}</span>
+            <span
+              class="iconfont"
+              :class="`icon${getPinyin(futureData.wea).split('zhuan')[0]}`"
+            ></span>
+            <span class="tem">{{ futureData.tem1 }}/{{ futureData.tem2 }}</span>
+            <span class="win">{{
+              futureData.win[1] || futureData.win[0]
+            }}</span>
+            <span class="win_speed">{{ futureData.win_speed }}</span>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/dayjs/1.8.12/dayjs.min.js"></script>
+    <script src="./js/pinyinjs/dict/pinyin_dict_notone.js"></script>
+    <script src="./js/pinyinjs/pinyinUtil.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
