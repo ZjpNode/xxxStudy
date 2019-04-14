@@ -1,0 +1,15 @@
+.logo {
+  height: 50px;
+  width: 200px;
+}
+.avatar {
+  height: 50px;
+  width: 50px;
+}
+.container {
+  margin-top: 1rem;
+  min-width: 720px;
+}
+.carousel .carousel-inner {
+  height: 300px;
+}
