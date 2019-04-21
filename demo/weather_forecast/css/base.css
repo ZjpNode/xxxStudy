@@ -1,9 +1,24 @@
 @keyframes marquee {
-  0% {
+  /* 0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
+  } */
+  0% {
+    left: 0;
+  }
+  100% {
+    /* 根据行数 */
+    left: -120%;
+  }
+}
+@keyframes marqueeT {
+  0% {
+    left: 120%;
+  }
+  100% {
+    left: 0;
   }
 }
 html,
@@ -86,6 +101,10 @@ main {
 .container .weather.alarm .content .marquee {
   position: absolute;
   animation: marquee 10s 1s linear infinite;
+}
+.container .weather.alarm .content .marqueeT {
+  position: absolute;
+  animation: marqueeT 10s 1s linear infinite;
 }
 
 .container .weather.future {

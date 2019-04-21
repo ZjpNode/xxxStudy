@@ -30,12 +30,16 @@
         <article class="weather now">
           <span class="tem-wea">
             <span class="tem">{{ weatherData.tem }}<sup>℃</sup></span>
-            <span class="wea">{{ weatherData.wea }}</span>
+            <span class="wea">{{
+              weatherData.data[0]
+                ? weatherData.data[0].wea.split("转")[0]
+                : weatherData.wea
+            }}</span>
           </span>
           <span class="time">{{ nowTime }}</span>
           <span
             class="wea-svg iconfont"
-            :class="`icon${getPinyin(weatherData.wea).split('zhuan')[0]}`"
+            :class="`icon${getPinyin(weatherData.data[0]?weatherData.data[0].wea:weatherData.wea).split('zhuan')[0]}`"
           ></span>
         </article>
         <article class="weather desc">
@@ -56,7 +60,7 @@
         </article>
         <article
           class="weather alarm box"
-          v-if="weatherData.alarm && weatherData.alarm_type"
+          v-if="weatherData.alarm && weatherData.alarm.alarm_type"
         >
           <span>{{ weatherData.alarm.alarm_type }}</span>
           <strong class="type"
@@ -64,6 +68,7 @@
           >
           <span class="content" :title="weatherData.alarm.alarm_content">
             <span class="marquee">{{ weatherData.alarm.alarm_content }}</span>
+            <span class="marqueeT">{{ weatherData.alarm.alarm_content }}</span>
           </span>
         </article>
         <article class="weather future box">
@@ -83,7 +88,7 @@
         </article>
       </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.bootcss.com/dayjs/1.8.12/dayjs.min.js"></script>
     <script src="./js/pinyinjs/dict/pinyin_dict_notone.js"></script>

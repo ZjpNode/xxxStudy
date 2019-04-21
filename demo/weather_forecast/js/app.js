@@ -3,12 +3,10 @@ let main = new Vue({
   data: {
     nowTime: dayjs().format("HH:mm:ss"),
     weatherData: {
-      alarm2: null,
-      alarm: null,
       data: []
-    },
-    WEATHER_TYPE: window.WEATHER_TYPE
+    }
   },
+  watch: {},
   computed: {},
   created() {
     setInterval(() => {
@@ -29,7 +27,11 @@ let main = new Vue({
         .get("https://www.tianqiapi.com/api/?version=v1")
         .then(response => {
           if (response.status === 200) {
-            this.weatherData = Object.assign(this.weatherData, response.data);
+            this.weatherData = Object.assign(
+              {},
+              this.weatherData,
+              response.data
+            );
           }
         })
         .catch(error => {
@@ -39,7 +41,11 @@ let main = new Vue({
         .get("https://www.tianqiapi.com/api/?version=v6")
         .then(response => {
           if (response.status === 200) {
-            this.weatherData = Object.assign(this.weatherData, response.data);
+            this.weatherData = Object.assign(
+              {},
+              this.weatherData,
+              response.data
+            );
           }
         })
         .catch(error => {
