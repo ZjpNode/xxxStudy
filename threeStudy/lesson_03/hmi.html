@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>three.js_lesson02_HMI</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <a href="javascript:void(0)" onclick="saveObj()">saveObj</a>
+    <script src="../lib/FileSaver.js"></script>
+    <script src="../lib/three.js-dev/build/three.js"></script>
+    <script src="../lib/three.js-dev/examples/js/exporters/GLTFExporter.js"></script>
+    <script src="../lib/three.js-dev/examples/js/controls/OrbitControls.js"></script>
+    <script>
+      let camera, scene, renderer;
+      let geometry, material, mesh, circle, group;
+      let controls;
+      init();
+      animate();
+      // addTouchListener();
+      function init() {
+        // 请使用正交相机 https://www.jianshu.com/p/66004ede1ffd
+        // 相机: https://threejs.org/docs/index.html#api/en/cameras/PerspectiveCamera
+        camera = new THREE.PerspectiveCamera(
+          50, // fov - field of view，视野角，是距离观测点near长度处，最上端与最下端之间的角度( Default is 50)
+          window.innerWidth / window.innerHeight, // aspect - 画面横宽比
+          1, // near - 相机最近范围内可以看到的物体的距离( Default is 0.1)
+          2000 // far - 相机最远范围内可以看到的物体的距离( Default is 2000)
+        );
+        camera.position.z = 2;
+
+        // 场景
+        scene = new THREE.Scene();
+
+        var texture = new THREE.TextureLoader().load("./img/1.png");
+        texture.magFilter = THREE.LinearFilter; // 防止图片模糊
+        texture.minFilter = THREE.LinearFilter; // 防止图片模糊
+        // 正方形
+        geometry = new THREE.PlaneGeometry(3, 1.5);
+        material = new THREE.MeshBasicMaterial({
+          map: texture,
+          transparent: true // 防止png图片模糊
+        });
+        mesh = new THREE.Mesh(geometry, material);
+        // scene.add(mesh);
+        // 圆形
+        var circleGeometry = new THREE.CircleGeometry(
+          0.03,
+          100,
+          0,
+          2 * Math.PI
+        );
+        var circleMaterial = new THREE.MeshBasicMaterial({ color: 0x009688 });
+        circle = new THREE.Mesh(circleGeometry, circleMaterial);
+        circle.position.z += 0.01;
+        circle.position.x += -1.41;
+        circle.position.y += -0.46;
+        // scene.add(circle);
+
+        group = new THREE.Group();
+        group.add(circle);
+        group.add(mesh);
+        scene.add(group);
+
+        // // 启用轨道控制（即允许鼠标点击拖拽、滚轮放大）
+        // controls = new THREE.OrbitControls(camera);
+
+        // 渲染器
+        renderer = new THREE.WebGLRenderer({
+          // precision: "highp",
+          antialias: true, // antialias - whether to perform antialiasing. Default is false.
+          alpha: true // alpha - whether the canvas contains an alpha (transparency) buffer or not. Default is false.
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xffffff, 0); // Sets the clear color and opacity.
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+
+        window.addEventListener("mousedown", onDocumentMouseDown, false);
+        window.addEventListener("mouseup", onDocumentMouseUp, false);
+        window.addEventListener("mousemove", onDocumentMouseMove, false);
+
+        console.log(scene.toJSON());
+      }
+      function animate() {
+        requestAnimationFrame(animate);
+        // var hex = Math.random() * 0xffffff;
+        // circle.material.color.setHex(hex);
+        // mesh.rotation.x += 0.01;
+        // mesh.rotation.y += 0.02;
+
+        renderer.render(scene, camera);
+      }
+
+      var selectedObject = null;
+      function onDocumentMouseDown(event) {
+        event.preventDefault();
+        var intersects = getIntersects(event.layerX, event.layerY);
+        console.log(intersects);
+        if (intersects.length > 0) {
+          selectedObject = intersects[0].object;
+        }
+      }
+      function onDocumentMouseUp() {
+        event.preventDefault();
+        selectedObject = null;
+      }
+
+      function onDocumentMouseMove(event) {
+        event.preventDefault();
+        var mouseVector = getMouseVector2(event.layerX, event.layerY);
+
+        if (selectedObject) {
+          selectedObject.position.x = mouseVector.x;
+          selectedObject.position.y = mouseVector.y;
+        }
+      }
+
+      var raycaster = new THREE.Raycaster();
+
+      function getMouseVector(x, y) {
+        x = (x / window.innerWidth) * 2 - 1;
+        y = -(y / window.innerHeight) * 2 + 1;
+
+        var mouseVector = new THREE.Vector3();
+        mouseVector.set(x, y, 0.01);
+        // mouseVector.unproject(camera);
+        return mouseVector;
+      }
+
+      function getMouseVector2(x, y) {
+        x = (x / window.innerWidth) * 2 - 1;
+        y = -(y / window.innerHeight) * 2 + 1;
+
+        var mouseVector = new THREE.Vector3();
+        mouseVector.set(x, y, 0.01);
+        mouseVector.unproject(camera);
+        return mouseVector;
+      }
+
+      function getIntersects(x, y) {
+        var mouseVector = getMouseVector(x, y);
+        raycaster.setFromCamera(mouseVector, camera);
+        return raycaster.intersectObject(group, true);
+      }
+
+      function saveObj(event) {
+        // var file = new File([2], "test.json", {
+        //   type: "text/plain;charset=utf-8"
+        // });
+        // // saveAs(file);
+        // console.log(scene.toJSON());
+
+        var exporter = new THREE.GLTFExporter();
+        exporter.parse(scene, function(gltf) {
+          console.log(gltf);
+          var file = new File([JSON.stringify(gltf)], "test.json", {
+            type: "text/plain;charset=utf-8"
+          });
+          saveAs(file);
+        });
+      }
+    </script>
+  </body>
+</html>

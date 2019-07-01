@@ -4,155 +4,157 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
+  <!--<![endif]-->
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>three.js_lesson02_load .skp</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-<body>
+  <body>
     <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
 
     <script src="../lib/three.js-dev/build/three.min.js"></script>
     <script src="../lib/three.js-dev/examples/js/loaders/ColladaLoader.js"></script>
     <script src="../lib/three.js-dev/examples/js/controls/OrbitControls.js"></script>
     <script src="../lib/three.js-dev/examples/js/libs/stats.min.js"></script>
     <script>
-        let camera, scene, renderer;
-        let geometry, material, mesh;
-        let stats, clock, controls;
-        let loader, skpObj;
+      let camera, scene, renderer;
+      let geometry, material, mesh;
+      let stats, clock, controls;
+      let loader, skpObj;
 
-        // 初始化tree.js
-        function initTree() {
-            // 场景
-            scene = new THREE.Scene();
+      // 初始化tree.js
+      function initTree() {
+        // 场景
+        scene = new THREE.Scene();
 
-            // 相机
-            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 20000);
-            camera.position.set(15, 15, 10);
-            // camera.lookAt(scene.position);
+        // 相机
+        camera = new THREE.PerspectiveCamera(
+          45,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          20000
+        );
+        camera.position.set(15, 15, 10);
+        // camera.lookAt(scene.position);
 
-            clock = new THREE.Clock();
+        clock = new THREE.Clock();
 
-            // 在网页上显示坐标系，其中坐标系的长度为6
-            var axisHelper = new THREE.AxisHelper(6);
-            scene.add(axisHelper)
+        // 在网页上显示坐标系，其中坐标系的长度为6
+        var axisHelper = new THREE.AxisHelper(6);
+        scene.add(axisHelper);
 
-            // 环境光
-            var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
-            scene.add(ambientLight);
-            // 平行光
-            var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-            directionalLight.position.set(1, 1, 0).normalize();
-            scene.add(directionalLight);
+        // 环境光
+        var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
+        scene.add(ambientLight);
+        // 平行光
+        var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(1, 1, 0).normalize();
+        scene.add(directionalLight);
 
-            // 启用轨道控制（即允许鼠标点击拖拽、滚轮放大）
-            controls = new THREE.OrbitControls(camera);
+        // 启用轨道控制（即允许鼠标点击拖拽、滚轮放大）
+        controls = new THREE.OrbitControls(camera);
 
-            // 渲染器
-            renderer = new THREE.WebGLRenderer({ antialias: true })
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            // renderer.setClearColor('#fff', 1.0);
+        // 渲染器
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        // renderer.setClearColor('#fff', 1.0);
 
-            document.body.appendChild(renderer.domElement);
+        document.body.appendChild(renderer.domElement);
+      }
+
+      // 添加性能插件
+      function AddStats() {
+        //stats对象初始化
+        stats = new Stats();
+        stats.domElement.style.position = "absolute"; //绝对坐标
+        stats.domElement.style.left = "0px"; // (0,0)px,左上角
+        stats.domElement.style.top = "0px";
+        document.body.appendChild(stats.domElement);
+      }
+
+      // 加载数据
+      function loadData() {
+        loader = new THREE.ColladaLoader();
+        loader.load("../models/edbyg.dae", function(result) {
+          skpObj = result.scene;
+          console.log(result);
+          scene.add(result.scene);
+        });
+      }
+
+      function render() {
+        renderer.render(scene, camera);
+        stats.update();
+      }
+
+      // 动画
+      function animate() {
+        requestAnimationFrame(animate);
+        let delta = clock.getDelta();
+        if (skpObj !== undefined) {
+          // skpObj.rotation.z += delta * 0.5;
         }
+        render();
+      }
 
-        // 添加性能插件
-        function AddStats() {
-            //stats对象初始化
-            stats = new Stats();
-            stats.domElement.style.position = 'absolute'; //绝对坐标
-            stats.domElement.style.left = '0px';// (0,0)px,左上角
-            stats.domElement.style.top = '0px';
-            document.body.appendChild(stats.domElement);
+      let select = true;
+      function rotateByOwn(selected, mesh) {
+        // dummy = new THREE.Object3D();
+        // plane = mesh;
+        // plane.position.set(5, 5, 0);
+        // dummy.add(plane);
+        // dummy.position.set(0, 0, 0);
+        // scene.add(dummy);
+        // dummy.rotation.y += 0.5 * Math.PI;
+        scene.remove(mesh);
+      }
 
-        }
+      function fixMatrix(mesh) {
+        bakeRotation(mesh);
+        rotate180(mesh);
+        bakeRotation(mesh);
+      }
 
-        // 加载数据
-        function loadData() {
-            loader = new THREE.ColladaLoader();
-            loader.load('../models/edbyg.dae', function (result) {
-                skpObj = result.scene
-                console.log(result)
-                scene.add(result.scene)
-            })
-        }
+      function rotate180(mesh) {
+        var m = new THREE.Matrix4();
+        m.makeRotationY(Math.PI);
+        mesh.matrix.multiplyMatrices(mesh.matrix, m);
+        mesh.matrix.decompose(mesh.position, mesh.quaternion, mesh.scale);
+      }
 
-        function render() {
-            renderer.render(scene, camera);
-            stats.update();
-        }
+      function bakeRotation(mesh) {
+        mesh.updateMatrixWorld();
+        var geom = mesh.geometry;
+        var rotMatrix = mesh.matrix.clone();
+        rotMatrix.setPosition(new THREE.Vector3(0, 0, 0));
+        var pos = new THREE.Vector3();
+        pos.setFromMatrixPosition(mesh.matrix);
+        geom.applyMatrix(rotMatrix);
+        mesh.matrix.identity();
+        mesh.matrix.setPosition(pos);
+        mesh.matrix.decompose(mesh.position, mesh.quaternion, mesh.scale);
+        mesh.updateMatrixWorld();
+      }
 
-        // 动画
-        function animate() {
-            requestAnimationFrame(animate);
-            let delta = clock.getDelta();
-            if (skpObj !== undefined) {
-                // skpObj.rotation.z += delta * 0.5;
-            }
-            render()
-        }
+      function addTouchListener() {
+        var mouse = { x: 0, y: 0 };
 
+        document.body.onmousedown = function(event) {
+          console.log("Click.");
+          event.preventDefault();
 
-
-        let select = true;
-        function rotateByOwn(selected, mesh) {
-
-            // dummy = new THREE.Object3D();
-            // plane = mesh;
-            // plane.position.set(5, 5, 0);
-            // dummy.add(plane);
-            // dummy.position.set(0, 0, 0);
-            // scene.add(dummy);
-            // dummy.rotation.y += 0.5 * Math.PI;
-            scene.remove(mesh)
-
-
-        }
-
-        function fixMatrix(mesh) {
-            bakeRotation(mesh);
-            rotate180(mesh);
-            bakeRotation(mesh);
-        }
-
-        function rotate180(mesh) {
-            var m = new THREE.Matrix4();
-            m.makeRotationY(Math.PI);
-            mesh.matrix.multiplyMatrices(mesh.matrix, m);
-            mesh.matrix.decompose(mesh.position, mesh.quaternion, mesh.scale);
-        }
-
-        function bakeRotation(mesh) {
-            mesh.updateMatrixWorld();
-            var geom = mesh.geometry;
-            var rotMatrix = mesh.matrix.clone();
-            rotMatrix.setPosition(new THREE.Vector3(0, 0, 0));
-            var pos = new THREE.Vector3();
-            pos.setFromMatrixPosition(mesh.matrix);
-            geom.applyMatrix(rotMatrix);
-            mesh.matrix.identity();
-            mesh.matrix.setPosition(pos);
-            mesh.matrix.decompose(mesh.position, mesh.quaternion, mesh.scale);
-            mesh.updateMatrixWorld();
-        }
-
-        function addTouchListener() {
-            var mouse = { x: 0, y: 0 };
-
-            document.body.onmousedown = function (event) {
-                console.log("Click.");
-                event.preventDefault();
-
-                // update the mouse variable
-                /* 推导过程：
+          // update the mouse variable
+          /* 推导过程：
                     设A点为点击点(x1,y1),x1=e.clintX, y1=e.clientY
                     设A点在世界坐标中的坐标值为B(x2,y2);
                     由于A点的坐标值的原点是以屏幕左上角为(0,0);
@@ -163,42 +165,46 @@
                     x2 = (x1 -innerWidth/2)/(innerwidth/2) = (x1/innerWidth)*2-1
                     同理得 y2 = -(y1/innerHeight)*2 +1
                 */
-                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-                // 新建一个三维单位向量 假设z方向就是1
-                // 根据照相机，把这个向量转换到视点坐标系
-                var vector = new THREE.Vector3(mouse.x, mouse.y, 1).unproject(camera);
-                // 在视点坐标系中形成射线,射线的起点向量是照相机， 射线的方向向量是照相机到点击的点，这个向量应该归一标准化。
-                var raycaster = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
-                //射线和模型求交，选中一系列直线
-                var intersects = raycaster.intersectObjects(skpObj.children[0].children);
-                console.log('intersects=' + intersects)
-                if (intersects.length > 0) {
-                    //选中第一个射线相交的物体
-                    SELECTED = intersects[0];
-                    var intersected = SELECTED.object;
-                    console.log(SELECTED, intersected)
-                    // change the color of the closest face.
-                    // SELECTED.face.color.setRGB(0.8 * Math.random() + 0.2, 0, 0);
-                    // intersected.geometry.colorsNeedUpdate = true;
-                    rotateByOwn(SELECTED, intersected)
-                    render();
-                }
-            };
-            // document.body.onmousemove = function(e){
-            //     console.log("Move.");
-            //     event.preventDefault();
-            // }
-        }
+          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+          // 新建一个三维单位向量 假设z方向就是1
+          // 根据照相机，把这个向量转换到视点坐标系
+          var vector = new THREE.Vector3(mouse.x, mouse.y, 1).unproject(camera);
+          // 在视点坐标系中形成射线,射线的起点向量是照相机， 射线的方向向量是照相机到点击的点，这个向量应该归一标准化。
+          var raycaster = new THREE.Raycaster(
+            camera.position,
+            vector.sub(camera.position).normalize()
+          );
+          //射线和模型求交，选中一系列直线
+          var intersects = raycaster.intersectObjects(
+            skpObj.children[0].children
+          );
+          console.log("intersects=" + intersects);
+          if (intersects.length > 0) {
+            //选中第一个射线相交的物体
+            SELECTED = intersects[0];
+            var intersected = SELECTED.object;
+            console.log(SELECTED, intersected);
+            // change the color of the closest face.
+            // SELECTED.face.color.setRGB(0.8 * Math.random() + 0.2, 0, 0);
+            // intersected.geometry.colorsNeedUpdate = true;
+            rotateByOwn(SELECTED, intersected);
+            render();
+          }
+        };
+        // document.body.onmousemove = function(e){
+        //     console.log("Move.");
+        //     event.preventDefault();
+        // }
+      }
 
-        (function () {
-            initTree();
-            AddStats();
-            loadData();
-            animate();
-            addTouchListener();
-        })()
+      (function() {
+        initTree();
+        AddStats();
+        loadData();
+        animate();
+        addTouchListener();
+      })();
     </script>
-</body>
-
+  </body>
 </html>

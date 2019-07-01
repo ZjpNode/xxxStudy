@@ -4,59 +4,73 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
+  <!--<![endif]-->
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>three.js_lesson01_helloWorld</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-</head>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
     <script src="../lib/three.js-dev/build/three.min.js"></script>
     <script>
-        let camera, scene, renderer;
-        let geometry, material, mesh;
-        init();
-        animate();
-        function init() {
-            // 相机
-            camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10)
-            camera.position.z = 2;
+      let camera, scene, renderer;
+      let geometry, material, mesh;
+      init();
+      animate();
+      function init() {
+        // 相机: https://threejs.org/docs/index.html#api/en/cameras/PerspectiveCamera
+        camera = new THREE.PerspectiveCamera(
+          50, // fov - field of view，视野角，是距离观测点near长度处，最上端与最下端之间的角度( Default is 50)
+          window.innerWidth / window.innerHeight, // aspect - 画面横宽比
+          0.1, // near - 相机最近范围内可以看到的物体的距离( Default is 0.1)
+          2000 // far - 相机最远范围内可以看到的物体的距离( Default is 2000)
+        );
+        camera.position.z = 2;
 
-            // 场景
-            scene = new THREE.Scene();
+        // 场景
+        scene = new THREE.Scene();
 
-            // 立方体
-            geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-            material = new THREE.MeshNormalMaterial();
-            mesh = new THREE.Mesh(geometry, material)
+        // 立方体
+        geometry = new THREE.BoxGeometry(1, 1, 1);
+        material = new THREE.MeshNormalMaterial();
+        mesh = new THREE.Mesh(geometry, material);
 
-            scene.add(mesh)
+        scene.add(mesh);
 
-            // 渲染器
-            renderer = new THREE.WebGLRenderer({ antialias: true })
-            renderer.setSize(window.innerWidth, window.innerHeight);
+        // 渲染器
+        renderer = new THREE.WebGLRenderer({
+          antialias: true, // antialias - whether to perform antialiasing. Default is false.
+          alpha: true // alpha - whether the canvas contains an alpha (transparency) buffer or not. Default is false.
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xffffff, 0); // Sets the clear color and opacity.
 
-            document.body.appendChild(renderer.domElement);
+        document.body.appendChild(renderer.domElement);
+      }
+      function animate() {
+        requestAnimationFrame(animate);
 
-        }
-        function animate() {
-            requestAnimationFrame(animate);
+        mesh.rotation.x += 0.01;
+        mesh.rotation.y += 0.02;
 
-            mesh.rotation.x += 0.01;
-            mesh.rotation.y += 0.02;
-
-            renderer.render(scene, camera);
-        }
+        renderer.render(scene, camera);
+      }
     </script>
-</body>
-
+  </body>
 </html>
