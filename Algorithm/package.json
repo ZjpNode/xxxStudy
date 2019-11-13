@@ -1,0 +1,17 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive",
+    "reporter": "mocha --recursive --reporter mochawesome --reporter-options reportDir=./test/report,reportFilename=index"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "mochawesome": "^4.1.0"
+  }
+}
