@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 14:28:24
+ * @LastEditTime: 2019-11-14 16:06:56
  * @Description: 桶排序，时间复杂度：O(x*N)，稳定性：稳定
  * 桶排序(Bucket sort)是一种基于计数的排序算法，
  * 工作的原理是将数据分到有限数量的桶子里，然后每个桶再分别排序（有可能再使用别的排序算法或是以递回方式继续使用桶排序进行排序）。
@@ -10,7 +10,6 @@
  * 桶排序不同于快速排序，并不是比较排序，不受到时间复杂度 O(nlogn) 下限的影响。
  * 桶排序，主要适用于小范围整数数据，且独立均匀分布，可以计算的数据量很大，而且符合线性期望时间
  */
-let quickSort = require('./quickSort')
 /**
  * 桶排序
  * @param {Array<number>} arr   源数组
