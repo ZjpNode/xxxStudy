@@ -2,14 +2,25 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:30:10
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 09:35:04
+ * @LastEditTime: 2019-11-14 17:29:20
  * @Description:
  */
 
 const { expect } = require('chai')
-const { bubbleSort, selectSort, quickSort, insertSort, shellSort, bucketSort, countSort, mergeSortInOrder, downToMaxHeap } = require('../../src/sort')
+const {
+  bubbleSort,
+  selectSort,
+  quickSort,
+  insertSort,
+  shellSort,
+  countSort,
+  bucketSort,
+  radixSort,
+  mergeSortInOrder,
+  downToMaxHeap
+} = require('../../src/sort')
 
-let sortArr = [1, 2, 3, 5, 23, 35, 100, 100, 100, 100, 145, 200, 999]
+let sortArr = [-10, -9, 1, 2, 3, 5, 23, 35, 100, 100, 100, 100, 145, 200, 999]
 let arr = sortArr.slice(0).sort(() => Math.random() - 0.5)
 console.log(arr)
 
@@ -39,6 +50,14 @@ describe('sort test', function() {
       .but.not.have.ordered.members(arr)
   })
   it('select sort v2 test', function() {
+    let afterSortArr = selectSort.v2(arr)
+    expect(afterSortArr)
+      .to.have.ordered.members(sortArr)
+      .but.not.have.ordered.members(arr)
+  })
+  // [ 145, 200, 100, 23, 999, 2, 100, 35, 100, 5, 1, 3, 100 ]
+  it('select sort v2 test at [ -10,-9,145, 200, 100, 23, 999, 2, 100, 35, 100, 5, 1, 3, 100 ]', function() {
+    let arr = [-10, -9, 145, 200, 100, 23, 999, 2, 100, 35, 100, 5, 1, 3, 100]
     let afterSortArr = selectSort.v2(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
@@ -74,14 +93,18 @@ describe('sort test', function() {
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
   })
-
   it('shellSort sort test', function() {
     let afterSortArr = shellSort(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
   })
-
+  it('countSort sort test', function() {
+    let afterSortArr = countSort(arr)
+    expect(afterSortArr)
+      .to.have.ordered.members(sortArr)
+      .but.not.have.ordered.members(arr)
+  })
   it('bucketSort sort test', function() {
     let afterSortArr = bucketSort(arr)
     expect(afterSortArr)
@@ -89,8 +112,8 @@ describe('sort test', function() {
       .but.not.have.ordered.members(arr)
   })
 
-  it('countSort sort test', function() {
-    let afterSortArr = countSort(arr)
+  it('radixSort sort test', function() {
+    let afterSortArr = radixSort(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
