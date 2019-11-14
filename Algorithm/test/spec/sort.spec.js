@@ -2,22 +2,12 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:30:10
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-13 11:25:31
+ * @LastEditTime: 2019-11-14 09:35:04
  * @Description:
  */
 
 const { expect } = require('chai')
-const {
-  bubbleSort,
-  selectSort,
-  quickSort,
-  insertSort,
-  shellSort,
-  bucketSort,
-  countSort,
-  mergeSortInOrder,
-  downToMaxHeap
-} = require('../../src/sort')
+const { bubbleSort, selectSort, quickSort, insertSort, shellSort, bucketSort, countSort, mergeSortInOrder, downToMaxHeap } = require('../../src/sort')
 
 let sortArr = [1, 2, 3, 5, 23, 35, 100, 100, 100, 100, 145, 200, 999]
 let arr = sortArr.slice(0).sort(() => Math.random() - 0.5)
@@ -42,37 +32,44 @@ describe('sort test', function() {
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
   })
-
   it('select sort v1 test', function() {
     let afterSortArr = selectSort.v1(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
   })
-
   it('select sort v2 test', function() {
     let afterSortArr = selectSort.v2(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
   })
-
   it('quickSort sort v1 test', function() {
     let afterSortArr = quickSort.v1(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
   })
-
   it('quickSort sort v2 test', function() {
     let afterSortArr = quickSort.v2(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
   })
-
-  it('insertSort sort test', function() {
-    let afterSortArr = insertSort(arr)
+  it('insertSort sort v1 test', function() {
+    let afterSortArr = insertSort.v1(arr)
+    expect(afterSortArr)
+      .to.have.ordered.members(sortArr)
+      .but.not.have.ordered.members(arr)
+  })
+  it('insertSort sort v2 test', function() {
+    let afterSortArr = insertSort.v2(arr)
+    expect(afterSortArr)
+      .to.have.ordered.members(sortArr)
+      .but.not.have.ordered.members(arr)
+  })
+  it('insertSort sort v3 test', function() {
+    let afterSortArr = insertSort.v3(arr)
     expect(afterSortArr)
       .to.have.ordered.members(sortArr)
       .but.not.have.ordered.members(arr)
