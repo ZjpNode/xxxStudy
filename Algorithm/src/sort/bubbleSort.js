@@ -2,8 +2,11 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 17:42:01
- * @Description: 冒泡排序,时间复杂度：O(N²), 稳定性：稳定
+ * @LastEditTime: 2019-11-15 14:29:35
+ * @Description: 冒泡排序,
+ * 时间复杂度：O(N²)
+ * 辅助空间：O(1)
+ * 稳定性：稳定
  */
 let swap = require('../../lib/swap')
 /**

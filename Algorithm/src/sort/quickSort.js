@@ -2,8 +2,11 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 17:43:25
- * @Description: 快速排序,时间复杂度：O(NlogN), 稳定性：不稳定
+ * @LastEditTime: 2019-11-15 14:32:00
+ * @Description: 快速排序
+ * 时间复杂度：O(N log2 N)
+ * 辅助空间：O(n)
+ * 稳定性：不稳定
  */
 let quickSortV1 = (arr, _logName = '') => {
   arr = (arr || []).slice(0)

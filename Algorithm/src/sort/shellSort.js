@@ -2,8 +2,11 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 11:22:20
- * @Description: 希尔排序，时间复杂度：通常认为是O(N3/2)，稳定性：不稳定
+ * @LastEditTime: 2019-11-15 14:33:25
+ * @Description: 希尔排序
+ * 时间复杂度：通常认为是O(N3/2)
+ * 辅助空间：O(1)
+ * 稳定性：不稳定
  */
 /**
  * 希尔排序

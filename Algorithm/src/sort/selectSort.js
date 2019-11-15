@@ -2,8 +2,11 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 17:43:46
- * @Description: 选择排序,时间复杂度：O(N2), 稳定性：不稳定
+ * @LastEditTime: 2019-11-15 14:30:28
+ * @Description: 选择排序
+ * 时间复杂度：O(N2)
+ * 辅助空间：O(1)
+ * 稳定性：不稳定
  */
 let swap = require('../../lib/swap')
 /**
