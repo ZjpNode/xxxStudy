@@ -2,12 +2,11 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-13 11:41:20
+ * @LastEditTime: 2019-11-14 17:43:25
  * @Description: 快速排序,时间复杂度：O(NlogN), 稳定性：不稳定
  */
 let quickSortV1 = (arr, _logName = '') => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   if (!len) return []
   let pivot = arr[0]
@@ -21,13 +20,8 @@ let quickSortV1 = (arr, _logName = '') => {
     if (arr[i] < pivot) {
       leftArr.push(arr[i])
     }
-    _time++
   }
-  console.log(`${_logName} time: `, _time)
-  return quickSortV1(leftArr, 'left').concat(
-    pivot,
-    quickSortV1(rightArr, 'right')
-  )
+  return quickSortV1(leftArr, 'left').concat(pivot, quickSortV1(rightArr, 'right'))
 }
 
 /**
@@ -48,7 +42,6 @@ let _getMidVal = (a, b, c) => {
 
 let quickSortV2 = (arr, _logName = '') => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   if (!len) return []
   let pivot = _getMidVal(arr[0], arr[len / 2], arr[len - 1]) // 随机取出来3个数，取中间大小的为基准值
@@ -65,13 +58,8 @@ let quickSortV2 = (arr, _logName = '') => {
     if (arr[i] < pivot) {
       leftArr.push(arr[i])
     }
-    _time++
   }
-  console.log(`${_logName} time: `, _time)
-  return quickSortV2(leftArr, 'left').concat(
-    midArr,
-    quickSortV2(rightArr, 'right')
-  )
+  return quickSortV2(leftArr, 'left').concat(midArr, quickSortV2(rightArr, 'right'))
 }
 module.exports = {
   v1: quickSortV1,

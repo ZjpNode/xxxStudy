@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 16:06:56
+ * @LastEditTime: 2019-11-14 17:42:14
  * @Description: 桶排序，时间复杂度：O(x*N)，稳定性：稳定
  * 桶排序(Bucket sort)是一种基于计数的排序算法，
  * 工作的原理是将数据分到有限数量的桶子里，然后每个桶再分别排序（有可能再使用别的排序算法或是以递回方式继续使用桶排序进行排序）。
@@ -17,7 +17,6 @@
  */
 let bucketSort = (arr, count = 10) => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   let buckets = [] // 初始化桶
   let max = Math.max(...arr)
@@ -39,7 +38,6 @@ let bucketSort = (arr, count = 10) => {
             insertPoint = j
             break
           }
-          _time++
         }
       }
       buckets[index].splice(insertPoint, 0, arr[i])
@@ -47,9 +45,7 @@ let bucketSort = (arr, count = 10) => {
       buckets[index] = []
       buckets[index].push(arr[i])
     }
-    _time++
   }
-  console.log(`time: `, _time)
   return buckets.reduce((acc, val) => acc.concat(val), [])
 }
 module.exports = bucketSort

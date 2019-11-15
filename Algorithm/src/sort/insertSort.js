@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 10:15:08
+ * @LastEditTime: 2019-11-14 17:43:09
  * @Description: 插入排序,时间复杂度：O(N²), 稳定性：稳定
  */
 /**
@@ -11,7 +11,6 @@
  */
 let insertSortV1 = arr => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   if (!len) return []
   // let insertArr = [arr[0]]
@@ -22,7 +21,6 @@ let insertSortV1 = arr => {
       // 当前元素比待排序元素大
       arr[insertPoint + 1] = arr[insertPoint] // 当前元素后移一位
       insertPoint--
-      _time++
     }
     arr[insertPoint + 1] = temp // 找到了插入位置，插入待排序元素
 
@@ -31,12 +29,10 @@ let insertSortV1 = arr => {
     //     insertIndex = j
     //     break
     //   }
-    //   _time++
     // }
 
     // insertArr = insertArr.splice(0, insertIndex).concat(arr[i], insertArr)
   }
-  console.log('time: ', _time)
   return arr
 }
 /**
@@ -47,8 +43,7 @@ let insertSortV1 = arr => {
  * @param {number} target       目标元素
  * @return 目标元素应该插入位置的下标
  */
-let binarySearch = (array, lowerBound, upperBound, target, _time) => {
-  _time = _time || [0]
+let binarySearch = (array, lowerBound, upperBound, target) => {
   let curIndex
   while (lowerBound < upperBound) {
     curIndex = Math.round((lowerBound + upperBound) / 2)
@@ -57,7 +52,6 @@ let binarySearch = (array, lowerBound, upperBound, target, _time) => {
     } else {
       lowerBound = curIndex + 1
     }
-    _time[0]++
   }
   if (array[lowerBound] < target) {
     lowerBound++
@@ -70,8 +64,6 @@ let binarySearch = (array, lowerBound, upperBound, target, _time) => {
  */
 let insertSortV2 = arr => {
   arr = (arr || []).slice(0)
-  let _time = [0]
-  let _time2 = 0
   let len = arr.length
   if (!len) return []
   // let insertArr = [arr[0]]
@@ -79,18 +71,15 @@ let insertSortV2 = arr => {
     let temp = arr[i] // 存储待排序的元素值
     if (arr[i - 1] > temp) {
       // 比有序数组的最后一个元素要小
-      let insertIndex = binarySearch(arr, 0, i - 1, temp, _time)
+      let insertIndex = binarySearch(arr, 0, i - 1, temp)
       for (let j = i; j > insertIndex; j--) {
         // 将有序数组中，插入点之后的元素后移一位
         arr[j] = arr[j - 1]
-        _time[0]++
-        _time2++
       }
 
       arr[insertIndex] = temp // 插入待排序元素到正确的位置
     }
   }
-  console.log('time[0]: ', _time[0], '_time2：', _time2)
   return arr
 }
 /**
@@ -100,7 +89,6 @@ let insertSortV2 = arr => {
  */
 let insertSortV3 = arr => {
   arr = (arr || []).slice(0)
-  let _time = [0]
   let len = arr.length
   if (!len) return []
   let insertArr = [arr[0]]
@@ -113,12 +101,11 @@ let insertSortV3 = arr => {
       // 比有序数组的最后一个元素要大
       insertIndex = insertArr.length
     } else {
-      insertIndex = binarySearch(insertArr, 0, insertArr.length - 1, arr[i], _time)
+      insertIndex = binarySearch(insertArr, 0, insertArr.length - 1, arr[i])
     }
     // insertArr = insertArr.splice(0, insertIndex).concat(arr[i], insertArr)
     insertArr.splice(insertIndex, 0, arr[i])
   }
-  console.log('time: ', _time[0])
   return insertArr
 }
 

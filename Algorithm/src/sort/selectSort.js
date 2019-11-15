@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 15:32:56
+ * @LastEditTime: 2019-11-14 17:43:46
  * @Description: 选择排序,时间复杂度：O(N2), 稳定性：不稳定
  */
 let swap = require('../../lib/swap')
@@ -12,7 +12,6 @@ let swap = require('../../lib/swap')
  */
 let selectSortV1 = arr => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   for (let i = 0; i < len; i++) {
     let minIndex = i
@@ -20,13 +19,11 @@ let selectSortV1 = arr => {
       if (arr[minIndex] > arr[j]) {
         minIndex = j
       }
-      _time++
     }
     if (minIndex !== i) {
       swap(arr, i, minIndex)
     }
   }
-  console.log('time: ', _time)
   return arr
 }
 /**
@@ -35,7 +32,6 @@ let selectSortV1 = arr => {
  */
 let selectSortV2 = arr => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   for (let i = 0; i < len / 2; i++) {
     let minIndex = i
@@ -48,7 +44,6 @@ let selectSortV2 = arr => {
       if (arr[j] > arr[maxIndex]) {
         maxIndex = j
       }
-      _time++
     }
     if (i !== minIndex) {
       swap(arr, i, minIndex)
@@ -63,7 +58,6 @@ let selectSortV2 = arr => {
       swap(arr, len - i - 1, maxIndex)
     }
   }
-  console.log('time: ', _time)
   return arr
 }
 module.exports = {

@@ -15,7 +15,6 @@
  */
 let shellSort = arr => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   let dk = parseInt(len / 2) // 增量
   // let increament = len / 2 // 增量
@@ -26,14 +25,12 @@ let shellSort = arr => {
       while (insertIndex >= 0 && arr[insertIndex] > temp) {
         arr[insertIndex + dk] = arr[insertIndex] // 当前元素后移一位
         insertIndex = insertIndex - dk
-        _time++
       }
       arr[insertIndex + dk] = temp // 找到了插入位置，插入待排序元素
     }
     dk = parseInt(dk / 2)
   }
 
-  console.log('time: ', _time)
   return arr
 }
 module.exports = shellSort

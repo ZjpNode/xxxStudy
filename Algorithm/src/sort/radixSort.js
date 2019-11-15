@@ -2,7 +2,7 @@
  * @Author: jiapeng.Zheng
  * @Date: 2019-11-11 11:26:31
  * @LastEditors: jiapeng.Zheng
- * @LastEditTime: 2019-11-14 17:37:00
+ * @LastEditTime: 2019-11-14 17:43:34
  * @Description: 基数排序，时间复杂度：O(x*N)，稳定性：稳定
  * 桶排序的改进版，桶的大小固定为10，减少了内存空间的开销。
  * 首先，找出待排序列中得最大元素max，并依次按max的低位到高位对所有元素排序；
@@ -28,7 +28,6 @@ let _getTime = num => {
 
 let radixSort = arr => {
   arr = (arr || []).slice(0)
-  let _time = 0
   let len = arr.length
   let count = 10
   let buckets = Array(count).fill()
@@ -66,7 +65,6 @@ let radixSort = arr => {
     }
   }
 
-  console.log('time: ', _time)
   return arr
 }
 module.exports = radixSort
