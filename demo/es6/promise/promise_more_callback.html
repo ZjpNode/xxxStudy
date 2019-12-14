@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Promise解决第三方多次调用回调的问题</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <span>
+      本质上，如果你把你的回调传递给拥有良好保证和可预测性的中立Promises机制，你实质上重新获得了对于后续程序能很稳定并且运行良好的可靠性。标准的promises机制有以下这些保证：
+      <ul>
+        <li>
+          如果promise被resolve，它要不是success就是failure，不可能同时存在。
+        </li>
+        <li>一旦promise被resolve，它就再也不会被resolve(不会出现重复调用)。</li>
+        <li>
+          如果promise返回了成功的信息，那么你绑定在成功事件上的回调会得到这个消息。
+        </li>
+        <li>如果发生了错误，promise会收到一个带有错误信息的错误通知。</li>
+        <li>
+          无论promise最后的结果是什么(success或者failure)，他就不会改变了，你总是可以获得这个消息只要你不销毁promise。
+        </li>
+      </ul>
+    </span>
+    <div id="log"></div>
+    <script>
+      let log = document.getElementById("log");
+      function someAsyncThing(callBack) {
+        i = 0;
+        setInterval(() => {
+          callBack(i++);
+        }, 1000);
+      }
+
+      //   someAsyncThing(d => {
+      //     console.log(d);
+      //   });
+
+      let P = () => {
+        return new Promise((resolve, reject) => {
+          someAsyncThing(d => {
+            log.insertAdjacentHTML(
+              "beforeend",
+              `<div>callBack run return ${d}</div>`
+            );
+            resolve(d);
+          });
+        });
+      };
+
+      var p = P(); // Promise.resolve();
+      p.then(
+        function(d) {
+          log.insertAdjacentHTML("beforeend", "Promise resolve: " + d);
+        },
+        function(err) {
+          log.insertAdjacentHTML("beforeend", "Promise reject: " + err);
+        }
+      );
+    </script>
+  </body>
+</html>
