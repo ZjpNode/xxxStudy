@@ -1,0 +1,84 @@
+<!--
+ * @Author       : jiapeng.Zheng
+ * @Date         : 2020-01-06 16:47:17
+ * @LastEditors  : jiapeng.Zheng
+ * @LastEditTime : 2020-01-06 17:07:27
+ * @Description  : 
+ -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>tasks-microtasks-queues-and-schedules</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .outer {
+        background: #d4d4d4;
+        padding: 25px;
+        width: 92px;
+        margin: 0 auto;
+      }
+      .inner {
+        background: #adadad;
+        padding: 46px;
+        width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+    <script>
+      // Let's get hold of those elements
+      var outer = document.querySelector('.outer');
+      var inner = document.querySelector('.inner');
+
+      // Let's listen for attribute changes on the
+      // outer element
+      new MutationObserver(function(a,b,c) {
+        console.log('mutate',a,b,c);
+      }).observe(outer, {
+        attributes: true
+      });
+
+      // Here's a click listener…
+      function onClick(e, name) {
+        console.log(e.target);
+        console.log(name + ' click');
+
+        setTimeout(function() {
+          console.log(name + ' timeout');
+        }, 0);
+
+        Promise.resolve().then(function() {
+          console.log(name + ' promise');
+        });
+        outer.setAttribute('data-random',Math.random());
+      }
+      // …which we'll attach to both elements
+      inner.addEventListener('click', e => {
+        onClick(e, 'inner');
+      });
+      outer.addEventListener('click', e => {
+        onClick(e, 'outer');
+      });
+
+      inner.click();
+    </script>
+  </body>
+</html>
