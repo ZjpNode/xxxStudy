@@ -1,0 +1,115 @@
+<!--
+ * @Author       : jiapeng.Zheng
+ * @Date         : 2020-01-06 15:21:16
+ * @LastEditors  : jiapeng.Zheng
+ * @LastEditTime : 2020-01-06 15:33:16
+ * @Description  : 
+ -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      .demo > .image {
+        margin-bottom: 10px;
+        max-width: 100%;
+        float: left;
+      }
+      .demo > .content {
+        margin: 0 0 10px 140px;
+        min-height: 96px;
+        max-width: 100%;
+        padding: 5px;
+        background-color: #eee;
+        vertical-align: top;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: 360px) {
+        .demo > .image {
+          float: none;
+        }
+        .demo > .content {
+          margin-left: 0;
+        }
+      }
+      a.link::before {
+        content: '参考链接：';
+      }
+      a.link::after {
+        content: attr(href);
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <p>
+      <a
+        class="link" target="_blank"
+        href="https://www.zhangxinxu.com/wordpress/2014/10/responsive-images-srcset-size-w-descriptor/"
+      ></a>
+    </p>
+    <p>
+      <a
+        class="link" target="_blank"
+        href="https://www.hongweipeng.com/index.php/archives/1512/"
+      ></a>
+    </p>
+    <img
+      class="image"
+      src="img\mm-width-128px.jpg"
+      srcset="
+        img\mm-width-128px.jpg 128w,
+        img\mm-width-256px.jpg 256w,
+        img\mm-width-512px.jpg 512w
+      "
+      sizes="(max-width: 360px) 340px, 128px"
+    />
+    <div class="content">
+      当视图宽度不大于360像素的时候，左右布局变成上下布局，同时图片撑满屏幕显示。
+    </div>
+
+    <img
+      class="image"
+      src="img\mm-width-128px.jpg"
+      srcset="
+        img\mm-width-128px.jpg 128w,
+        img\mm-width-256px.jpg 256w,
+        img\mm-width-512px.jpg 512w
+      "
+      sizes="(max-width: 360px) calc(100vw - 20px), 128px"
+    />
+    <div class="content">
+      当视图宽度不大于360像素的时候，左右布局变成上下布局，同时图片撑满屏幕显示。
+    </div>
+
+    <img
+      class="image"
+      src="img\mm2-width-128px.jpg"
+      srcset="
+        img\mm2-width-128px.jpg 128w,
+        img\mm2-width-256px.jpg 256w,
+        img\mm2-width-512px.jpg 512w
+      "
+      sizes="(max-width: 360px) calc(100vw - 20px), 128px"
+    />
+    <div class="content">
+      当视图宽度不大于360像素的时候，左右布局变成上下布局，同时图片撑满屏幕显示。
+    </div>
+    <script src="" async defer></script>
+  </body>
+</html>
