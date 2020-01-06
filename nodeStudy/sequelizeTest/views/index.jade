@@ -1,0 +1,13 @@
+extends layout
+block body
+  h2 Projects
+  #list
+    ul#projects-list
+      each project in projects
+        li
+          a(href="/project/#{project.id}/task")= project.title
+          a.delete(href="/project/#{project.id}") x
+
+    form#add(action="/projects",method="post")
+      input(name="title" type="text")
+      button(type="submit") Add
