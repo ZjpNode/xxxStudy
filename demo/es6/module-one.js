@@ -1,9 +1,16 @@
-import say from './module-two.js';
-import {s} from './module-two.js'
+import say from './module-two.js'
+import { s, sayBymoduleTwo2, sayBymoduleTwo } from './module-two.js'
+import sayBymoduleThree from './module-three.js'
+import sayBymoduleFour from './module-four.js'
 
-alert("module-one.js");
+console.log("module-one.js", this) // this === undefined
 
 document.getElementById('importTwo').addEventListener('click', function () {
-  say('123,' + s);
+  say.sayBymoduleTwo()
+  say.sayBymoduleTwo2()
+  sayBymoduleTwo()
+  sayBymoduleTwo2()
+  sayBymoduleThree()
+  sayBymoduleFour()
 }, false)
 
