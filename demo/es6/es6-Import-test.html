@@ -9,4 +9,62 @@
 <a id="importTwo">importTwo</a>
 </body>
 <script src="./module-one.js" type="module"></script>
+<script  type="module">
+  'use strict'
+  console.log('[module this(strict)]', this)
+  function _a(){
+    console.log('[module this(strict):fn]',this)
+  }
+  var _b = ()=>{
+    console.log('[module this(strict):()=>]',this)
+  }
+  var obj = {_a,_b}
+  _a(); 
+  _b()
+  obj._a()
+  obj._b()
+</script>
+<script  type="module">
+  console.log('[module this]', this)
+  function a(){
+    console.log('[module this:fn]',this)
+  }
+  var b = ()=>{
+    console.log('[module this:()=>]',this)
+  }
+    var obj = {a,b}
+  a(); 
+  b()
+  obj.a()
+  obj.b()
+</script>
+<script>
+  'use strict'
+  console.log('[this(strict)]', this)
+  function aa(){
+    console.log('[this(strict):fn]',this)
+  }
+  var bb = ()=>{
+    console.log('[this(strict):()=>]',this)
+  }
+      var obj = {aa,bb}
+  aa(); 
+  bb()
+  obj.aa()
+  obj.bb()
+</script>
+<script>
+  console.log('[this]', this)
+  function aaa(){
+    console.log('[this:fn]',this)
+  }
+  var bbb = ()=>{
+    console.log('[this:()=>]',this)
+  }
+  var obj = {aaa,bbb}
+  aaa(); 
+  bbb()
+  obj.aaa()
+  obj.bbb()
+</script>
 </html>

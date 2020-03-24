@@ -2,11 +2,10 @@
  * @Author       : jiapeng.Zheng
  * @Date         : 2018-05-17 09:03:16
  * @LastEditors  : jiapeng.Zheng
- * @LastEditTime : 2020-03-24 12:21:22
+ * @LastEditTime : 2020-03-24 14:12:26
  * @Description  : 
  */
 export const s = 1;
-console.log("module-two.js", this); // this === undefined
 export default {
   sayBymoduleTwo: function (msg) {
     console.log('say.sayBymoduleTwo', this) // this !== undefined

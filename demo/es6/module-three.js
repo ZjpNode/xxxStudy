@@ -6,7 +6,6 @@
  * @Description  : 
  */
 export const s = 1;
-console.log("module-three.js", this); // this === undefined
 export default function sayBymoduleThree (msg) {
   console.log('sayBymoduleThree', this) // this === undefined
 }

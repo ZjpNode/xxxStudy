@@ -6,7 +6,6 @@
  * @Description  : 
  */
 export const s = 1;
-console.log("module-four.js", this); // this === undefined
 export default (msg) => {
   console.log('sayBymoduleFour', this) // this === undefined
 }
