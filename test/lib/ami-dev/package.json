@@ -91,7 +91,7 @@
         "karma-webpack": "^2.0.4",
         "live-server": "^1.1.0",
         "node-pre-gyp": "^0.10.0",
-        "puppeteer": "^0.13.0",
+        "puppeteer": "^1.13.0",
         "rimraf": "^2.6.1",
         "rollup-plugin-node-builtins": "^2.1.2",
         "shelljs": "latest",
