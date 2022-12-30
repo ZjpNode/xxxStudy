@@ -16,7 +16,7 @@
     "moment": "^2.19.4"
   },
   "devDependencies": {
-    "egg-bin": "^4.3.7",
+    "egg-bin": "^4.20.0",
     "egg-mock": "^3.14.0"
   }
 }
